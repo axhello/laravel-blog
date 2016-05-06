@@ -608,6 +608,9 @@ ul.icons li a {
 .content {
   font-size: 16px;
 }
+.content img {
+  width: 100%;
+}
 .content ul {
   list-style: disc;
 }

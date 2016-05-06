@@ -1,9 +1,12 @@
 @extends('admin.home')
 @section('content')
+    @if(Auth::check())
+        <script>
+            window.location.href = '/admin/dashboard'
+        </script>
+    @endif
     <div class="login-container">
-
             <div class="row">
-
                 <div class="col-sm-6">
                     <!-- Errors container -->
                     <div class="errors-container"></div>
