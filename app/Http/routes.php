@@ -1,15 +1,7 @@
 <?php
 
 
-//\Auth::loginUsingId(1);
-//if (Agent::isDesktop()) {
-    Route::get('/', 'Home\HomeController@index');
-//} else {
-//    Route::get('/', function (){
-//       return '这是手机版!';
-//    });
-//}
-
+Route::get('/', 'Home\HomeController@index');
 Route::get('/admin', 'Admin\AdminController@index');
 Route::post('/admin/signin', 'Admin\AdminController@signin');
 Route::get('/category', 'Home\HomeController@getCategory');

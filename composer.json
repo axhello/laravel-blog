@@ -9,9 +9,7 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
         "yuanchao/laravel-5-markdown-editor": "dev-master",
-        "barryvdh/laravel-ide-helper": "^2.1",
-        "cviebrock/eloquent-sluggable": "^3.1",
-        "jenssegers/agent": "^2.3"
+        "cviebrock/eloquent-sluggable": "^3.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

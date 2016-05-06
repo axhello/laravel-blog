@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 Desktop.ini
 /vendor
 /node_modules

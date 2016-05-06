@@ -150,7 +150,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         YuanChao\Editor\EndaEditorServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        Jenssegers\Agent\AgentServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -208,7 +207,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
-        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];
