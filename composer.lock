@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "71a57d3bc8afc070e5235ac1eed78644",
-    "content-hash": "0439b625e34f569d3c5c46843926787c",
+    "hash": "5cc107ee9dbe4e1b6d5828b489c7d69b",
+    "content-hash": "e5a7992b2cb2517557eaf987dbf4e181",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1944,39 +1944,6 @@
                 "environment"
             ],
             "time": "2016-04-15 10:48:49"
-        },
-        {
-            "name": "yuanchao/laravel-5-markdown-editor",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yccphp/laravel-5-markdown-editor.git",
-                "reference": "ce1e1d1f9cbb3a6382066fafbf653c3346ab524b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/yccphp/laravel-5-markdown-editor/ce1e1d1f9cbb3a6382066fafbf653c3346ab524b.zip",
-                "reference": "ce1e1d1f9cbb3a6382066fafbf653c3346ab524b",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "YuanChao\\Editor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "yuanchao",
-                    "email": "653069653@qq.com"
-                }
-            ],
-            "description": "Based on the markdown editor laravel 5",
-            "time": "2015-05-20 02:54:01"
         }
     ],
     "packages-dev": [
@@ -3203,9 +3170,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "yuanchao/laravel-5-markdown-editor": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

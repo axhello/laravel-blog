@@ -31,7 +31,6 @@ body {
   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
   font-size: 16px;
-  line-height: 1.75em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
@@ -502,7 +501,7 @@ ul.icons li a {
   position: relative;
 }
 .article .title {
-  width: 86%;
+  width: auto;
   font-size: 30px;
   margin: .5rem 0;
 }
@@ -516,12 +515,13 @@ ul.icons li a {
   text-decoration: none;
 }
 .article .content {
-  width: 86%;
+  width: auto;
   padding: 10px 0;
+  word-wrap: break-word;
 }
 .article .meta {
   color: #555;
-  width: 86%;
+  width: auto;
 }
 .article .meta .date {
   display: inline-block;

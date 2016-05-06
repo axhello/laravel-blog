@@ -28,7 +28,10 @@
                 </div>
             </div>
             <br />
-            @include('editor::head')
+            <link rel="stylesheet" href="/css/admin/uikit.css">
+            <link rel="stylesheet" href="/css/admin/codemirror.css">
+            <link rel="stylesheet" href="/css/admin/codemirror.css">
+            <link rel="stylesheet" href="/css/admin/htmleditor.css">
             {!! Form::model($article, ['url'=>'admin/articles/'.$article->id, 'method'=>'PATCH']) !!}
             <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                 {!! Form::text('title', null, ['class' => 'form-control', 'placeholder'=>'文章标题']) !!}
@@ -45,7 +48,7 @@
                 {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control','multiple'=>'multiple','id'=>'tag_list']) !!}
             </div>
             <div class="editor form-group {{ $errors->has('content_raw') ? ' has-error' : '' }}">
-                {!! Form::textarea('content_raw', null, ['id'=>'Editor', 'class' => 'form-control']) !!}
+                {!! Form::textarea('content_raw', null, ['data-uk-htmleditor'=>'{markdown:true}', 'class' => 'form-control']) !!}
                 @if ($errors->has('content_raw'))
                     <span class="help-block">
                         <strong>{{ $errors->first('content_raw') }}</strong>

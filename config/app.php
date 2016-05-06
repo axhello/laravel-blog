@@ -148,7 +148,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        YuanChao\Editor\EndaEditorServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 
         /*
@@ -206,7 +205,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
     ],
 
 ];

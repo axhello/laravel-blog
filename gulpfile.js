@@ -13,23 +13,29 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     // mix.sass('app.scss');
-    //mix.less('admin/xenon.less', 'public/css/admin/dashboard.min.css');
+    mix.less('admin/xenon.less', 'public/css/admin/dashboard.min.css');
     mix.less('home/main.less', 'public/css/home/main.css');
     mix.less('home/media.less', 'public/css/home/media.css');
-    //mix.scripts([
-    //    'admin/bootstrap.min.js',
-    //    'admin/TweenMax.min.js',
-    //    'admin/resizeable.js',
-    //    'admin/joinable.js',
-    //    'admin/xenon-api.js',
-    //    'admin/xenon-toggles.js',
-    //    'admin/xenon-widgets.js',
-    //    'admin/globalize.js',
-    //    'admin/toastr.min.js',
-    //    'admin/xenon-custom.js',
-    //    'admin/select2.full.min.js',
-    //    'admin/sweetalert.min.js'
-    //], 'public/js/admin/dashboard.min.js');
+    mix.scripts([
+        'admin/xenon/bootstrap.min.js',
+        'admin/xenon/TweenMax.min.js',
+        'admin/xenon/resizeable.js',
+        'admin/xenon/joinable.js',
+        'admin/xenon/xenon-api.js',
+        'admin/xenon/xenon-toggles.js',
+        'admin/xenon/toastr.min.js',
+        'admin/xenon/xenon-custom.js',
+        'admin/min/select2.full.min.js',
+        'admin/min/sweetalert.min.js',
+        'admin/min/uikit.min.js',
+        'admin/min/codemirror.js',
+        'admin/min/markdown.js',
+        'admin/min/overlay.js',
+        'admin/min/xml.js',
+        'admin/min/gfm.js',
+        'admin/min/marked.js',
+        'admin/min/htmleditor.js'
+    ], 'public/js/admin/dashboard.min.js');
     mix.scripts([
         'home/vue.js',
         'home/vue-resource.js',
