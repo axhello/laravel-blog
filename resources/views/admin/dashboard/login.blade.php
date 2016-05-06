@@ -60,7 +60,6 @@
                 </div>
             </div>
         </div>
-    <script src="/js/admin/jquery.validate.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             // Reveal Login form

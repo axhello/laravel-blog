@@ -24,6 +24,7 @@ elixir(function(mix) {
         'admin/xenon/xenon-api.js',
         'admin/xenon/xenon-toggles.js',
         'admin/xenon/toastr.min.js',
+        'admin/xenon/jquery.validate.min.js',
         'admin/xenon/xenon-custom.js',
         'admin/min/select2.full.min.js',
         'admin/min/sweetalert.min.js',
