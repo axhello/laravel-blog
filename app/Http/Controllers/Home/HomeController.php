@@ -122,7 +122,8 @@ class HomeController extends Controller
      */
     public function links()
     {
-        $links = Link::latest()->get();
-        return view('home.links', compact('links'));
+        $links = Link::all();
+        $options = Options::first();
+        return view('home.links', compact('links', 'options'));
     }
 }

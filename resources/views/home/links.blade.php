@@ -1,4 +1,12 @@
 @extends('app')
+@section('header')
+    @if(!empty($options))
+        <title>Links - {{ $options->title }}</title>
+        <meta name="author" content="{{ $options->author }}">
+        <meta name="description" content="{{ $options->description }}| {{ $options->title }}" />
+        <meta name="keywords" content="{{ $options->keywords }}" />
+    @endif
+@stop
 @section('content')
     <div id="Container" class="container">
         <main class="main-content">
