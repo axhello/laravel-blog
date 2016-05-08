@@ -2,7 +2,8 @@
 @section('content')
     <div id="Container" class="container">
         <main class="main-content">
-            <div class="info">
+            <header><h2 class="about-title">About Me</h2></header>
+            <div class="about">
                 <ul>
                     <li>94后。懒癌待拯救，喜欢折腾自己感兴趣的东西。</li>
                     <li>患有"重度网络禁断症"，一定不能断网QAQ，不然就觉得跟世界隔绝了一样</li>

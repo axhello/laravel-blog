@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Article;
 use App\Category;
+use App\Link;
 use App\Options;
 use DebugBar\DebugBar;
 use Illuminate\Http\Request;
@@ -104,6 +105,10 @@ class HomeController extends Controller
         //
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function search(Request $request)
     {
         $keyword = $request->input('q');
@@ -112,8 +117,12 @@ class HomeController extends Controller
         return view('home.search', compact('results', 'options'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function links()
     {
-        return view('home.links');
+        $links = Link::latest()->get();
+        return view('home.links', compact('links'));
     }
 }

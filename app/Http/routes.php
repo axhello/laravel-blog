@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::post('/links', 'Admin\LinksController@create');
     Route::get('/links/edit/{id}', 'Admin\LinksController@edit');
     Route::patch('/links/update/{id}', 'Admin\LinksController@update');
+    Route::delete('/links/delete/{id}', 'Admin\LinksController@destroy');
 
     Route::get('/options/basic', 'Admin\OptionsController@basic');
     Route::patch('/options/basic/{id}', 'Admin\OptionsController@update');

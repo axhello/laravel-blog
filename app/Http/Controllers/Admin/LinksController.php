@@ -61,4 +61,14 @@ class LinksController extends Controller
             return redirect()->back()->with('errors','更新失败!');
         }
     }
+
+    public function destroy($id)
+    {
+        $links = Link::findOrFail($id)->delete();
+        if ($links) {
+            return redirect()->back()->with('success','删除成功!');
+        } else {
+            return redirect()->back()->with('errors','删除失败!');
+        }
+    }
 }

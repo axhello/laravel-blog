@@ -51,7 +51,8 @@
                                     <table cellspacing="0" class="table table-small-font table-bordered table-striped">
                                         <thead>
                                         <tr>
-                                            <th id="idcbc9bb11ff70e-col-0">名字</th>
+                                            <th>图片</th>
+                                            <th>名字</th>
                                             <th data-priority="1">链接</th>
                                             <th data-priority="1">描述</th>
                                             <th data-priority="1">操作</th>
@@ -61,14 +62,18 @@
                                         @foreach($links as $link)
                                             <tr>
                                                 <td>
-                                                    <div class="image">{{ $link->image}}</div>
+                                                    <img src="{{ $link->image}}" alt="" width="32" height="32">
+                                                </td>
+                                                <td>
                                                     <div class="name">{{ $link->name }}</div>
                                                 </td>
                                                 <td data-priority="1" colspan="1">{{ $link->url }}</td>
                                                 <td data-priority="1" colspan="1">{{ $link->description }}</td>
                                                 <td data-priority="1" colspan="1">
-                                                    <a href="javascript:;" onclick="Onedit({{ $link->id }})" class="btn btn-secondary btn-sm btn-icon icon-left">Edit</a>
-                                                    <a href="javascript:;" class="btn btn-danger btn-sm btn-icon icon-left">Delete</a>
+                                                    {!! Form::open(['url'=>'/admin/links/delete/'.$link->id,'method' => 'DELETE']) !!}
+                                                        <a href="javascript:;" onclick="Onedit({{ $link->id }})" class="btn btn-secondary btn-sm btn-icon icon-left">Edit</a>
+                                                        <button type="submit" class="btn btn-danger btn-sm btn-icon icon-left">Delete</button>
+                                                    {!! Form::close() !!}
                                                 </td>
                                             </tr>
                                         @endforeach

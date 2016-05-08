@@ -12,7 +12,7 @@
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">Profile</h1>
+                    <h1 class="title">Site Settings</h1>
                     <p class="description">User profile and site setting</p>
                 </div>
                 <div class="breadcrumb-env">

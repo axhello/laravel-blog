@@ -107,7 +107,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <span class="title">Compose Message</span>
+                            <span class="title">个人资料</span>
                         </a>
                     </li>
                     <li>
