@@ -142,18 +142,21 @@
   .switch {
     display: none;
   }
+  .header h1 {
+    font-size: 1.2em;
+  }
 }
 @media screen and (max-width: 1280px) {
   #sidebar {
-    width: 20em;
+    width: 21em;
   }
   #Container {
-    padding-left: 20em;
+    padding-left: 21em;
   }
 }
 @media screen and (max-width: 1680px) {
   #sidebar {
-    width: 21em;
+    width: 22em;
   }
   #sidebar > header {
     padding: 2em;
@@ -162,7 +165,10 @@
     padding: 1.5em;
   }
   #Container {
-    padding-left: 21em;
+    padding-left: 22em;
+  }
+  .header h1 {
+    font-size: 1em;
   }
 }
 

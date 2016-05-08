@@ -67,6 +67,7 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 a:active,
 a:hover {
@@ -212,6 +213,15 @@ p {
   word-spacing: 0.05em;
   margin: 0 0 10.5px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
 blockquote {
   margin: 0;
   padding: 0;
@@ -243,8 +253,9 @@ blockquote {
 }
 #sidebar > header p {
   color: #d1f1e9;
-  font-style: italic;
+  font-style: normal;
   margin: 1em 0 0 0;
+  font-weight: bold;
 }
 #sidebar > nav ul {
   list-style: none;
@@ -263,6 +274,10 @@ blockquote {
   display: block;
   padding: 0.85em 0;
   text-decoration: none;
+}
+#sidebar > nav ul li:hover a {
+  background: #fff;
+  color: #4acaa8 !important;
 }
 #sidebar > nav ul li a.active {
   background: #fff;
@@ -365,10 +380,12 @@ ul.icons li a {
 #Container {
   background: #fff;
   padding-left: 23em;
-  min-height: 100%;
 }
 .main-content {
-  padding: 4em 2em 0 2em;
+  padding: 50px 30px 30px 30px;
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
 }
 .vi.tabular.menu {
   position: relative;
@@ -599,14 +616,21 @@ ul.icons li a {
 .pagination li.disabled:hover {
   border-color: #d9d9d9;
 }
-#section {
-  padding: 0 2em;
-}
 .header {
   margin: 1rem 0;
 }
+.header h1 {
+  margin: 10px 0;
+}
+.header time {
+  color: #666;
+}
 .content {
   font-size: 16px;
+  line-height: 1.5em;
+}
+.content li p {
+  margin: 0;
 }
 .content img {
   width: 100%;
@@ -627,6 +651,7 @@ ul.icons li a {
 }
 .content blockquote {
   padding: 8px 15px;
+  margin: 15px 0;
   color: #666;
   border-left: 4px solid #ddd;
 }
@@ -720,7 +745,8 @@ ul.icons li a {
 }
 .form-group {
   display: inline-block;
-  margin: 15px 0;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 .form-group label {
   margin-right: 5px;
@@ -728,7 +754,7 @@ ul.icons li a {
 .form-group input {
   outline: none;
   border-radius: 3px;
-  margin-right: 1.54em;
+  margin-right: 10px;
 }
 .form-group.has-errors .form-control {
   border-color: red;
@@ -762,7 +788,7 @@ ul.icons li a {
   border-top: 1px solid #eee;
 }
 #comment-from h3 {
-  margin-bottom: 5px;
+  margin: 15px 0;
 }
 .form-submit {
   margin-bottom: 1.5em;
@@ -908,6 +934,97 @@ pre[data-lang=patch]:after {
 }
 .hljs-addition {
   background: #dfd;
+}
+.link-title {
+  margin: 1em 0;
+}
+.links-box .more-item {
+  position: relative;
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+.links-box .more-item .layer {
+  position: absolute;
+}
+.links-box .more-item .avatar {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.links-box .more-item .scroll-bg1 {
+  -webkit-animation: myanimate 6s linear 0ms infinite;
+  animation: myanimate 6s linear 0ms infinite;
+}
+.links-box .more-item .scroll-bg2 {
+  -webkit-animation: myanimate2 6s linear 0ms infinite;
+  animation: myanimate2 6s linear 0ms infinite;
+}
+.links-box .desc {
+  float: left;
+  padding-left: 5px;
+}
+.links-box .desc h3 {
+  font-size: 1.3em;
+  line-height: 42px;
+}
+.links-box .desc span {
+  display: block;
+  font-size: 12px;
+  color: #a3a3a3;
+}
+@-webkit-keyframes myanimate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes myanimate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes myanimate2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes myanimate2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

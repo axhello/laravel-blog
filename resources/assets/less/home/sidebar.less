@@ -31,8 +31,9 @@
 
     p {
       color: #d1f1e9;
-      font-style: italic;
+      font-style: normal;
       margin: 1em 0 0 0;
+      font-weight: bold;
     }
   }
 
@@ -56,6 +57,11 @@
         display: block;
         padding: 0.85em 0;
         text-decoration: none;
+      }
+
+      &:hover a {
+        background: #fff;
+        color: #4acaa8 !important;
       }
 
       a.active {
@@ -110,6 +116,7 @@ header p {
     }
   }
 }
+
 ul.icons {
   cursor: default;
   list-style: none;
@@ -147,18 +154,23 @@ ul.icons {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-mail:before {
   content: "\e900";
 }
+
 .icon-twitter:before {
   content: "\e901";
 }
+
 .icon-sina-weibo:before {
   content: "\e902";
 }
+
 .icon-steam:before {
   content: "\e903";
 }
+
 .icon-github:before {
   content: "\e904";
 }

@@ -8,10 +8,10 @@
     </header>
     <nav id="nav">
         <ul>
-            <li><a href="/" class="active" id="one-link">Home</a></li>
-            <li><a href="#two" id="two-link" class="">I Can Do That</a></li>
-            <li><a href="#three" id="three-link" class="">That Is Awesome</a></li>
-            <li><a href="#four" id="four-link" class="">About Me</a></li>
+            <li><a href="/" id="one-link">Home</a></li>
+            <li><a href="#two" id="two-link">I Can Do That</a></li>
+            <li><a href="/links" id="links" >My Friends</a></li>
+            <li><a href="/about" id="about">About Me</a></li>
         </ul>
     </nav>
     <footer>

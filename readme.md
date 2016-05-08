@@ -1,5 +1,5 @@
 # laravel-blog
-Laravel博客演示
+基于laravel5.2开发的博客
 
 ### Usage
 
@@ -35,7 +35,6 @@ chmod -R 755 storage/
 
 ```
 php artisan migrate
-
 ```
 6、填充数据库（默认用户）
 

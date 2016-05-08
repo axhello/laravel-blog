@@ -10,6 +10,7 @@ Route::get('/about', 'Home\AboutController@about');
 Route::post('/comment','Home\CommentController@comment');
 Route::get('/search', 'Home\HomeController@search');
 Route::get('/tag/{tag}', 'Home\TagsController@show');
+Route::get('/links','Home\HomeController@links');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/logout', 'Admin\AdminController@logout');

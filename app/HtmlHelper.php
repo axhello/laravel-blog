@@ -22,4 +22,9 @@ class HtmlHelper
         || \Request::is('admin/'.$links)? 'active opened expanded has-sub' : '';
     }
 
+    public static function navActive($route)
+    {
+        return \Request::is($route) ? 'active' : '';
+    }
+
 }

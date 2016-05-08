@@ -111,4 +111,9 @@ class HomeController extends Controller
         $options = Options::first();
         return view('home.search', compact('results', 'options'));
     }
+
+    public function links()
+    {
+        return view('home.links');
+    }
 }
