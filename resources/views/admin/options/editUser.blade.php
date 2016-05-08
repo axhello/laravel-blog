@@ -12,7 +12,7 @@
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">Site Settings</h1>
+                    <h1 class="title">Edit Profile</h1>
                     <p class="description">User profile and site setting</p>
                 </div>
                 <div class="breadcrumb-env">
@@ -21,10 +21,10 @@
                             <a href="/admin/dashboard"><i class="fa-home"></i>Home</a>
                         </li>
                         <li class="active">
-                            <strong>Options</strong>
+                            <a href="/admin/options/basic">Options</a>
                         </li>
                         <li class="active">
-                            <strong>Basic</strong>
+                            <strong>Edit Profile</strong>
                         </li>
                     </ol>
                 </div>
@@ -38,7 +38,7 @@
                                 <img class="img-cirlce img-responsive img-thumbnail" src="https://secure.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=72&amp;r=G&amp;d=mm" alt="{{ Auth::user()->name }}" width="72" height="72">
                             </a>
                             <a href="#" class="user-name">
-                                {{ Auth::user()->name }}
+                                {{ $user->name }}
                                 <span class="user-status is-online"></span>
                             </a>
 							<span class="user-title">
@@ -48,7 +48,7 @@
                             <ul class="list-unstyled user-info-list">
                                 <li>
                                     <i class="linecons-mail"></i>
-                                    <span>{{ Auth::user()->email }}</span>
+                                    <span>{{ $user->email }}</span>
                                 </li>
                                 <li>
                                     <i class="fa-graduation-cap"></i>
@@ -74,8 +74,8 @@
                                     条评论
                                 </li>
                             </ul>
-                            <a href="/admin/user/edit" class="btn btn-success btn-block">
-                                更改资料
+                            <a href="/admin/options/basic" class="btn btn-success btn-block">
+                                更改站点信息
                             </a>
                         </div>
 
@@ -84,31 +84,22 @@
                     <div class="col-sm-9">
                         <!-- User timeline stories -->
                         <section class="user-timeline-stories profile-post-form">
-                            @if(empty($options))
-                                {!! Form::open(['url'=>'admin/options/basic']) !!}
-                            @else
-                                {!! Form::model($options,['url'=>'admin/options/basic/'.$options->id,'method'=>'PATCH']) !!}
-                            @endif
-                                {!! Form::hidden('author', Auth::user()->name ) !!}
+                            {!! Form::model($user,['url'=>'/admin/user/edit/'.$user->id,'method'=>'PATCH']) !!}
                                 <div class="form-group">
-                                    {!! Form::label('title', '站点名称') !!}
-                                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
-                                    <p style="margin: 8px 0;">站点的名称将显示在网页的标题处</p>
+                                    {!! Form::label('name', '用户名') !!}
+                                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('siteUrl', '站点地址') !!}
-                                    {!! Form::text('siteUrl', null, ['class' => 'form-control']) !!}
-                                    <p style="margin: 8px 0;">站点地址主要用于生成内容的永久链接</p>
+                                    {!! Form::label('password', '密码') !!}
+                                    {!! Form::password('password', ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('description', '站点描述') !!}
-                                    {!! Form::text('description', null, ['class' => 'form-control']) !!}
-                                    <p style="margin: 8px 0;">站点描述将显示在网页代码的头部</p>
+                                    {!! Form::label('password_confirmation', '确认密码') !!}
+                                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('keywords', '关键词') !!}
-                                    {!! Form::text('keywords', null, ['class' => 'form-control']) !!}
-                                    <p style="margin: 8px 0;">请以半角逗号","分割多个关键词</p>
+                                    {!! Form::label('email', '电子邮件') !!}
+                                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
                                 </div>
                                 {!! Form::submit('提交修改',['class'=>'btn btn-primary form-control']) !!}
                             {!! Form::close() !!}

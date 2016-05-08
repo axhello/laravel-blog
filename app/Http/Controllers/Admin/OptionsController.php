@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use App\Comment;
 use App\Options;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -39,5 +40,29 @@ class OptionsController extends Controller
         } else {
             return redirect()->back()->with('errors', '站点信息更新失败!');
         }
+    }
+
+    public function addUser()
+    {
+        return view('admin.options.addUser');
+    }
+
+    public function editUser()
+    {
+        $user = \Auth::user();
+        $options = Options::first();
+        $articles = Article::all();
+        $comments = Comment::all();
+        return view('admin.options.editUser',compact('user','articles','comments','options'));
+    }
+
+    public function edit(Requests\UserRequest $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        if ($user->save()) {
+            return redirect('/admin/options/basic')->with('success','用户信息更新成功!');
+        }
+        return redirect()->back()->with('errors', '用户信息更新失败!');
     }
 }

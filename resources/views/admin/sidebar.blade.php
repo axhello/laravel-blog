@@ -87,35 +87,36 @@
                     </li>
                 </ul>
             </li>
+            <li class="{{ \App\HtmlHelper::userActive('basic','add','edit') }}">
+                <a href="#">
+                    <i class="linecons-cog"></i>
+                    <span class="title">设置</span>
+                    <span class="label label-purple pull-right hidden-collapsed">New</span>
+                </a>
+                <ul>
+                    <li class="{{ \App\HtmlHelper::o_active('basic') }}">
+                        <a href="/admin/options/basic">
+                            <span class="title">基本</span>
+                            <span class="label label-success pull-right">new</span>
+                        </a>
+                    </li>
+                    <li class="{{ \App\HtmlHelper::u_active('add') }}">
+                        <a href="/admin/user/add">
+                            <span class="title">添加用户</span>
+                        </a>
+                    </li>
+                    <li class="{{ \App\HtmlHelper::u_active('edit') }}">
+                        <a href="/admin/user/edit">
+                            <span class="title">更改资料</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="{{ \App\HtmlHelper::a_active('recycle') }}">
                 <a href="/admin/articles/recycle">
                     <i class="linecons-beaker"></i>
                     <span class="title">回收站</span>
                 </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="linecons-cog"></i>
-                    <span class="title">设置</span>
-                    <span class="label label-success pull-right">5</span>
-                </a>
-                <ul>
-                    <li>
-                        <a href="/admin/options/basic">
-                            <span class="title">基本</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="title">个人资料</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="title">View Message</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
     </div>
