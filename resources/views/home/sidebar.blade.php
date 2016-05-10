@@ -16,11 +16,11 @@
     </nav>
     <footer>
         <ul class="icons">
-            <li><a class="icon icon-twitter"><span class="label">Twitter</span></a></li>
-            <li><a class="icon icon-sina-weibo"><span class="label">Facebook</span></a></li>
-            <li><a class="icon icon-steam"><span class="label">Instagram</span></a></li>
-            <li><a class="icon icon-github"><span class="label">Github</span></a></li>
-            <li><a class="icon icon-mail"><span class="label">Email</span></a></li>
+            <li><a href="#" class="icon icon-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon icon-sina-weibo"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon icon-steam"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon icon-github"><span class="label">Github</span></a></li>
+            <li><a href="#" class="icon icon-mail"><span class="label">Email</span></a></li>
         </ul>
     </footer>
 </div>

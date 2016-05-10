@@ -35,7 +35,7 @@
                         <!-- User Info Sidebar -->
                         <div class="user-info-sidebar">
                             <a href="#" class="user-img">
-                                <img class="img-cirlce img-responsive img-thumbnail" src="https://secure.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=72&amp;r=G&amp;d=mm" alt="{{ Auth::user()->name }}" width="72" height="72">
+                                <img class="img-cirlce img-responsive img-thumbnail" src="http://gravatar.duoshuo.com/avatar/{{ md5(Auth::user()->email) }}?s=72&amp;r=G&amp;d=mm" alt="{{ Auth::user()->name }}" width="72" height="72">
                             </a>
                             <a href="#" class="user-name">
                                 {{ $user->name }}
@@ -78,9 +78,7 @@
                                 更改站点信息
                             </a>
                         </div>
-
                     </div>
-
                     <div class="col-sm-9">
                         <!-- User timeline stories -->
                         <section class="user-timeline-stories profile-post-form">
@@ -90,16 +88,16 @@
                                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('password', '密码') !!}
-                                    {!! Form::password('password', ['class' => 'form-control']) !!}
+                                    {!! Form::label('email', '电子邮件') !!}
+                                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('password', '修改密码') !!}
+                                    {!! Form::password('password', ['class' => 'form-control','required']) !!}
                                 </div>
                                 <div class="form-group">
                                     {!! Form::label('password_confirmation', '确认密码') !!}
-                                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
-                                </div>
-                                <div class="form-group">
-                                    {!! Form::label('email', '电子邮件') !!}
-                                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                                    {!! Form::password('password_confirmation', ['class' => 'form-control','required']) !!}
                                 </div>
                                 {!! Form::submit('提交修改',['class'=>'btn btn-primary form-control']) !!}
                             {!! Form::close() !!}

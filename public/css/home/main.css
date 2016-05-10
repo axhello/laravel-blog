@@ -691,6 +691,9 @@ ul.icons li a {
 #comments-list {
   border-top: 1px solid #eee;
 }
+#comments-list h3 {
+  margin: 1em 0;
+}
 #comments-list ol {
   padding: 0;
 }
@@ -956,7 +959,8 @@ pre[data-lang=patch]:after {
   width: auto;
   float: left;
   padding: 0 10px 0 90px;
-  transition: background .5s ;
+  color: #222;
+  transition: background .3s ;
 }
 .links-box ul li:hover {
   -webkit-animation: jello 1s linear;

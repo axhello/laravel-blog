@@ -35,7 +35,7 @@
                         <!-- User Info Sidebar -->
                         <div class="user-info-sidebar">
                             <a href="#" class="user-img">
-                                <img class="img-cirlce img-responsive img-thumbnail" src="https://secure.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=72&amp;r=G&amp;d=mm" alt="{{ Auth::user()->name }}" width="72" height="72">
+                                <img class="img-cirlce img-responsive img-thumbnail" src="http://gravatar.duoshuo.com/avatar/{{ md5(Auth::user()->email) }}?s=72&amp;r=G&amp;d=mm" alt="{{ Auth::user()->name }}" width="72" height="72">
                             </a>
                             <a href="#" class="user-name">
                                 {{ Auth::user()->name }}
@@ -75,10 +75,9 @@
                                 </li>
                             </ul>
                             <a href="/admin/user/edit" class="btn btn-success btn-block">
-                                更改资料
+                                修改资料
                             </a>
                         </div>
-
                     </div>
 
                     <div class="col-sm-9">

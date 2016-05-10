@@ -29,7 +29,7 @@
                             <li>
                                 <div class="comment-author">
                                     <a {{ $comment->website !== '' ? 'href='.$comment->website : 'href=#comments-list' }} rel="external nofollow" target="_blank">
-                                        <img class="avatar" src="https://secure.gravatar.com/avatar/{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
+                                        <img class="avatar" src="http://gravatar.duoshuo.com/avatar/{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
                                     </a>
                                     <div class="author-name">
                                         <a {{ $comment->website !== '' ? 'href='.$comment->website : 'href=#comments-list' }} rel="external nofollow" target="_blank">{{ $comment->username }}</a> -
@@ -53,7 +53,7 @@
                             {{ csrf_field() }}
                             <input type="hidden" name="article_id" value="{{ $article->id }}">
                             <div class="form-group">
-                                <label for="username">姓名:</label>
+                                <label for="username">名称:</label>
                                 <input type="text"
                                        name="username"
                                        id="username"
