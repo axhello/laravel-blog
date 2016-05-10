@@ -102,5 +102,4 @@ class ArticleController extends Controller
             return redirect()->back()->withErrors('删除失败！');
         }
     }
-
 }

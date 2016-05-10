@@ -19,7 +19,15 @@ class HtmlHelper
         return \Request::is('admin/'.$category)
             || \Request::is('admin/'.$tags)
             || \Request::is('admin/'.$comment)
-            || \Request::is('admin/'.$links)? 'active opened expanded has-sub' : '';
+            || \Request::is('admin/'.$links) ? 'active opened expanded has-sub' : '';
+    }
+
+    public static function articleActive($article, $a_create, $pages, $p_create)
+    {
+        return \Request::is('admin/'.$article)
+        || \Request::is('admin/articles/'.$a_create)
+        || \Request::is('admin/'.$pages)
+        || \Request::is('admin/pages/'.$p_create) ? 'active opened expanded has-sub' : '';
     }
 
     public static function userActive($basic, $add, $edit)
@@ -37,6 +45,11 @@ class HtmlHelper
     public static function u_active($route)
     {
         return \Request::is('admin/user/'.$route) ? 'active' : '';
+    }
+
+    public static function p_active($route)
+    {
+        return \Request::is('admin/pages/'.$route) ? 'active' : '';
     }
 
 }

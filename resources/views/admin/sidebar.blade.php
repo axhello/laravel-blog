@@ -41,7 +41,7 @@
                 </ul>
             </li>
 
-            <li class="{{ \App\HtmlHelper::m_active('articles') || \App\HtmlHelper::a_active('create') ? 'active opened expanded has-sub' : '' }}">
+            <li class="{{ \App\HtmlHelper::articleActive('articles','create','pages','create')}}">
                 <a href="#">
                     <i class="linecons-desktop"></i>
                     <span class="title">文章管理</span>
@@ -55,6 +55,16 @@
                     <li class="{{ \App\HtmlHelper::a_active('create') }}">
                         <a href="/admin/articles/create">
                             <span class="title">撰写文章</span>
+                        </a>
+                    </li>
+                    <li class="{{ \App\HtmlHelper::m_active('pages') }}">
+                        <a href="/admin/pages">
+                            <span class="title">查看页面</span>
+                        </a>
+                    </li>
+                    <li class="{{ \App\HtmlHelper::p_active('create') }}">
+                        <a href="/admin/pages/create">
+                            <span class="title">创建页面</span>
                         </a>
                     </li>
                 </ul>

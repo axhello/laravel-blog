@@ -9,9 +9,11 @@
     <nav id="nav">
         <ul>
             <li><a href="/" id="one-link">Home</a></li>
-            <li><a href="#two" id="two-link">I Can Do That</a></li>
+            <li><a href="#two" id="two-link">I can do that</a></li>
             <li><a href="/links" id="links" >My Friends</a></li>
-            <li><a href="/about" id="about">About Me</a></li>
+            @foreach($pages as $page)
+            <li><a href="/pages/{{$page->slug}}" id="about">{{$page->title}}</a></li>
+            @endforeach
         </ul>
     </nav>
     <footer>

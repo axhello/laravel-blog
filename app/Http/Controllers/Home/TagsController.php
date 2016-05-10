@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Article;
 use App\Options;
+use App\Pages;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,7 @@ class TagsController extends Controller
     {
         $articles = $tag->articles()->paginate(6);
         $options = Options::first();
-        return  view('home.tags', compact('tag', 'articles','options'));
+        $pages = Pages::all();
+        return  view('home.tags', compact('tag', 'articles','options','pages'));
     }
 }

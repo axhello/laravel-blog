@@ -37,6 +37,10 @@ class RouteServiceProvider extends ServiceProvider
         \Route::bind('category', function ($category){
             return \App\Category::where('slug', $category)->firstOrFail();
         });
+
+        \Route::bind('slug', function ($slug){
+            return \App\Pages::where('slug', $slug)->firstOrFail();
+        });
     }
 
     /**

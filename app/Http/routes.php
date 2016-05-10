@@ -9,7 +9,7 @@ Route::get('/admin', 'Admin\AdminController@index');
 Route::post('/admin/signin', 'Admin\AdminController@signin');
 Route::get('/category', 'Home\HomeController@getCategory');
 Route::get('/article/{article}', 'Home\HomeController@show');
-Route::get('/about', 'Home\AboutController@about');
+Route::get('/pages/{slug}', 'Home\PagesController@pages');
 Route::post('/comment','Home\CommentController@comment');
 Route::get('/search', 'Home\HomeController@search');
 Route::get('/tag/{tag}', 'Home\TagsController@show');
@@ -24,7 +24,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/articles/recycle', 'Admin\ArticleController@recycle');
     Route::get('/articles/restore/{id}', 'Admin\ArticleController@restore');
     Route::get('/articles/delete/{id}', 'Admin\ArticleController@delete');
-    Route::resource('/articles','Admin\ArticleController');
+    Route::resource('/articles', 'Admin\ArticleController');
+
+    Route::resource('/pages','Admin\PagesController');
 
     Route::get('/category', 'Admin\CategoryController@index');
     Route::patch('/category/{id}', 'Admin\CategoryController@update');

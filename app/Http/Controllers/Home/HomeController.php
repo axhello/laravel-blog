@@ -6,6 +6,7 @@ use App\Article;
 use App\Category;
 use App\Link;
 use App\Options;
+use App\Pages;
 use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class HomeController extends Controller
         $cate = $cates->first();
         $articles = $cate->articles()->latest()->paginate(6);
         $options = Options::first();
-        return view('home.index',compact('cates', 'articles', 'options'));
+        $pages = Pages::all();
+        return view('home.index',compact('cates', 'articles', 'options', 'pages'));
     }
 
     public function category(Category $category)
@@ -34,7 +36,8 @@ class HomeController extends Controller
         $cates = Category::getCategoryAll();
         $articles = $category->articles()->latest()->paginate(6);
         $options = Options::first();
-        return view('home.category', compact('cates', 'articles', 'options'));
+        $pages = Pages::all();
+        return view('home.category', compact('cates', 'articles', 'options', 'pages'));
     }
 
     /**
@@ -68,7 +71,8 @@ class HomeController extends Controller
     {
         $options = Options::first();
         $comments = $article->comments()->paginate(10);
-        return view('home.show',compact('article', 'comments','options'));
+        $pages = Pages::all();
+        return view('home.show',compact('article', 'comments','options','pages'));
     }
 
     /**
@@ -114,7 +118,8 @@ class HomeController extends Controller
         $keyword = $request->input('q');
         $results = Article::Search($keyword);
         $options = Options::first();
-        return view('home.search', compact('results', 'options'));
+        $pages = Pages::all();
+        return view('home.search', compact('results', 'options','pages'));
     }
 
     /**
@@ -124,6 +129,7 @@ class HomeController extends Controller
     {
         $links = Link::all();
         $options = Options::first();
-        return view('home.links', compact('links', 'options'));
+        $pages = Pages::all();
+        return view('home.links', compact('links', 'options','pages'));
     }
 }

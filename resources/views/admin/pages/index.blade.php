@@ -20,7 +20,7 @@
                             <a href="/admin/dashboard"><i class="fa-home"></i>Home</a>
                         </li>
                         <li class="active">
-                            <strong>Articles</strong>
+                            <strong>Pages</strong>
                         </li>
                     </ol>
                 </div>
@@ -42,38 +42,36 @@
                         <tr>
                             <th><input id="cbox" class="cbox" type="checkbox"></th>
                             <th>标题</th>
-                            <th>作者</th>
                             <th>更新于</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody class="middle-align">
-                        @foreach($articles as $article)
-                        <tr>
-                            <td><input name="aid[]" type="checkbox" value="{{ $article->id }}"></td>
-                            <td><a href="/admin/articles/{{ $article->id }}/edit">{{ $article->title }}</a></td>
-                            <td>{{ $article->user->name }}</td>
-                            <td>{{ $article->updatedat() }}</td>
-                            <td>
-                                {!! Form::open(['url'=>'/admin/articles/'.$article->id,'method'=>'DELETE','id'=>'delete-form']) !!}
-                                    <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-icon icon-left">
-                                {!! Form::close() !!}
-                            </td>
-                        </tr>
+                        @foreach($pages as $page)
+                            <tr>
+                                <td><input name="aid[]" type="checkbox" value="{{ $page->id }}"></td>
+                                <td><a href="/admin/pages/{{$page->id}}/edit">{{ $page->title }}</a></td>
+                                <td>{{ $page->updated_at }}</td>
+                                <td>
+                                    {!! Form::open(['url'=>'/admin/pages/'.$page->id,'method'=>'DELETE','id'=>'delete-form']) !!}
+                                        <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-icon icon-left">
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="dataTables_info">
-                                <a  href="/admin/articles/create" class="btn btn-info btn-md btn-icon icon-left">
-                                    撰写文章
+                                <a  href="/admin/pages/create" class="btn btn-info btn-md btn-icon icon-left">
+                                    创建页面
                                 </a>
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="dataTables_paginate paging_simple_numbers" style="text-align: right;">
-                                {!! $articles->links() !!}
+                                {!! $pages->links() !!}
                             </div>
                         </div>
                     </div>
