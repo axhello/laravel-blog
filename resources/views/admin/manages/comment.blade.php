@@ -6,29 +6,28 @@
         @include('admin.sidebar')
 
         <div class="main-content">
-            <!-- User Info, Notifications and Menu Bar -->
+                    <!-- User Info, Notifications and Menu Bar -->
             @include('admin.navbar')
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">DataTable</h1>
+                    <h1 class="title">Articles</h1>
                     <p class="description">Dynamic table variants with pagination and other controls</p>
                 </div>
                 <div class="breadcrumb-env">
                     <ol class="breadcrumb bc-1">
-                        <li>
-                            <a href="/admin/dashboard"><i class="fa-home"></i>Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Manages</a>
-                        </li>
-                        <li class="active">
-                            <strong>Comment</strong>
-                        </li>
-                    </ol>
+                                <li>
+                                    <a href="/admin/dashboard"><i class="fa-home"></i>Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Manages</a>
+                                </li>
+                                <li class="active">
+                                    <strong>Comment</strong>
+                                </li>
+                            </ol>
                 </div>
             </div>
-
             <!-- Removing search and results count filter -->
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -41,7 +40,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    {!! Form::open(['url'=>'/admin/manages/comment','method'=>'DELETE']) !!}
+                    {!! Form::open(['url'=>'/admin/comment','method'=>'DELETE']) !!}
                     <table class="table table-bordered table-striped" id="example-2">
                         <thead>
                         <tr>
@@ -72,14 +71,14 @@
                                     </div>
                                 </td>
                                 <td>
-                                  <div class="comment-body">
-                                      <div class="comment-date">
-                                          {{ $comment->created_at->diffForHumans() }} 于 <a href="#">{{ $comment->articles->title }}</a>
-                                      </div>
-                                      <div class="comment-content">
-                                          {{ $comment->content }}
-                                      </div>
-                                  </div>
+                                    <div class="comment-body">
+                                        <div class="comment-date">
+                                            {{ $comment->created_at->diffForHumans() }} 于 <a href="#">{{ $comment->articles->title }}</a>
+                                        </div>
+                                        <div class="comment-content">
+                                            {{ $comment->content }}
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -97,7 +96,7 @@
                     </div>
                     {!! Form::close() !!}
                 </div>
-        </div>
+            </div>
             <footer class="main-footer sticky footer-type-1">
                 <div class="footer-inner">
                     <!-- Add your copyright text here -->
@@ -114,5 +113,20 @@
                     </div>
                 </div>
             </footer>
+        </div>
     </div>
+    @if ( Session::has('success') )
+        <script>
+            window.onload = function () {
+                toastr.success("{{ Session::get('success') }}", "成功提醒( •̀∀•́ )✧", opts);
+            };
+        </script>
+    @endif
+    @if ( Session::has('info') )
+        <script>
+            window.onload = function () {
+                toastr.info('{{ Session::get('info') }}');
+            };
+        </script>
+    @endif
 @stop

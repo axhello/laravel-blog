@@ -19,7 +19,10 @@ class CommentController extends Controller
     public function destroy(Request $request)
     {
         $id = $request->get('id');
-        Comment::destroy($id);
-        return redirect()->back();
+        $comment = Comment::destroy($id);
+        if ($comment) {
+            return back()->with('success','评论删除成功!');
+        }
+        return redirect()->back()->with('error','评论删除失败!');
     }
 }

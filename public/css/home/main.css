@@ -637,6 +637,7 @@ ul.icons li a {
 }
 .content ul {
   list-style: disc;
+  line-height: 1.8em;
 }
 .content pre {
   font-size: 15px;

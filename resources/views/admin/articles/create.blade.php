@@ -8,16 +8,12 @@
         <div class="main-content">
             <!-- User Info, Notifications and Menu Bar -->
             @include('admin.navbar')
-
             <div class="page-title">
-
                 <div class="title-env">
                     <h1 class="title">Articles Creating</h1>
                     <p class="description">Combined WYSIWYG editors you can use with Xenon theme</p>
                 </div>
-
                 <div class="breadcrumb-env">
-
                     <ol class="breadcrumb bc-1">
                         <li>
                             <a href="/"><i class="fa-home"></i>Home</a>
@@ -29,10 +25,8 @@
                             <strong>Create</strong>
                         </li>
                     </ol>
-
                 </div>
             </div>
-            <br />
             <link rel="stylesheet" href="/css/admin/uikit.css">
             <link rel="stylesheet" href="/css/admin/codemirror.css">
             <link rel="stylesheet" href="/css/admin/codemirror.css">
@@ -64,7 +58,6 @@
                     {!! Form::submit('提交啊',['class'=>'btn btn-primary form-control']) !!}
                 </div>
             {!! Form::close() !!}
-
         </div>
     </div>
 @stop
