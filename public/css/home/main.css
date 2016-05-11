@@ -1057,6 +1057,7 @@ pre[data-lang=patch]:after {
   font-size: 1.3em;
   line-height: 38px;
   padding-top: 10px;
+  margin: 0;
 }
 .links-box ul li p {
   color: #999;
