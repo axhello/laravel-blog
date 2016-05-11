@@ -213,14 +213,33 @@ p {
   word-spacing: 0.05em;
   margin: 0 0 10.5px;
 }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+}
+h5 {
+  font-size: .83em;
+  margin: 1.5em 0;
+}
+h6 {
+  font-size: .75em;
+  margin: 1.67em 0;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
+  font-weight: bolder;
 }
 blockquote {
   margin: 0;
@@ -626,18 +645,22 @@ ul.icons li a {
   color: #666;
 }
 .content {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1em;
+  line-height: 1.6em;
 }
 .content li p {
   margin: 0;
 }
 .content img {
-  width: 100%;
+  max-width: 100%;
 }
 .content ul {
   list-style: disc;
-  line-height: 1.8em;
+  line-height: 1.6em;
+}
+.content ol {
+  list-style-type: decimal;
+  line-height: 1.6em;
 }
 .content pre {
   font-size: 15px;
@@ -646,9 +669,17 @@ ul.icons li a {
 .content code {
   font-family: "Fira Mono", menlo, monospace;
   font-size: 14px;
-  line-height: 1.5em;
-  height: auto;
-  padding: 1em;
+}
+.content p code {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #FF6D6D;
+  margin: 2px 2px;
+  background: #eee;
+}
+.content pre code {
+  padding: 1.2em;
+  line-height: 1.4em;
 }
 .content blockquote {
   padding: 8px 15px;
@@ -658,6 +689,44 @@ ul.icons li a {
 }
 .content blockquote p {
   margin: 0;
+}
+.content td,
+.content th {
+  text-align: left;
+  display: table-cell;
+}
+.content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.content table thead {
+  display: table-header-group;
+}
+.content table thead tr {
+  background-color: #F8F8F8;
+}
+.content table tbody {
+  display: table-row-group;
+}
+.content table th {
+  font-weight: 700;
+}
+.content table td,
+.content table th {
+  padding: 6px 26px;
+  border: 1px solid #ddd;
+}
+.content table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.content table tr:nth-child(2n) {
+  background-color: #f8f8f8;
 }
 .tiny.label {
   font-size: .71428571rem;
@@ -895,49 +964,58 @@ pre[data-lang=patch]:after {
   font-weight: 600;
 }
 .hljs-comment,
-.hljs-quote,
+.hljs-quote {
+  color: #999999;
+}
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #f2777a;
+}
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f99157;
+}
+.hljs-attribute {
+  color: #ffcc66;
+}
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #99cc99;
+}
+.hljs-title,
+.hljs-section {
+  color: #6699cc;
+}
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #cc99cc;
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em;
+}
 .hljs-emphasis {
-  color: #b3b3b3;
   font-style: italic;
 }
-.hljs-attr,
-.hljs-attribute,
-.hljs-bullet,
-.hljs-built_in,
-.hljs-keyword,
-.hljs-section,
-.hljs-selector-id,
-.hljs-type,
-.hljs-class {
-  color: #e96900;
-}
-.hljs-tag,
-.hljs-doctag,
-.hljs-selector-tag,
-.hljs-name,
-.hljs-builtin-name,
-.hljs-link,
-.hljs-title,
-.hljs-meta,
-.hljs-subst {
-  color: #2973b7;
-}
-.hljs-symbol,
-.hljs-string,
-.hljs-regexp,
-.hljs-variable,
-.hljs-template-variable {
-  color: #42b983;
-}
-.hljs-literal,
-.hljs-number {
-  color: #ae81ff;
-}
-.hljs-deletion {
-  background: #fdd;
-}
-.hljs-addition {
-  background: #dfd;
+.hljs-strong {
+  font-weight: bold;
 }
 .link-title {
   margin: 1em 0;
