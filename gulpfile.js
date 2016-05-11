@@ -12,10 +12,9 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-     //mix.sass('app.scss', 'public/css/app.css');
-    //mix.less('admin/xenon.less', 'public/css/admin/dashboard.min.css');
     mix.less('home/main.less', 'public/css/home/main.css');
     mix.less('home/media.less', 'public/css/home/media.css');
+    //mix.less('admin/xenon.less', 'public/css/admin/dashboard.min.css');
     //mix.scripts([
     //    'admin/xenon/bootstrap.min.js',
     //    'admin/xenon/TweenMax.min.js',

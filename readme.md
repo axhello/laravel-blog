@@ -1,7 +1,25 @@
 # laravel-blog
-基于laravel5.2开发的博客
 
-### Usage
+Blog project written in Laravel 5.2.
+
+### Features
+
+- [x] 版本为5.2
+- [x] 支持SEO优化
+- [x] 友情链接管理
+- [x] 支持新建页面
+- [x] 后台支持自定义皮肤
+- [x] 后台评论管理
+- [ ] 暂不支持本地上传图片
+- [ ] 评论邮件通知功能
+
+### Packages
+
+* [laravelcollective/html](https://github.com/LaravelCollective/html)
+* [cviebrock/eloquent-sluggable](https://github.com/cviebrock/eloquent-sluggable/)
+
+
+### Installation
 
 1、克隆或者下载上次到你的服务器
 
@@ -45,7 +63,7 @@ php artisan db:seed
 
 登录账户是：`admin@admin.com` 密码：`admin23`
 
-7、 使用apache请开启mod_rewrite， 使用nginx请配置你的虚拟主机文件，参考：
+7、 使用apache请开启mod_rewrite， 使用nginx请配置你的虚拟主机文件，以下仅供参考：
 
 ```
 server {
