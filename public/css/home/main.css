@@ -647,37 +647,37 @@ ul.icons li a {
 .header time {
   color: #666;
 }
-article {
+.content {
   font-size: 1em;
   line-height: 1.6em;
   border-bottom: 1px solid #eee;
 }
-article a {
+.content a {
   color: #00a8e6;
 }
-article li p {
+.content li p {
   margin: 0;
 }
-article img {
+.content img {
   max-width: 100%;
 }
-article ul {
+.content ul {
   list-style: disc;
   line-height: 1.8em;
 }
-article ol {
+.content ol {
   list-style-type: decimal;
   line-height: 1.8em;
 }
-article pre {
+.content pre {
   font-size: 15px;
   border-radius: 4px;
 }
-article code {
+.content code {
   font-family: "Fira Mono", menlo, monospace;
   font-size: 14px;
 }
-article p code {
+.content p code {
   padding: 2px 4px;
   font-size: 90%;
   color: #c7254e;
@@ -685,25 +685,25 @@ article p code {
   border: 1px solid #eee;
   border-radius: 4px;
 }
-article pre code {
+.content pre code {
   padding: 1.2em;
   line-height: 1.4em;
 }
-article blockquote {
+.content blockquote {
   padding: 8px 15px;
   margin: 15px 0;
   color: #666;
   border-left: 4px solid #ddd;
 }
-article blockquote p {
+.content blockquote p {
   margin: 0;
 }
-article td,
-article th {
+.content td,
+.content th {
   text-align: left;
   display: table-cell;
 }
-article table {
+.content table {
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
@@ -713,28 +713,28 @@ article table {
   word-break: normal;
   word-break: keep-all;
 }
-article table thead {
+.content table thead {
   display: table-header-group;
 }
-article table thead tr {
+.content table thead tr {
   background-color: #F8F8F8;
 }
-article table tbody {
+.content table tbody {
   display: table-row-group;
 }
-article table th {
+.content table th {
   font-weight: 700;
 }
-article table td,
-article table th {
+.content table td,
+.content table th {
   padding: 6px 26px;
   border: 1px solid #ddd;
 }
-article table tr {
+.content table tr {
   background-color: #fff;
   border-top: 1px solid #ccc;
 }
-article table tr:nth-child(2n) {
+.content table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 .tiny.label {
