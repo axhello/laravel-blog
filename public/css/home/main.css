@@ -651,6 +651,9 @@ article {
   font-size: 1em;
   line-height: 1.6em;
 }
+article a {
+  color: #00a8e6;
+}
 article li p {
   margin: 0;
 }
