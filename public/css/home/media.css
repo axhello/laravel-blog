@@ -134,17 +134,25 @@
     transition: transform 0.5s ease;
     padding: 20px 0 1px 0!important;
   }
+  .main-content {
+    padding: 40px 10px;
+  }
   .article {
     padding: 18px 0!important;
   }
   .article .title {
     font-size: 18px!important;
   }
+  .header h1 {
+    font-size: 1.3em;
+  }
+  .content ul,
+  .content ol {
+    -webkit-padding-start: 10px;
+    padding-left: 10px;
+  }
   .switch {
     display: none;
-  }
-  .header h1 {
-    font-size: 1em;
   }
 }
 @media screen and (max-width: 1280px) {
