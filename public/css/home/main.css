@@ -647,10 +647,12 @@ ul.icons li a {
 .header time {
   color: #666;
 }
+#section .content {
+  border-bottom: 1px solid #eee;
+}
 .content {
   font-size: 1em;
   line-height: 1.6em;
-  border-bottom: 1px solid #eee;
 }
 .content a {
   color: #00a8e6;
