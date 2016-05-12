@@ -148,8 +148,8 @@
   }
   .content ul,
   .content ol {
-    -webkit-padding-start: 10px;
-    padding-left: 10px;
+    -webkit-padding-start: 20px;
+    padding-left: 20px;
   }
   .switch {
     display: none;
