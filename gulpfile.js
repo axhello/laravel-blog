@@ -36,12 +36,12 @@ elixir(function(mix) {
     //    'admin/min/marked.js',
     //    'admin/min/htmleditor.js'
     //], 'public/js/admin/dashboard.min.js');
-    //mix.scripts([
-    //    'home/vue.js',
-    //    'home/vue-resource.js',
-    //    'home/vue-validator.js',
-    //    'home/highlight.pack.js',
-    //    'home/marked.min.js',
-    //    'home/main.js'
-    //], 'public/js/home/main.js');
+    mix.scripts([
+        'home/vue.js',
+        'home/vue-resource.js',
+        'home/vue-validator.js',
+        'home/highlight.pack.js',
+        'home/marked.min.js',
+        'home/main.js'
+    ], 'public/js/home/main.js');
 });
