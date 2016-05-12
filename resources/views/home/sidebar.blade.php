@@ -4,7 +4,7 @@
             <a href="/"><img src="/css/home/img/img.jpg" alt=""></a>
         </span>
         <h1 id="logo"><a>Ciyuanai</a></h1>
-        <p>远的不是距离,而是次元!</p>
+        <p>{{ $options->description }}</p>
     </header>
     <nav id="nav">
         <ul>

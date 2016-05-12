@@ -213,6 +213,9 @@ p {
   word-spacing: 0.05em;
   margin: 0 0 10.5px;
 }
+a {
+  color: #222;
+}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -644,58 +647,59 @@ ul.icons li a {
 .header time {
   color: #666;
 }
-.content {
+article {
   font-size: 1em;
   line-height: 1.6em;
 }
-.content li p {
+article li p {
   margin: 0;
 }
-.content img {
+article img {
   max-width: 100%;
 }
-.content ul {
+article ul {
   list-style: disc;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
-.content ol {
+article ol {
   list-style-type: decimal;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
-.content pre {
+article pre {
   font-size: 15px;
   border-radius: 4px;
 }
-.content code {
+article code {
   font-family: "Fira Mono", menlo, monospace;
   font-size: 14px;
 }
-.content p code {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  color: #FF6D6D;
-  margin: 2px 2px;
-  background: #eee;
+article p code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border: 1px solid #eee;
+  border-radius: 4px;
 }
-.content pre code {
+article pre code {
   padding: 1.2em;
   line-height: 1.4em;
 }
-.content blockquote {
+article blockquote {
   padding: 8px 15px;
   margin: 15px 0;
   color: #666;
   border-left: 4px solid #ddd;
 }
-.content blockquote p {
+article blockquote p {
   margin: 0;
 }
-.content td,
-.content th {
+article td,
+article th {
   text-align: left;
   display: table-cell;
 }
-.content table {
+article table {
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
@@ -704,28 +708,28 @@ ul.icons li a {
   word-break: normal;
   word-break: keep-all;
 }
-.content table thead {
+article table thead {
   display: table-header-group;
 }
-.content table thead tr {
+article table thead tr {
   background-color: #F8F8F8;
 }
-.content table tbody {
+article table tbody {
   display: table-row-group;
 }
-.content table th {
+article table th {
   font-weight: 700;
 }
-.content table td,
-.content table th {
+article table td,
+article table th {
   padding: 6px 26px;
   border: 1px solid #ddd;
 }
-.content table tr {
+article table tr {
   background-color: #fff;
   border-top: 1px solid #ccc;
 }
-.content table tr:nth-child(2n) {
+article table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 .tiny.label {
