@@ -72,7 +72,9 @@ class HomeController extends Controller
         $options = Options::first();
         $comments = $article->comments()->paginate(10);
         $pages = Pages::all();
-        return view('home.show',compact('article', 'comments','options','pages'));
+        $prev_article = Article::find($this->getPrevArticleId($article->id));
+        $next_article = Article::find($this->getNextArticleId($article->id));
+        return view('home.show',compact('article', 'comments','options','pages','prev_article','next_article'));
     }
 
     /**
@@ -131,5 +133,25 @@ class HomeController extends Controller
         $options = Options::first();
         $pages = Pages::all();
         return view('home.links', compact('links', 'options','pages'));
+    }
+
+    /**
+     * 取得上一篇的文章id
+     * @param $id
+     * @return mixed
+     */
+    protected function getPrevArticleId($id)
+    {
+        return Article::where('id', '<', $id)->max('id');
+    }
+
+    /**
+     * 取得下一篇的文章id
+     * @param $id
+     * @return mixed
+     */
+    protected function getNextArticleId($id)
+    {
+        return Article::where('id', '>', $id)->min('id');
     }
 }

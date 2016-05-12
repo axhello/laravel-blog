@@ -300,6 +300,7 @@
 article {
   font-size: 1em;
   line-height: 1.6em;
+  border-bottom: 1px solid #eee;
 
   a {
     color: #00a8e6;
@@ -369,6 +370,7 @@ article {
     display: block;
     width: 100%;
     overflow: auto;
+    margin-bottom: 40px;
     word-break: normal;
     word-break: keep-all;
 
@@ -537,6 +539,80 @@ article {
 
   &.has-errors .form-control {
     border-color: red;
+  }
+}
+
+.article-page {
+  margin: 35px 0;
+  position: relative;
+
+  .center {
+    width: 100%;
+    display: inline;
+    float: left;
+    text-align: center;
+  }
+
+  .aligned {
+    float: left;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  a {
+    color: #4acaa8;
+  }
+
+  .vertical.divider {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 50%;
+    line-height: 0;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    &:before {
+      top: -100%;
+    }
+
+    &:after {
+      top: auto;
+      bottom: 0;
+    }
+
+    &:after, &:before {
+      position: absolute;
+      left: 50%;
+      content: '';
+      z-index: 3;
+      border-left: 1px solid rgba(34,36,38,.15);
+      border-right: 1px solid rgba(255,255,255,.1);
+      width: 0;
+      height: ~'calc(100% - 1rem)';
+    }
+  }
+  .divider {
+    margin: 1rem 0;
+    line-height: 1;
+    height: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: rgba(0,0,0,.85);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 12px;
   }
 }
 
