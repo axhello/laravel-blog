@@ -1,9 +1,5 @@
 <?php
 
-Route::get('index', function (){
-   return view('index');
-});
-
 Route::get('/', 'Home\HomeController@index');
 Route::get('/admin', 'Admin\AdminController@index');
 Route::post('/admin/signin', 'Admin\AdminController@signin');
