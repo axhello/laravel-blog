@@ -9,7 +9,7 @@ class UserSeeder extends Seeder
         $user = new App\User;
         $user->name = 'admin';
         $user->email = 'admin@admin.com';
-        $user->password = bcrypt('admin123');
+        $user->password = 'admin123';
         $user->save();
     }
 }
