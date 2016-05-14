@@ -109,9 +109,34 @@
                                     {!! Form::text('keywords', null, ['class' => 'form-control']) !!}
                                     <p style="margin: 8px 0;">请以半角逗号","分割多个关键词</p>
                                 </div>
-                                {!! Form::submit('提交修改',['class'=>'btn btn-primary form-control']) !!}
-                            {!! Form::close() !!}
                         </section>
+                        <section class="user-timeline-stories">
+                            <article class="timeline-story">
+                                <div style="font-size: 32px;margin-bottom: 10px;text-align: center">Social Link</div>
+                                    <div class="form-group">
+                                        {!! Form::label('twitter', 'Twitter链接:') !!}
+                                        {!! Form::text('twitter', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('weibo', 'Weibo链接:') !!}
+                                        {!! Form::text('weibo', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('steam', 'Steam链接:') !!}
+                                        {!! Form::text('steam', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('github', 'Github链接:') !!}
+                                        {!! Form::text('github', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('email', 'Email地址:') !!}
+                                        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    {!! Form::submit('提交修改',['class'=>'btn btn-primary form-control']) !!}
+                            </article>
+                        </section>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </section>

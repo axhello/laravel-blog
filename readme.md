@@ -43,18 +43,24 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-4、 修改目录为可写,在根目录下执行
+4、生成key
+
+```
+php artisan key:generate
+```
+
+5、 修改目录为可写,在根目录下执行
 
 ```
 chmod -R 755 storage/
 ```
 
-5、 安装数据库
+6、 安装数据库
 
 ```
 php artisan migrate
 ```
-6、填充数据库（默认用户）
+7、填充数据库（默认用户）
 
 ```
 php artisan db:seed
@@ -63,7 +69,7 @@ php artisan db:seed
 
 登录账户是：`admin@admin.com` 密码：`admin23`
 
-7、 使用apache请开启mod_rewrite， 使用nginx请配置你的虚拟主机文件，以下仅供参考：
+8、 使用apache请开启mod_rewrite， 使用nginx请配置你的虚拟主机文件，以下仅供参考：
 
 ```
 server {
