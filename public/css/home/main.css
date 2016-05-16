@@ -654,6 +654,9 @@ ul.icons li a {
   font-size: 1em;
   line-height: 1.6em;
 }
+.content.thumb {
+  width: 85%;
+}
 .content a {
   color: #00a8e6;
 }
@@ -1103,7 +1106,7 @@ pre[data-lang=patch]:after {
 .links-box ul li {
   float: left;
   position: relative;
-  margin: 0 2em 2em 0;
+  margin: 0 2em 2em 2em;
 }
 .links-box ul li:hover a {
   background: rgba(140, 212, 245, 0.5);

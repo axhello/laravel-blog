@@ -69,7 +69,7 @@ class Article extends Model implements SluggableInterface
     }
 
     /**
-     * 创建文章时将content_raw转成html存到数据库中
+     * 创建文章时将content_raw转成html存到content_html中
      * @param $contentRaw
      */
     public function setContentRawAttribute($contentRaw)
