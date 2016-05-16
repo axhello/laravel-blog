@@ -14,15 +14,17 @@ body {
   width: 100%;
   font-weight: 500;
   font-family: 'Lato';
+  overflow: hidden;
 }
 .container {
+  width: 1024px;
   height: 100%;
   text-align: center;
   margin: 0 auto;
   position: relative;
 }
 .content {
-  padding-top: 2em;
+  padding-top: 5em;
 }
 .content .title {
   font-size: 92px;
@@ -43,11 +45,15 @@ body {
 .footer img {
   position: absolute;
   bottom: 0;
-  left: 12.9999%;
+  max-width: 100%;
+  display: block;
 }
 @media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
   .content {
-    padding-top: 5em;
+    padding-top: 2em;
   }
   .content .title {
     font-size: 60px;
@@ -55,11 +61,7 @@ body {
   }
   .content .desc {
     font-size: 16px;
-    margin: 1.5em 0;
-  }
-  .footer img {
-    left: 2%;
-    width: 360px;
+    margin-bottom: 4em;
   }
 }
 
