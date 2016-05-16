@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 html,
 body {
   height: 100%;
@@ -27,12 +27,16 @@ body {
   padding-top: 5em;
 }
 .content .title {
-  font-size: 92px;
-  line-height: 1.5em;
+  font-size: 65px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 .content .desc {
   font-size: 28px;
-  margin: 1.5em 0;
+  font-weight: 400;
+  margin: 2em 0;
 }
 .content a {
   font-size: 18px;
@@ -61,7 +65,7 @@ body {
   }
   .content .desc {
     font-size: 16px;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
   }
 }
 
