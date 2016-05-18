@@ -2,7 +2,7 @@
 
 Route::get('/', 'Home\HomeController@index');
 Route::get('/admin', 'Admin\AdminController@index');
-Route::post('/admin/signin', 'Admin\AdminController@signin');
+Route::post('/admin/login', 'Admin\AdminController@login');
 Route::get('/category', 'Home\HomeController@getCategory');
 Route::get('/article/{article}', 'Home\HomeController@show');
 Route::get('/pages/{slug}', 'Home\PagesController@pages');
@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::delete('/category/{id}', 'Admin\CategoryController@destroy');
 
     Route::get('/tags', 'Admin\TagController@index');
+
     Route::get('/comment', 'Admin\CommentController@index');
     Route::delete('/comment', 'Admin\CommentController@destroy');
 

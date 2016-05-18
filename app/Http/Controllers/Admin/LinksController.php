@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Link;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

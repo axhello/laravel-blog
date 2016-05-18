@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Article;
-use App\Options;
-use App\Pages;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Options;
+use App\Models\Pages;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

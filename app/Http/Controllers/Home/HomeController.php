@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Article;
-use App\Category;
-use App\Link;
-use App\Options;
-use App\Pages;
-use DebugBar\DebugBar;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Link;
+use App\Models\Options;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use YuanChao\Editor\EndaEditor;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller

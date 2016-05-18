@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Tag;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

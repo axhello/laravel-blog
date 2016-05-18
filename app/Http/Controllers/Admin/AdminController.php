@@ -19,12 +19,12 @@ class AdminController extends Controller
         return view('admin.dashboard.dashboard');
     }
 
-    public function signin(Request $request)
+    public function login(Request $request)
     {
         $field = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
         $request->merge([$field => $request->input('login')]);
-        $user = \Auth::attempt($request->only($field, 'password'));
-        if ($user) {
+        $login = \Auth::attempt($request->only($field, 'password'));
+        if ($login) {
             return \Response::json([
                'access' => 'true'
             ]);

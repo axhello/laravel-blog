@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Article;
-use App\Pages;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -29,6 +28,7 @@ class PagesController extends Controller
         if ($pages) {
             return redirect('admin/pages')->with('success','创建页面成功');
         }
+        return redirect()->back()->with('errors','创建页面失败');
     }
 
     public function create()
@@ -43,6 +43,7 @@ class PagesController extends Controller
         if ($pages->save()) {
             return redirect('admin/pages')->with('success','更新页面成功');
         }
+        return redirect()->back()->with('errors', '更新页面失败');
     }
 
     public function destroy($id)
@@ -51,5 +52,6 @@ class PagesController extends Controller
         if ($pages) {
             return redirect('admin/pages')->with('success','删除页面成功');
         }
+        return redirect()->back()->with('errors', '删除页面失败');
     }
 }

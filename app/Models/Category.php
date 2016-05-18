@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,9 @@ class Category extends Model
         return $this->hasMany(Article::class, 'cate_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public static function getCategoryAll()
     {
         return self::all();

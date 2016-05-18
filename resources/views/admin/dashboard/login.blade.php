@@ -92,7 +92,7 @@
                 // Form Processing via AJAX
                 submitHandler: function(form)
                 {
-                    show_loading_bar(70); // Fill progress bar to 70% (just a given value)
+                    show_loading_bar(60); // Fill progress bar to 70% (just a given value)
 
                     var opts = {
                         "closeButton": true,
@@ -116,7 +116,7 @@
                     });
 
                     $.ajax({
-                        url: "/admin/signin",
+                        url: "/admin/login",
                         method: 'POST',
                         dataType: 'json',
                         data: {
@@ -130,11 +130,10 @@
                                 pct: 100,
                                 finish: function(){
                                     // Redirect after successful login page (when progress bar reaches 100%)
-                                    if(resp.access)
-                                    {
+                                    if(resp.access) {
                                         window.location.href = '/admin/dashboard';
                                     } else {
-                                        toastr.error("You have entered wrong password, please try again. User and password is <strong>demo/demo</strong> :)", "Invalid Login!", opts);
+                                        toastr.error("You have entered wrong password, please try again. Invalid Login!", opts);
                                         $password.select();
                                     }
                                 }

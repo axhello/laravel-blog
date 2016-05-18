@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Options;
-use App\Pages;
+use App\Models\Options;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
