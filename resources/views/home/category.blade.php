@@ -14,7 +14,9 @@
         <main class="main-content">
             <div id="menu" class="vi tabular menu">
                 @foreach($cates as $cate)
-                    <a href="/{{ $cate->slug }}" class="item {{ explode('?',ltrim(Request::getRequestUri(),'/'))[0] === $cate->slug ? 'active' : ''}}">{{ $cate->name }}</a>
+                    <a href="/{{ $cate->slug }}" class="item {{ explode('?',ltrim(Request::getRequestUri(),'/'))[0] === $cate->slug ? 'active' : ''}}">
+                        {{ $cate->name }}
+                    </a>
                 @endforeach
                 <div class="switch">
                     <input class="mui-switch mui-switch-anim" type="checkbox" :checked="switch"  @click="toggleSwitch()">

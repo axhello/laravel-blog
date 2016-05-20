@@ -51,11 +51,19 @@
                             @foreach($comments as $comment)
                             <li>
                                 <div class="comment-author">
-                                    <a {{ $comment->website !== '' ? 'href='.$comment->website : 'href=#comments-list' }} rel="external nofollow" target="_blank">
+                                    @if(empty($comment->website))
+                                        <a  href="#comments-list" rel="external nofollow">
+                                    @else
+                                        <a  href="//{{ $comment->website }}" rel="external nofollow" target="_blank">
+                                    @endif
                                         <img class="avatar" src="http://gravatar.duoshuo.com/avatar/{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
                                     </a>
                                     <div class="author-name">
-                                        <a {{ $comment->website !== '' ? 'href='.$comment->website : 'href=#comments-list' }} rel="external nofollow" target="_blank">{{ $comment->username }}</a> -
+                                        @if(empty($comment->website))
+                                            <a href="#comments-list" rel="external nofollow">{{ $comment->username }}</a> -
+                                        @else
+                                            <a href="//{{ $comment->website }}" rel="external nofollow" target="_blank">{{ $comment->username }}</a> -
+                                        @endif
                                     </div>
                                     <div class="mate">
                                         <time datetime="{{ $comment->created_at }}">{{ $comment->CreatedAt() }}</time>
@@ -66,6 +74,22 @@
                                 </div>
                             </li>
                             @endforeach
+                            <li v-for="comment in messages">
+                                <div class="comment-author">
+                                    <a  href="#comments-list" rel="external nofollow">
+                                        <img class="avatar" src="http://gravatar.duoshuo.com/avatar/@{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
+                                    </a>
+                                     <div class="author-name">
+                                         <a href="#comments-list" rel="external nofollow">@{{ comment.username }}</a> -
+                                     </div>
+                                      <div class="mate">
+                                          <time datetime="now">刚刚</time>
+                                      </div>
+                                </div>
+                                <div class="comment-content">
+                                    @{{ comment.content }}
+                                </div>
+                            </li>
                         </ol>
                     </div>
                     @endif

@@ -11,8 +11,9 @@ class CommentController extends Controller
 {
     public function comment(Requests\CommentRequest $request)
     {
-        $ip = ['ip' => $request->ip()];
-        $comment = Comment::create(array_merge($request->all(), $ip));
-        return redirect()->back();
+        Comment::create($request->all());
+        $previousUrl = \URL::previous(); // 這是上一頁的網址
+        $anchor = "#comments-list"; // 這是描點
+        return redirect()->to($previousUrl.$anchor);
     }
 }
