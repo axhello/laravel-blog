@@ -782,7 +782,8 @@ ul.icons li a {
   padding: 0;
 }
 #comments-list li {
-  margin: 20px 0;
+  margin: 15px 0;
+  padding: 10px 0;
 }
 #comments-list li:before,
 #comments-list li:after {

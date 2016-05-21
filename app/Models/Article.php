@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Markdown\Parser;
 use App\User;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
@@ -75,7 +76,7 @@ class Article extends Model implements SluggableInterface
      */
     public function setContentRawAttribute($contentRaw)
     {
-        $this->attributes['content_html'] = (new Markdown\Parser())->makeHtml($contentRaw);
+        $this->attributes['content_html'] = (new Parser())->makeHtml($contentRaw);
         $this->attributes['content_raw'] = $contentRaw;
     }
 

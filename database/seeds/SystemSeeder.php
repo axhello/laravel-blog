@@ -11,7 +11,7 @@ class SystemSeeder extends Seeder
      */
     public function run()
     {
-        $options = new \App\Options;
+        $options = new \App\Models\Options();
         $options->title = 'localshot';
         $options->siteUrl = 'http://localhost:8000';
         $options->save();

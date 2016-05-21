@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\CommentNotifications;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -20,5 +21,12 @@ class Comment extends Model
     public function scopeCreatedAt()
     {
         return $this->created_at->diffForHumans();
+    }
+
+    public static function commenting(array $attributes)
+    {
+        $comment = static::create($attributes);
+        event(new CommentNotifications($comment));
+        return $comment;
     }
 }

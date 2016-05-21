@@ -16,7 +16,7 @@ class ArticleController extends Controller
     {
         $articles = Article::latest()->paginate(15);
 
-        return view('admin.articles.index',compact('articles'));
+        return view('admin.articles.index', compact('articles'));
     }
 
     public function create()
@@ -25,7 +25,7 @@ class ArticleController extends Controller
 
         $tags = Tag::getTagArray();
 
-        return view('admin.articles.create',compact('cates','tags'));
+        return view('admin.articles.create', compact('cates', 'tags'));
     }
 
     public function store(Requests\ArticlesRequest $request)
@@ -58,7 +58,7 @@ class ArticleController extends Controller
 
         $tags = Tag::getTagArray();
 
-        return view('admin.articles.edit',compact('article','cates','tags'));
+        return view('admin.articles.edit', compact('article', 'cates', 'tags'));
     }
 
     public function update(Requests\ArticlesRequest $request, $id)
@@ -75,7 +75,7 @@ class ArticleController extends Controller
 
             Article::syncTags($article, $tag_list);
 
-            return  redirect()->intended('admin/articles');
+            return redirect('admin/articles')->with('success', '成功更新了一篇文章!');
 
         } else {
             return redirect()->back()->withInput();
@@ -103,7 +103,7 @@ class ArticleController extends Controller
     {
         $articles = Article::onlyTrashed()->paginate(15);
 
-        return view('admin.articles.recycle',compact('articles'));
+        return view('admin.articles.recycle', compact('articles'));
     }
 
     //恢复文章
@@ -112,7 +112,7 @@ class ArticleController extends Controller
         $restore = Article::withTrashed()->where('id', $id)->restore();
 
         if ($restore) {
-            return redirect('admin/articles')->with('success','成功恢复了一篇文章!');
+            return redirect('admin/articles')->with('success', '成功恢复了一篇文章!');
         } else {
             return redirect()->back()->with('errors', '恢复失败!');
         }
