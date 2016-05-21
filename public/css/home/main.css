@@ -249,7 +249,7 @@ blockquote {
   padding: 0;
 }
 #sidebar {
-  background: #4acaa8;
+  background: #1ABC9C;
   color: #d1f1e9;
   height: 100%;
   position: fixed;
@@ -285,7 +285,7 @@ blockquote {
   padding: 0;
 }
 #sidebar > nav ul li {
-  border-top: solid 2px #5ccfb0;
+  border-top: solid 1px #5ccfb0;
   display: block;
   padding: 0;
 }
@@ -389,15 +389,6 @@ ul.icons li a {
 }
 .icon-github:before {
   content: "\e904";
-}
-.atag a {
-  color: #333;
-  text-decoration: none;
-  transition: color .3s;
-}
-.atag a:hover {
-  color: #2479CC;
-  text-decoration: none;
 }
 #Container {
   background: #fff;
@@ -647,7 +638,7 @@ ul.icons li a {
 .header time {
   color: #666;
 }
-#section .content {
+#section article.content {
   border-bottom: 1px solid #eee;
 }
 .content {
@@ -775,61 +766,57 @@ ul.icons li a {
 #comments-list {
   border-top: 1px solid #eee;
 }
-#comments-list h3 {
-  margin: 1em 0;
+#comments-list .comment {
+  border-bottom: 1px solid #edf1f2;
+  padding-bottom: 15px;
 }
-#comments-list ol {
-  padding: 0;
+#comments-list .comment-con {
+  position: relative;
+  padding: 24px 0 0 80px;
 }
-#comments-list li {
-  margin: 15px 0;
-  padding: 10px 0;
+#comments-list .comment-con .img-box {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
-#comments-list li:before,
-#comments-list li:after {
-  content: " ";
-  display: table;
+#comments-list .comment-con .img-box img {
+  display: block;
+  height: 100%;
 }
-#comments-list li:after {
-  clear: both;
-}
-#comments-list li:before,
-#comments-list li:after {
-  content: " ";
-  display: table;
-}
-#comments-list li:after {
-  clear: both;
-}
-#comments-list .comment-author img {
+#comments-list .content-box .user-info .username {
   float: left;
   margin-right: 10px;
-  border-radius: 50%;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-  transition: all .5s;
-}
-#comments-list .comment-author img:hover {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-#comments-list .comment-author .author-name {
-  display: inline-block;
-  margin: 5px 0;
-}
-#comments-list .comment-author .author-name a {
-  text-decoration: none;
+  color: #1ABC9C;
   font-size: 16px;
-  color: #07ABEA;
+  text-align: left;
+  line-height: 20px;
 }
-#comments-list .comment-author .mate {
-  display: inline-block;
-  font-size: 14px;
-  color: #5F5F5F;
+#comments-list .content-box .content {
+  line-height: 28px;
+  font-size: 15px;
+  color: #14191e;
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 0;
+  word-break: break-all;
 }
-#comments-list .comment-content p {
-  margin: 0;
+#comments-list .content-box .mate {
   margin-top: 5px;
+  color: #b5b9bc;
+  font-size: 12px;
+  line-height: 20px;
+  clear: both;
+}
+#comments-list .content-box .replay {
+  float: right;
+  color: #1ABC9C;
+  cursor: default;
+  display: block;
+  font-size: 14px;
+  overflow: hidden;
+  padding-left: 16px;
 }
 .form-group {
   display: inline-block;
@@ -936,9 +923,6 @@ ul.icons li a {
   -ms-user-select: none;
   user-select: none;
   font-size: 12px;
-}
-#comment-from {
-  border-top: 1px solid #eee;
 }
 #comment-from h3 {
   margin: 15px 0;

@@ -47,50 +47,38 @@
                     @if(count($comments) > 0)
                     <div id="comments-list">
                         <h3>已有 {{ count($comments) }} 条评论</h3>
-                        <ol>
                             @foreach($comments as $comment)
-                            <li>
-                                <div class="comment-author">
+                            <div class="comment">
+                                <div class="comment-con">
                                     @if(empty($comment->website))
-                                        <a  href="#comments-list" rel="external nofollow">
+                                        <a  href="#comments-list" rel="external nofollow" class="img-box">
                                     @else
-                                        <a  href="//{{ $comment->website }}" rel="external nofollow" target="_blank">
+                                        <a  href="//{{ $comment->website }}" rel="external nofollow" target="_blank" class="img-box">
                                     @endif
                                         <img class="avatar" src="http://gravatar.duoshuo.com/avatar/{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
                                     </a>
-                                    <div class="author-name">
-                                        @if(empty($comment->website))
-                                            <a href="#comments-list" rel="external nofollow">{{ $comment->username }}</a> -
-                                        @else
-                                            <a href="//{{ $comment->website }}" rel="external nofollow" target="_blank">{{ $comment->username }}</a> -
-                                        @endif
-                                    </div>
-                                    <div class="mate">
-                                        <time datetime="{{ $comment->created_at }}">{{ $comment->CreatedAt() }}</time>
+                                    <div class="content-box">
+                                        <div class="user-info clearfix">
+                                            @if(empty($comment->website))
+                                                <a href="#comments-list" rel="external nofollow" class="username">{{ $comment->username }}</a>
+                                            @else
+                                                <a href="//{{ $comment->website }}" rel="external nofollow" target="_blank" class="username">{{ $comment->username }}</a> -
+                                            @endif
+                                        </div>
+                                        <div class="star-box">
+                                            <i class="icon-star2 active"></i>
+                                            <i class="icon-star2 active"></i>
+                                            <i class="icon-star2 active"></i>
+                                        </div>
+                                        <p class="content">{{ $comment->content }}</p>
+                                        <div class="mate">
+                                            <time datetime="{{ $comment->created_at }}">{{ $comment->CreatedAt() }}</time>
+                                            <a href="#" class="replay">回复</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="comment-content">
-                                    {{ $comment->content }}
-                                </div>
-                            </li>
+                            </div>
                             @endforeach
-                            <li v-for="comment in messages">
-                                <div class="comment-author">
-                                    <a  href="#comments-list" rel="external nofollow">
-                                        <img class="avatar" src="http://gravatar.duoshuo.com/avatar/@{{ md5($comment->email) }}?s=64&amp;r=G&amp;d=mm" alt="{{ $comment->email }}" width="64" height="64">
-                                    </a>
-                                     <div class="author-name">
-                                         <a href="#comments-list" rel="external nofollow">@{{ comment.username }}</a> -
-                                     </div>
-                                      <div class="mate">
-                                          <time datetime="now">刚刚</time>
-                                      </div>
-                                </div>
-                                <div class="comment-content">
-                                    @{{ comment.content }}
-                                </div>
-                            </li>
-                        </ol>
                     </div>
                     @endif
                     <div id="comment-from">
