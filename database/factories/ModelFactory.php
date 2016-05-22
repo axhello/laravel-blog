@@ -20,9 +20,9 @@ $factory->define(\App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Article::class, function (Faker\Generator $faker) {
+$factory->define(\App\Models\Article::class, function (Faker\Generator $faker) {
     $user_ids = \App\User::lists('id')->toArray();
-    $cate_ids = \App\Category::lists('id')->toArray();
+    $cate_ids = \App\Models\Category::lists('id')->toArray();
     return [
         'user_id' => $faker->randomElement($user_ids),
         'cate_id' => $faker->randomElement($cate_ids),
@@ -32,21 +32,21 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+$factory->define(\App\Models\Tag::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
     ];
 });
 
-$factory->define(App\Category::class, function (Faker\Generator $faker) {
+$factory->define(\App\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
         'sort' => 0,
     ];
 });
 
-$factory->define(App\Comment::class, function (Faker\Generator $faker) {
-    $article_ids = \App\Article::lists('id')->toArray();
+$factory->define(\App\Models\Comment::class, function (Faker\Generator $faker) {
+    $article_ids = \App\Models\Article::lists('id')->toArray();
     return [
         'username' => $faker->userName,
         'email' => $faker->email,

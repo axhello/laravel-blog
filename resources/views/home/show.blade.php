@@ -44,8 +44,8 @@
                     </div>
                 </div>
                 <footer id="footer">
-                    @if(count($comments) > 0)
                     <div id="comments-list">
+                        @if(count($comments) > 0)
                         <h3>已有 {{ count($comments) }} 条评论</h3>
                             @foreach($comments as $comment)
                             <div class="comment">
@@ -79,8 +79,9 @@
                                 </div>
                             </div>
                             @endforeach
+                        @endif
                     </div>
-                    @endif
+
                     <div id="comment-from">
                         <h3>添加新评论</h3>
                         <validator name="validation">

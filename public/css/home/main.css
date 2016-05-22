@@ -542,7 +542,7 @@ ul.icons li a {
   transition: color .3s;
 }
 .article .title a:hover {
-  color: #2479CC;
+  color: #2db7f5;
   text-decoration: none;
 }
 .article .content {
