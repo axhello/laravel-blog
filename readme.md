@@ -21,7 +21,7 @@ Blog project written in Laravel 5.2.
 
 ### Installation
 
-1、克隆或者下载上次到你的服务器
+1、克隆到你的服务器
 
 ```
 git clone https://github.com/axhello/laravel-blog.git

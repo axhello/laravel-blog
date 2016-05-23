@@ -147,5 +147,3 @@ Vue.component('custom-error', {
 
 //绑定到#app
 new Vue({el:'#app'});
-hljs.initHighlightingOnLoad();
-

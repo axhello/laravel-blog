@@ -809,7 +809,7 @@ ul.icons li a {
   line-height: 20px;
   clear: both;
 }
-#comments-list .content-box .replay {
+#comments-list .content-box .reply {
   float: right;
   color: #1ABC9C;
   cursor: default;
@@ -817,6 +817,16 @@ ul.icons li a {
   font-size: 14px;
   overflow: hidden;
   padding-left: 16px;
+}
+.cancel-reply {
+  float: right;
+  color: #F14E4E;
+  cursor: default;
+  overflow: hidden;
+  padding-left: 16px;
+}
+#comment-from {
+  margin-top: 1.5em;
 }
 .form-group {
   display: inline-block;

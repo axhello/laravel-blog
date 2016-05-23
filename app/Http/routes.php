@@ -7,6 +7,8 @@ Route::get('/category', 'Home\HomeController@getCategory');
 Route::get('/article/{article}', 'Home\HomeController@show');
 Route::get('/pages/{slug}', 'Home\PagesController@pages');
 Route::post('/comment','Home\CommentController@comment');
+Route::post('/comment/reply','Home\CommentController@reply');
+Route::post('/comment/notice','Home\CommentController@notice');
 Route::get('/search', 'Home\HomeController@search');
 Route::get('/tag/{tag}', 'Home\TagsController@show');
 Route::get('/links','Home\HomeController@links');

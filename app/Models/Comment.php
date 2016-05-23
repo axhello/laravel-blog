@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Events\CommentNotifications;
+use App\Markdown\Parser;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -26,7 +27,11 @@ class Comment extends Model
     public static function commenting(array $attributes)
     {
         $comment = static::create($attributes);
-        event(new CommentNotifications($comment));
         return $comment;
+    }
+
+    public function setContentAttribute($content)
+    {
+        $this->attributes['content'] = (new Parser())->makeHtml($content);
     }
 }

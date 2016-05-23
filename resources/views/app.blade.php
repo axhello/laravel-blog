@@ -8,6 +8,10 @@
     <meta name="_token" id="token" content="{{ csrf_token() }}" />
     <link rel="stylesheet" href="/css/home/main.css">
     <link rel="stylesheet" href="/css/home/media.css">
+    <link rel="stylesheet" href="/css/home/atwho.css">
+    <script src="/js/home/jquery.min.js"></script>
+    <script src="/js/home/caret.min.js"></script>
+    <script src="/js/home/atwho.min.js"></script>
 </head>
 <body :class="sidebar ? 'header-visible' :''">
     @include('home.sidebar')

@@ -69,10 +69,11 @@ class HomeController extends Controller
     {
         $options = Options::first();
         $comments = $article->comments()->paginate(10);
+        $username = json_encode($comments->lists('username')->toArray());
         $pages = Pages::all();
         $prev_article = Article::find($this->getPrevArticleId($article->id));
         $next_article = Article::find($this->getNextArticleId($article->id));
-        return view('home.show',compact('article', 'comments','options','pages','prev_article','next_article'));
+        return view('home.show',compact('article', 'comments', 'username', 'options', 'pages', 'prev_article', 'next_article'));
     }
 
     /**
