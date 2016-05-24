@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name','slug','sort'];
+    protected $fillable = ['name', 'slug', 'sort'];
 
     public function articles()
     {
@@ -21,6 +21,9 @@ class Category extends Model
         return self::all();
     }
 
+    /**
+     * @return mixed
+     */
     public static function getCategoryArray()
     {
         return self::lists('name', 'id');

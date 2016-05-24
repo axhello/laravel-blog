@@ -639,6 +639,7 @@ ul.icons li a {
   color: #666;
 }
 #section article.content {
+  padding-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
 .content {
@@ -763,112 +764,6 @@ ul.icons li a {
 .clearfix:after {
   clear: both;
 }
-#comments-list {
-  border-top: 1px solid #eee;
-}
-#comments-list .comment {
-  border-bottom: 1px solid #edf1f2;
-  padding-bottom: 15px;
-}
-#comments-list .comment-con {
-  position: relative;
-  padding: 24px 0 0 80px;
-}
-#comments-list .comment-con .img-box {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  border-radius: 50%;
-  overflow: hidden;
-}
-#comments-list .comment-con .img-box img {
-  display: block;
-  height: 100%;
-}
-#comments-list .content-box .user-info .username {
-  float: left;
-  margin-right: 10px;
-  color: #1ABC9C;
-  font-size: 16px;
-  text-align: left;
-  line-height: 20px;
-}
-#comments-list .content-box .content {
-  line-height: 28px;
-  font-size: 15px;
-  color: #14191e;
-  text-align: left;
-  margin-top: 8px;
-  margin-bottom: 0;
-  word-break: break-all;
-}
-#comments-list .content-box .mate {
-  margin-top: 5px;
-  color: #b5b9bc;
-  font-size: 12px;
-  line-height: 20px;
-  clear: both;
-}
-#comments-list .content-box .reply {
-  float: right;
-  color: #1ABC9C;
-  cursor: default;
-  display: block;
-  font-size: 14px;
-  overflow: hidden;
-  padding-left: 16px;
-}
-.cancel-reply {
-  float: right;
-  color: #F14E4E;
-  cursor: default;
-  overflow: hidden;
-  padding-left: 16px;
-}
-#comment-from {
-  margin-top: 1.5em;
-}
-.form-group {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
-.form-group label {
-  margin-right: 5px;
-}
-.form-group input {
-  outline: none;
-  border-radius: 3px;
-  margin-right: 10px;
-}
-.form-group.has-errors .form-control {
-  border-color: red;
-}
-.form-control {
-  padding: 5px 6px;
-  line-height: 18px;
-  height: 35px;
-  width: 300px;
-  border: 1px solid #ccc;
-}
-.form-control:focus {
-  border-color: #66afe9;
-}
-.form-textarea {
-  margin-bottom: 1em;
-}
-.form-textarea label {
-  margin: 5px 0;
-}
-.form-textarea textarea {
-  outline: none;
-  border-radius: 3px;
-  width: 100%;
-  height: auto;
-}
-.form-textarea.has-errors .form-control {
-  border-color: red;
-}
 .article-page {
   margin: 35px 0;
   position: relative;
@@ -887,6 +782,7 @@ ul.icons li a {
 }
 .article-page a {
   color: #4acaa8;
+  font-size: 15px;
 }
 .article-page .vertical.divider {
   position: absolute;
@@ -934,36 +830,14 @@ ul.icons li a {
   user-select: none;
   font-size: 12px;
 }
-#comment-from h3 {
-  margin: 15px 0;
-}
-.form-submit {
-  margin-bottom: 1.5em;
-}
-.form-submit button[disabled],
-.form-submit input[disabled] {
-  cursor: no-drop;
-}
-.form-submit .btn-danger {
-  color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
-}
-.form-submit .btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-}
-.copy {
+#footer {
+  padding: 10px;
   border-top: 1px solid #eee;
 }
 .copy p {
-  margin: 0;
+  margin: 1em 0 0 0;
   padding: 8px 0;
   text-align: center;
-}
-.search-title {
-  padding: 12px 0;
 }
 pre {
   margin: 1.2em 0;

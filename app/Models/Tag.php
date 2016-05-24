@@ -10,11 +10,17 @@ class Tag extends Model
 
     public $timestamps = false;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function articles()
     {
         return $this->belongsToMany(Article::class);
     }
 
+    /**
+     * @return mixed
+     */
     public static function getTagArray()
     {
         return self::lists('name', 'id');

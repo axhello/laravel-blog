@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CategoryRequest extends Request
+class TagsRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class CategoryRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required'
         ];
     }
 }

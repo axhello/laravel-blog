@@ -117,7 +117,7 @@
                     </li>
                     <li class="{{ \App\HtmlHelper::u_active('edit') }}">
                         <a href="/admin/user/edit">
-                            <span class="title">修改资料</span>
+                            <span class="title">账户资料</span>
                         </a>
                     </li>
                 </ul>

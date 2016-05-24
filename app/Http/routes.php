@@ -27,12 +27,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::resource('/pages','Admin\PagesController');
 
     Route::get('/category', 'Admin\CategoryController@index');
-    Route::patch('/category/{id}', 'Admin\CategoryController@update');
     Route::post('/category', 'Admin\CategoryController@store');
     Route::post('/category/edit/{id}', 'Admin\CategoryController@edit');
-    Route::delete('/category/{id}', 'Admin\CategoryController@destroy');
+    Route::patch('/category/update/{id}', 'Admin\CategoryController@update');
+    Route::delete('/category/delete/{id}', 'Admin\CategoryController@destroy');
 
     Route::get('/tags', 'Admin\TagController@index');
+    Route::post('/tags', 'Admin\TagController@create');
+    Route::post('/tags/edit/{id}', 'Admin\TagController@edit');
+    Route::patch('/tags/update/{id}', 'Admin\TagController@update');
+    Route::delete('/tags/delete/{id}', 'Admin\TagController@destroy');
 
     Route::get('/comment', 'Admin\CommentController@index');
     Route::delete('/comment', 'Admin\CommentController@destroy');

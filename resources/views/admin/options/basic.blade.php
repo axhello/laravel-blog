@@ -58,19 +58,11 @@
                             <hr>
                             <ul class="list-unstyled user-friends-count">
                                 <li>
-                                    @if(!empty($articles))
-                                        <span>{{ count($articles) }}</span>
-                                    @else
-                                        <span>0</span>
-                                    @endif
+                                    <span>0</span>
                                     篇文章
                                 </li>
                                 <li>
-                                    @if(!empty($comments))
-                                        <span>{{ count($comments) }}</span>
-                                    @else
-                                        <span>0</span>
-                                    @endif
+                                    <span>0</span>
                                     条评论
                                 </li>
                             </ul>
@@ -140,20 +132,7 @@
                     </div>
                 </div>
             </section>
-            @if ( Session::has('success') )
-                <script>
-                    window.onload = function () {
-                        toastr.success("{{ Session::get('success') }}", "成功提示!", opts);
-                    };
-                </script>
-            @endif
-            @if ( Session::has('errors') )
-                <script>
-                    window.onload = function () {
-                        toastr.error("{{ Session::get('errors') }}", "失败提示!", opts);
-                    };
-                </script>
-            @endif
+            @include('admin.notice')
             <footer class="main-footer sticky footer-type-1">
                 <div class="footer-inner">
                     <!-- Add your copyright text here -->

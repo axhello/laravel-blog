@@ -11,7 +11,7 @@
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">DataTable</h1>
+                    <h1 class="title">Tags Manage</h1>
                     <p class="description">Dynamic table variants with pagination and other controls</p>
                 </div>
                 <div class="breadcrumb-env">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-bordered table-striped" id="example-2">
+                    <table class="table table-bordered table-striped" id="example">
                         <thead>
                         <tr>
                             <th>分类</th>
@@ -52,18 +52,80 @@
                             <tr role="row" class="odd">
                                 <td>{{ $tag->name }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-secondary btn-sm btn-icon icon-left">
-                                        Edit
-                                    </a>
-                                    <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-icon icon-left">
+                                    <form action="/admin/tags/delete/{{ $tag->id }}" method="POST">
+                                        {{ method_field('DELETE') }}
+                                        {!! csrf_field() !!}
+                                        <a href="#" onclick="edit({{ $tag->id }})" class="btn btn-secondary btn-sm btn-icon icon-left">Edit</a>
+                                        <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-icon icon-left">
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    <div id="create" class="row">
+                        {!! Form::open(['url'=>'admin/tags']) !!}
+                        <div class="col-xs-5">
+                            <div class="dataTables_info{{ $errors->has('name') ? ' has-error' : '' }}">
+                                {!! Form::text('name', null, ['class' => 'form-control','placeholder'=>'标签']) !!}
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="submit" class="btn btn-info btn-block icon-left">
+                                创建标签
+                            </button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <div id="update" class="row" style="display: none">
+                        <form id="edit-form" method="POST" accept-charset="UTF-8" action="">
+                            {{ method_field('PATCH') }}
+                            {!! csrf_field() !!}
+                            <div class="col-xs-5">
+                                <div class="dataTables_info">
+                                    <input id="edit" type="text" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <button type="submit" class="btn btn-secondary btn-block icon-left">
+                                    更新分类
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        function edit(id) {
+                            $('#create').css('display','none');
+                            $('#update').css('display','block');
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('input[name="_token"]').attr('value')
+                                }
+                            });
+                            $.ajax({
+                                url: '/admin/tags/edit/'+ id,
+                                method: 'POST',
+                                dataType: 'json',
+                                data: { id: id },
+                                success: function(response) {
+                                    console.log(response);
+                                    $('#edit-form').attr('action','/admin/tags/update/'+ response.data.id);
+                                    $('#edit').val(response.data.name);
+                                },
+                                error: function(response) {
+                                    console.log(response);
+                                }
+                            });
+                        }
+                    </script>
                 </div>
             </div>
-
+            @include('admin.notice')
             <footer class="main-footer sticky footer-type-1">
                 <div class="footer-inner">
                     <!-- Add your copyright text here -->

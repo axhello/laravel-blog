@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="/css/home/main.css">
     <link rel="stylesheet" href="/css/home/media.css">
     <link rel="stylesheet" href="/css/home/atwho.css">
-    <script src="/js/home/jquery.min.js"></script>
-    <script src="/js/home/caret.min.js"></script>
-    <script src="/js/home/atwho.min.js"></script>
 </head>
 <body :class="sidebar ? 'header-visible' :''">
     @include('home.sidebar')
     @yield('content')
     <div id="titleBar" @click="toggleSidebar"><a href="#header" class="toggle"></a></div>
     <script src="/js/home/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

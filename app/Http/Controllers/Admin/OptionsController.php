@@ -16,16 +16,14 @@ class OptionsController extends Controller
     public function basic()
     {
         $options = Options::first();
-        $articles = Article::all();
-        $comments = Comment::all();
-        return view('admin.options.basic', compact('options','articles','comments'));
+        return view('admin.options.basic', compact('options'));
     }
 
     public function create(Request $request)
     {
         $options = Options::create($request->all());
         if ($options) {
-            return redirect()->back()->with('success','站点信息更新成功!');
+            return redirect()->back()->with('success', '站点信息更新成功!');
         } else {
             return redirect()->back()->with('errors', '站点信息更新失败!');
         }
@@ -36,7 +34,7 @@ class OptionsController extends Controller
         $options = Options::findOrFail($id);
         $options->update($request->all());
         if ($options->save()) {
-            return redirect()->back()->with('success','站点信息更新成功!');
+            return redirect()->back()->with('success', '站点信息更新成功!');
         } else {
             return redirect()->back()->with('errors', '站点信息更新失败!');
         }
@@ -51,17 +49,16 @@ class OptionsController extends Controller
     {
         $user = \Auth::user();
         $options = Options::first();
-        $articles = Article::all();
-        $comments = Comment::all();
-        return view('admin.options.editUser',compact('user','articles','comments','options'));
+        return view('admin.options.editUser', compact('user', 'options'));
     }
 
     public function edit(Requests\UserRequest $request, $id)
     {
+        dd($request->all());
         $user = User::findOrFail($id);
         $user->update($request->all());
         if ($user->save()) {
-            return redirect('/admin/options/basic')->with('success','用户信息更新成功!');
+            return redirect('/admin/options/basic')->with('success', '用户信息更新成功!');
         }
         return redirect()->back()->with('errors', '用户信息更新失败!');
     }

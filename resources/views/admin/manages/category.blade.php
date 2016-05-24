@@ -11,7 +11,7 @@
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">DataTable</h1>
+                    <h1 class="title">Category Manage</h1>
                     <p class="description">Dynamic table variants with pagination and other controls</p>
                 </div>
                 <div class="breadcrumb-env">
@@ -56,7 +56,7 @@
                                 <td>{{ $cate->slug }}</td>
                                 <td>{{ $cate->created_at }}</td>
                                 <td>
-                                    {!! Form::open(['url'=>'/admin/category/'.$cate->id,'method'=>'DELETE','id'=>'delete-form']) !!}
+                                    {!! Form::open(['url'=>'/admin/category/delete/'.$cate->id,'method'=>'DELETE','id'=>'delete-form']) !!}
                                     <a href="#" onclick="edit({{ $cate->id }})" class="btn btn-secondary btn-sm btn-icon icon-left">Edit</a>
                                     <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-icon icon-left">
                                     {!! Form::close() !!}
@@ -136,7 +136,7 @@
                                     id: id
                                 },
                                 success: function(resp) {
-                                    $('#edit-form').attr('action','/admin/category/'+resp.data.id);
+                                    $('#edit-form').attr('action','/admin/category/update/'+ resp.data.id);
                                     $('#edit').val(resp.data.name);
                                     $('#slug').val(resp.data.slug);
                                 }
@@ -145,6 +145,7 @@
                     </script>
                 </div>
             </div>
+            @include('admin.notice')
             <footer class="main-footer sticky footer-type-1">
                 <div class="footer-inner">
                     <!-- Add your copyright text here -->

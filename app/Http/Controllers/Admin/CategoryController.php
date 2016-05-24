@@ -13,38 +13,42 @@ class CategoryController extends Controller
     public function index()
     {
         $cates = Category::latest()->get();
-        return view('admin.manages.category',compact('cates'));
+        return view('admin.manages.category', compact('cates'));
     }
 
     public function store(Requests\CategoryRequest $request)
     {
         Category::create($request->all());
-        return back();
+        return back()->with('success', '添加成功!');
     }
 
     public function edit($id)
     {
         $isCate = Category::findOrFail($id);
-        return \Response::json([
-           'message' => '200',
-            'data' => $isCate
-        ]);
+        if (!empty($isCate)) {
+            return response()->json(['status' => 'success', 'data' => $isCate]);
+        }
+        return response()->json(['status' => 'error']);
     }
 
     public function update(Requests\CategoryRequest $request, $id)
     {
         $cate = Category::findOrFail($id);
-        $cate->name = $request->get('name');
-        $cate->slug = $request->get('slug');
-        $cate->sort = $request->get('sort');
-        $cate->save();
-        return back();
+        $cate->name = $request->name;
+        $cate->slug = $request->slug;
+        $cate->sort = $request->sort;
+        if ($cate->save()) {
+            return redirect()->back()->with('success', '更新成功!');
+        }
+        return back()->with('errors', '更新失败!');
     }
 
     public function destroy($id)
     {
-        $cate = Category::findOrFail($id);
-        $cate->delete();
-        return back();
+        $cate = Category::findOrFail($id)->delete();
+        if ($cate) {
+            return redirect()->back()->with('success', '删除成功!');
+        }
+        return back()->with('errors', '删除失败!');
     }
 }

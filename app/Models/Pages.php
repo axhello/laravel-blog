@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Markdown\Parser;
 use Illuminate\Database\Eloquent\Model;
 
 class Pages extends Model
@@ -14,7 +15,7 @@ class Pages extends Model
      */
     public function setContentRawAttribute($contentRaw)
     {
-        $this->attributes['content_html'] = (new Markdown\Parser())->makeHtml($contentRaw);
+        $this->attributes['content_html'] = (new Parser())->makeHtml($contentRaw);
         $this->attributes['content_raw'] = $contentRaw;
     }
 }

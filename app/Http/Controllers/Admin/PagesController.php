@@ -13,7 +13,7 @@ class PagesController extends Controller
     public function index()
     {
         $pages = Pages::latest()->paginate(15);
-        return view('admin.pages.index',compact('pages'));
+        return view('admin.pages.index', compact('pages'));
     }
 
     public function edit($id)
@@ -26,9 +26,9 @@ class PagesController extends Controller
     {
         $pages = Pages::create($request->all());
         if ($pages) {
-            return redirect('admin/pages')->with('success','创建页面成功');
+            return redirect('admin/pages')->with('success', '创建页面成功');
         }
-        return redirect()->back()->with('errors','创建页面失败');
+        return redirect()->back()->with('errors', '创建页面失败');
     }
 
     public function create()
@@ -41,7 +41,7 @@ class PagesController extends Controller
         $pages = Pages::findOrFail($id);
         $pages->update($request->all());
         if ($pages->save()) {
-            return redirect('admin/pages')->with('success','更新页面成功');
+            return redirect('admin/pages')->with('success', '更新页面成功');
         }
         return redirect()->back()->with('errors', '更新页面失败');
     }
@@ -50,7 +50,7 @@ class PagesController extends Controller
     {
         $pages = Pages::findOrFail($id)->delete();
         if ($pages) {
-            return redirect('admin/pages')->with('success','删除页面成功');
+            return redirect('admin/pages')->with('success', '删除页面成功');
         }
         return redirect()->back()->with('errors', '删除页面失败');
     }

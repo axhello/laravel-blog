@@ -296,6 +296,7 @@
 }
 
 #section article.content {
+  padding-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
 
@@ -442,135 +443,6 @@
   .clearfix();
 }
 
-#comments-list {
-  border-top: 1px solid #eee;
-
-  .comment {
-    border-bottom: 1px solid #edf1f2;
-    padding-bottom: 15px;
-  }
-
-  .comment-con {
-    position: relative;
-    padding: 24px 0 0 80px;
-
-    .img-box {
-      position: absolute;
-      top: 30px;
-      left: 0;
-      border-radius: 50%;
-      overflow: hidden;
-
-      img {
-        display: block;
-        height: 100%;
-      }
-    }
-  }
-  .content-box {
-    .user-info .username {
-      float: left;
-      margin-right: 10px;
-      color: @background;
-      font-size: 16px;
-      text-align: left;
-      line-height: 20px;
-    }
-
-    .content {
-      line-height: 28px;
-      font-size: 15px;
-      color: #14191e;
-      text-align: left;
-      margin-top: 8px;
-      margin-bottom: 0;
-      word-break: break-all;
-    }
-
-    .mate {
-      margin-top: 5px;
-      color: #b5b9bc;
-      font-size: 12px;
-      line-height: 20px;
-      clear: both;
-    }
-
-    .reply {
-      float: right;
-      color: @background;
-      cursor: default;
-      display: block;
-      font-size: 14px;
-      overflow: hidden;
-      padding-left: 16px;
-    }
-  }
-}
-
-.cancel-reply {
-  float: right;
-  color: #F14E4E;
-  cursor: default;
-  overflow: hidden;
-  padding-left: 16px;
-}
-
-#comment-from {
-  margin-top: 1.5em;
-}
-.form-group {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 25px;
-
-  label {
-    margin-right: 5px;
-  }
-
-  input {
-    outline: none;
-    border-radius: 3px;
-    margin-right: 10px;
-  }
-
-  &.has-errors .form-control {
-    border-color: red;
-  }
-
-}
-
-.form-control {
-  padding: 5px 6px;
-  line-height: 18px;
-  height: 35px;
-  width: 300px;
-  border: 1px solid #ccc;
-
-  &:focus {
-    border-color: #66afe9;
-  }
-
-}
-
-.form-textarea {
-  margin-bottom: 1em;
-
-  label {
-    margin: 5px 0;
-  }
-
-  textarea {
-    outline: none;
-    border-radius: 3px;
-    width: 100%;
-    height: auto;
-  }
-
-  &.has-errors .form-control {
-    border-color: red;
-  }
-}
-
 .article-page {
   margin: 35px 0;
   position: relative;
@@ -592,6 +464,7 @@
 
   a {
     color: #4acaa8;
+    font-size: 15px;
   }
 
   .vertical.divider {
@@ -645,43 +518,17 @@
   }
 }
 
-#comment-from {
-  h3 {
-    margin: 15px 0;
-  }
-}
-
-.form-submit {
-  margin-bottom: 1.5em;
-
-  button[disabled], input[disabled] {
-    cursor: no-drop;
-  }
-
-  .btn-danger {
-    color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
-  }
-  .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-  }
+#footer {
+  padding: 10px;
+  border-top: 1px solid #eee;
 }
 
 .copy {
-  border-top: 1px solid #eee;
-
   p {
-    margin: 0;
+    margin: 1em 0 0 0;
     padding: 8px 0;
     text-align: center;
   }
-}
-
-.search-title {
-  padding: 12px 0;
 }
 
 pre {

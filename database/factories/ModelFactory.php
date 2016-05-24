@@ -44,15 +44,3 @@ $factory->define(\App\Models\Category::class, function (Faker\Generator $faker) 
         'sort' => 0,
     ];
 });
-
-$factory->define(\App\Models\Comment::class, function (Faker\Generator $faker) {
-    $article_ids = \App\Models\Article::lists('id')->toArray();
-    return [
-        'username' => $faker->userName,
-        'email' => $faker->email,
-        'ip' => $faker->ipv4,
-        'website' => $faker->url,
-        'content' => $faker->paragraph,
-        'article_id' => $faker->randomElement($article_ids),
-    ];
-});

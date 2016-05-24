@@ -12,7 +12,7 @@
         { <a href="{{ url('/') }}"><span>return</span> {{ url('/') }}</a> }
     </div>
     <div class="footer">
-        <img src="/images/404.png" alt="404 notfound">
+        <img src="/images/404.png" alt="404 NotFound">
     </div>
 </div>
 </body>
