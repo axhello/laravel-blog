@@ -72,9 +72,8 @@
                         </div>
                     </div>
                     <div class="col-sm-9">
-                        <!-- User timeline stories -->
                         <section class="user-timeline-stories profile-post-form">
-                            {!! Form::model($user,['url'=>'/admin/user/edit/'.$user->id,'method'=>'PATCH']) !!}
+                            {!! Form::model($user,['url'=>'/admin/user/update/'.$user->id, 'method'=>'PATCH']) !!}
                                 <div class="form-group">
                                     {!! Form::label('name', '用户名') !!}
                                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -84,12 +83,12 @@
                                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('password', '修改密码') !!}
-                                    {!! Form::password('password', ['class' => 'form-control', 'placeholder'=>'当前密码', 'required']) !!}
+                                    {!! Form::label('old_password', '修改密码') !!}
+                                    {!! Form::password('old_password', ['class' => 'form-control', 'placeholder'=>'当前密码']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::label('password_confirmation', '确认密码') !!}
-                                    {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder'=>'新密码', 'required']) !!}
+                                    {!! Form::label('new_password', '确认密码') !!}
+                                    {!! Form::password('new_password', ['class' => 'form-control', 'placeholder'=>'新密码']) !!}
                                 </div>
                                 {!! Form::submit('保存修改',['class'=>'btn btn-primary form-control']) !!}
                             {!! Form::close() !!}

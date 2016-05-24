@@ -18,8 +18,11 @@ class CategoryController extends Controller
 
     public function store(Requests\CategoryRequest $request)
     {
-        Category::create($request->all());
-        return back()->with('success', '添加成功!');
+        $cate = Category::create($request->all());
+        if ($cate) {
+            return back()->with('success', '添加成功!');
+        }
+        return back()->with('error', '添加失败!');
     }
 
     public function edit($id)
@@ -40,7 +43,7 @@ class CategoryController extends Controller
         if ($cate->save()) {
             return redirect()->back()->with('success', '更新成功!');
         }
-        return back()->with('errors', '更新失败!');
+        return back()->with('error', '更新失败!');
     }
 
     public function destroy($id)
@@ -49,6 +52,6 @@ class CategoryController extends Controller
         if ($cate) {
             return redirect()->back()->with('success', '删除成功!');
         }
-        return back()->with('errors', '删除失败!');
+        return back()->with('error', '删除失败!');
     }
 }

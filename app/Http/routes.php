@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
 
     Route::get('/user/add', 'Admin\OptionsController@addUser');
     Route::get('/user/edit','Admin\OptionsController@editUser');
-    Route::patch('/user/edit/{id}','Admin\OptionsController@edit');
+    Route::patch('/user/update/{id}','Admin\OptionsController@updateUser');
 });
 
 Route::get('/{category}', 'Home\HomeController@category');

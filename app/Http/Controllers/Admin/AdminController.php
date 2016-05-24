@@ -25,13 +25,9 @@ class AdminController extends Controller
         $request->merge([$field => $request->input('login')]);
         $login = \Auth::attempt($request->only($field, 'password'));
         if ($login) {
-            return \Response::json([
-               'access' => 'true'
-            ]);
+            return response()->json(['access' => 'true']);
         }
-        return \Response::json([
-            'error' => '请输入正确的登录信息'
-        ]);
+        return response()->json(['error' => '请输入正确的登录信息']);
     }
 
     public function logout()

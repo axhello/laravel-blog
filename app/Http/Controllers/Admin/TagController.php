@@ -18,8 +18,11 @@ class TagController extends Controller
 
     public function create(Requests\TagsRequest $request)
     {
-        Tag::create($request->all());
-        return redirect()->back()->with('success', '添加成功!');
+        $tag = Tag::create($request->all());
+        if ($tag) {
+            return redirect()->back()->with('success', '添加成功!');
+        }
+        return back()->with('error', '添加失败!');
     }
 
     public function edit($id)
@@ -28,7 +31,7 @@ class TagController extends Controller
         if (!empty($tag)) {
             return response()->json(['status' => 'success', 'data' => $tag]);
         }
-        return response()->json(['status' => 'errors']);
+        return response()->json(['status' => 'error']);
     }
 
     public function update(Requests\TagsRequest $request, $id)
@@ -38,7 +41,7 @@ class TagController extends Controller
         if ($tag->save()) {
             return redirect()->back()->with('success', '更新成功!');
         }
-        return back()->with('errors', '更新失败!');
+        return back()->with('error', '更新失败!');
     }
 
     public function destroy($id)
@@ -47,6 +50,6 @@ class TagController extends Controller
         if ($tag) {
             return redirect()->back()->with('success', '删除成功!');
         }
-        return back()->with('errors', '删除失败!');
+        return back()->with('error', '删除失败!');
     }
 }

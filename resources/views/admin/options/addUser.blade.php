@@ -64,7 +64,7 @@
                                 <div class="form-group-separator"></div>
                                 <div class="form-group">
                                     <div class="col-sm-4 col-md-offset-4">
-                                        <input type="submit" class="btn btn-info btn-block" id="field-3" value="添加">
+                                        <input type="submit" class="btn btn-info btn-block" id="field-3" value="添加用户">
                                     </div>
                                 </div>
                             </form>

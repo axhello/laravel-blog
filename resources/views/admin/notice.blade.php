@@ -5,10 +5,10 @@
         };
     </script>
 @endif
-@if ( Session::has('errors') )
+@if ( Session::has('error') )
     <script>
         window.onload = function () {
-            toastr.success("{{ Session::get('errors') }}", "失败提示!", opts);
+            toastr.error("{{ Session::get('error') }}", "失败提示!", opts);
         };
     </script>
 @endif

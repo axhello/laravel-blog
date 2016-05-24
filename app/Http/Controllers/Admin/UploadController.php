@@ -11,7 +11,6 @@ class UploadController extends Controller
 {
     public function imgUpload(Request $request)
     {
-        $data = EndaEditor::uploadImgFile('endaEdit');
-        return json_encode($data);
+        //
     }
 }

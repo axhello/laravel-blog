@@ -33,9 +33,9 @@ class ArticleController extends Controller
         $tag_list = empty($tag_lists) ? array() : $tag_lists;
         if ($article) {
             Article::attachTags($article, $tag_list);
-            return redirect('/admin/articles');
+            return redirect('/admin/articles')->with('success', '成功创建一篇文章!');
         } else {
-            return redirect()->back()->withInput();
+            return redirect()->back()->withInput()->with('error', '创建失败!');
         }
     }
 
@@ -57,7 +57,7 @@ class ArticleController extends Controller
             Article::syncTags($article, $tag_list);
             return redirect('admin/articles')->with('success', '成功更新了一篇文章!');
         } else {
-            return redirect()->back()->withInput();
+            return redirect()->back()->withInput()->with('error', '更新错误!');
         }
     }
 
@@ -72,7 +72,7 @@ class ArticleController extends Controller
         if ($destory) {
             return redirect('admin/articles')->with('info', '已移至回收站!!');
         }
-        return redirect()->back()->with('errors', '删除失败!');
+        return redirect()->back()->with('error', '删除失败!');
     }
 
     //回收站文章
@@ -89,7 +89,7 @@ class ArticleController extends Controller
         if ($restore) {
             return redirect('admin/articles')->with('success', '成功恢复了一篇文章!');
         } else {
-            return redirect()->back()->with('errors', '恢复失败!');
+            return redirect()->back()->with('error', '恢复失败!');
         }
     }
 
@@ -100,7 +100,7 @@ class ArticleController extends Controller
         if ($delete) {
             return redirect('admin/articles/recycle')->with('success', '已将文章从数据库中删除！');
         } else {
-            return redirect()->back()->with('errors', '删除失败！');
+            return redirect()->back()->with('error', '删除失败！');
         }
     }
 }

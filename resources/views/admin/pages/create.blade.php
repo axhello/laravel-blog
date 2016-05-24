@@ -44,8 +44,13 @@
                     </span>
                 @endif
             </div>
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
                 <p>{{ url('/pages') }}/ {!! Form::text('slug', null, ['class' => 'slug']) !!} <span>*最好填写英文或者拼音,不允许有空格*</span></p>
+                @if ($errors->has('slug'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('slug') }}</strong>
+                    </span>
+                @endif
                 <style>
                     .slug {
                         outline: none;

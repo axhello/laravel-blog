@@ -11,7 +11,7 @@
 
             <div class="page-title">
                 <div class="title-env">
-                    <h1 class="title">Articles</h1>
+                    <h1 class="title">Pages</h1>
                     <p class="description">Dynamic table variants with pagination and other controls</p>
                 </div>
                 <div class="breadcrumb-env">

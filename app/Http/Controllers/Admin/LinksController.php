@@ -20,10 +20,13 @@ class LinksController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function create(Request $request)
+    public function create(Requests\LinksRequest $request)
     {
         $links = Link::create($request->all());
-        return redirect()->back()->with('success','添加成功');
+        if ($links) {
+            return redirect()->back()->with('success','添加成功!');
+        }
+        return back()->with('error', '添加失败!');
     }
 
     /**
@@ -40,7 +43,7 @@ class LinksController extends Controller
             ]);
         } else {
             return response()->json([
-                'status' => 'errors',
+                'status' => 'error',
                 'data' => $links
             ]);
         }
@@ -51,14 +54,14 @@ class LinksController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Requests\LinksRequest $request, $id)
     {
         $links = Link::findOrFail($id);
         $links->update($request->all());
         if ($links->save()) {
             return redirect()->back()->with('success','更新成功!');
         } else {
-            return redirect()->back()->with('errors','更新失败!');
+            return redirect()->back()->with('error','更新失败!');
         }
     }
 
@@ -68,7 +71,7 @@ class LinksController extends Controller
         if ($links) {
             return redirect()->back()->with('success','删除成功!');
         } else {
-            return redirect()->back()->with('errors','删除失败!');
+            return redirect()->back()->with('error','删除失败!');
         }
     }
 }

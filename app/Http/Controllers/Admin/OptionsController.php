@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Article;
-use App\Models\Comment;
 use App\Models\Options;
-use App\Models\User;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,7 +23,7 @@ class OptionsController extends Controller
         if ($options) {
             return redirect()->back()->with('success', '站点信息更新成功!');
         } else {
-            return redirect()->back()->with('errors', '站点信息更新失败!');
+            return redirect()->back()->with('error', '站点信息更新失败!');
         }
     }
 
@@ -36,7 +34,7 @@ class OptionsController extends Controller
         if ($options->save()) {
             return redirect()->back()->with('success', '站点信息更新成功!');
         } else {
-            return redirect()->back()->with('errors', '站点信息更新失败!');
+            return redirect()->back()->with('error', '站点信息更新失败!');
         }
     }
 
@@ -52,14 +50,23 @@ class OptionsController extends Controller
         return view('admin.options.editUser', compact('user', 'options'));
     }
 
-    public function edit(Requests\UserRequest $request, $id)
+    public function updateUser(Requests\UpdateUserRequest $request, $id)
     {
-        dd($request->all());
         $user = User::findOrFail($id);
-        $user->update($request->all());
-        if ($user->save()) {
-            return redirect('/admin/options/basic')->with('success', '用户信息更新成功!');
+        $old_pass = $request->old_password;
+        $user_pass = $user->password;
+        if (\Hash::check($old_pass, $user_pass)) {
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->new_password;
+            $user->save();
+            if ($user->save()) {
+                return back()->with('success', '用户信息更新成功!');
+            } else {
+                return redirect()->back()->with('error', '用户信息更新失败!');
+            }
+        } else {
+            return redirect()->back()->with('error', '原密码不正确!');
         }
-        return redirect()->back()->with('errors', '用户信息更新失败!');
     }
 }
