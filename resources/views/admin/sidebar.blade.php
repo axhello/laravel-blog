@@ -29,100 +29,100 @@
         </header>
         <ul id="main-menu" class="main-menu">
 
-            <li class="{{ \App\HtmlHelper::m_active('skin') ? 'active opened expanded has-sub' : '' }}">
+            <li class="{{ App\Helpers\HtmlHelper::m_active('skin') ? 'active opened expanded has-sub' : '' }}">
                 <a href="/admin/dashboard">
                     <i class="linecons-params"></i>
                     <span class="title">控制台</span>
                 </a>
                 <ul>
-                    <li class="{{ \App\HtmlHelper::m_active('skin') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('skin') }}">
                         <a href="/admin/skin"><span class="title">更换皮肤</span></a>
                     </li>
                 </ul>
             </li>
 
-            <li class="{{ \App\HtmlHelper::articleActive('articles','create','pages','create')}}">
+            <li class="{{ App\Helpers\HtmlHelper::articleActive('articles','create','pages','create')}}">
                 <a href="#">
                     <i class="linecons-desktop"></i>
                     <span class="title">文章管理</span>
                 </a>
                 <ul>
-                    <li class="{{ \App\HtmlHelper::m_active('articles') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('articles') }}">
                         <a href="/admin/articles">
                             <span class="title">查看文章</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::a_active('create') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::a_active('create') }}">
                         <a href="/admin/articles/create">
                             <span class="title">撰写文章</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::m_active('pages') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('pages') }}">
                         <a href="/admin/pages">
                             <span class="title">查看页面</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::p_active('create') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::p_active('create') }}">
                         <a href="/admin/pages/create">
                             <span class="title">创建页面</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="{{ \App\HtmlHelper::classActive('category','tags', 'comment', 'links') }}">
+            <li class="{{ App\Helpers\HtmlHelper::classActive('category','tags', 'comment', 'links') }}">
                 <a href="#">
                     <i class="linecons-note"></i>
                     <span class="title">分类管理</span>
                 </a>
                 <ul>
-                    <li class="{{ \App\HtmlHelper::m_active('category') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('category') }}">
                         <a href="/admin/category">
                             <span class="title">分类管理</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::m_active('tags') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('tags') }}">
                         <a href="/admin/tags">
                             <span class="title">标签管理</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::m_active('comment') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('comment') }}">
                         <a href="/admin/comment">
                             <span class="title">评论管理</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::m_active('links') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::m_active('links') }}">
                         <a href="/admin/links">
                             <span class="title">友链管理</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="{{ \App\HtmlHelper::userActive('basic','add','edit') }}">
+            <li class="{{ App\Helpers\HtmlHelper::userActive('basic','add','edit') }}">
                 <a href="#">
                     <i class="linecons-cog"></i>
                     <span class="title">设置</span>
                     <span class="label label-purple pull-right hidden-collapsed">New</span>
                 </a>
                 <ul>
-                    <li class="{{ \App\HtmlHelper::o_active('basic') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::o_active('basic') }}">
                         <a href="/admin/options/basic">
                             <span class="title">基本</span>
                             <span class="label label-success pull-right">new</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::u_active('add') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::u_active('add') }}">
                         <a href="/admin/user/add">
                             <span class="title">添加用户</span>
                         </a>
                     </li>
-                    <li class="{{ \App\HtmlHelper::u_active('edit') }}">
+                    <li class="{{ App\Helpers\HtmlHelper::u_active('edit') }}">
                         <a href="/admin/user/edit">
                             <span class="title">账户资料</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="{{ \App\HtmlHelper::a_active('recycle') }}">
+            <li class="{{ App\Helpers\HtmlHelper::a_active('recycle') }}">
                 <a href="/admin/articles/recycle">
                     <i class="linecons-beaker"></i>
                     <span class="title">回收站</span>

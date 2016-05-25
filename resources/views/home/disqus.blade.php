@@ -5,10 +5,11 @@
          this.page.identifier = 'article-{{ $slug }}';
      };
     (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//ciyuanai.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', + new Date());
-        (d.head || d.body).appendChild(s);
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '//ciyuanai.disqus.com/embed.js';
+        script.setAttribute('data-timestamp', + new Date());
+        (document.head || document.body).appendChild(script);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
