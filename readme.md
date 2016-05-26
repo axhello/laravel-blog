@@ -2,38 +2,37 @@
 
 Blog project written in Laravel 5.2.
 
-### Features
+## Features
 
-- [x] 版本为5.2
-- [x] 支持SEO优化
-- [x] 友情链接管理
-- [x] 支持新建页面
-- [x] 后台支持自定义皮肤
-- [x] 后台评论管理
-- [ ] 支持本地上传图片
-- [ ] 评论邮件通知功能
+- [x] Version 5.2
+- [x] Support SEO optimization
+- [x] Friendship link manage
+- [x] Support new page
+- [x] Backend support for custom skin
+- [ ] Support local upload images
+- [ ] Support custom templates
 
-### Packages
+## Packages
 
 * [laravelcollective/html](https://github.com/LaravelCollective/html)
 * [cviebrock/eloquent-sluggable](https://github.com/cviebrock/eloquent-sluggable/)
 
 
-### Installation
+## Installation
 
-1、克隆到你的服务器
+1、Clone to your server
 
 ```
 git clone https://github.com/axhello/laravel-blog.git
 ```
 
-2、进入到根目录`cd laravel-blog/`，用composer更新项目：
+2、Enter the project root directory `cd laravel-blog/`,useage composer instal：
 
 ```
 composer install
 ```
 
-3、 修改`.env.example`为`.env`文件,配置你的mysql数据库,修改以下:
+3、Change`.env.example`to`.env`file,configure your MySQL database, modify the following:
 
 ```
 DB_HOST=127.0.0.1
@@ -43,33 +42,33 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-4、生成key
+4、Generate key
 
 ```
 php artisan key:generate
 ```
 
-5、 修改目录为可写,在根目录下执行
+5、 Modify the `storage directory` to write
 
 ```
 chmod -R 755 storage/
 ```
 
-6、 安装数据库
+6、 Migrate database
 
 ```
 php artisan migrate
 ```
-7、填充数据库（默认用户）
+7、Seed the database（Default user）
 
 ```
 php artisan db:seed
 ```
-默认后台登录地址是：`http://yourhost/admin` 
+Default backend login ：`http://yourhost/admin` 
 
-登录账户是：`admin@admin.com` 密码：`admin23`
+username：`admin@admin.com` password：`admin123`
 
-8、 使用apache请开启mod_rewrite， 使用nginx请配置你的虚拟主机文件，以下仅供参考：
+8、 Use Apache to open the `mod_rewrite`, use the nginx please configure your `virtual host file`, refer to the following：
 
 ```
 server {
@@ -105,6 +104,6 @@ server {
 }
 ```
 
-### License
+## License
 
 laravel-blog is licensed under [The MIT License](https://github.com/axhello/laravel-blog/blob/master/LICENSE).
