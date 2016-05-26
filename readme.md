@@ -104,3 +104,7 @@ server {
     }
 }
 ```
+
+### License
+
+laravel-blog is licensed under [The MIT License](https://github.com/axhello/laravel-blog/blob/master/LICENSE).
