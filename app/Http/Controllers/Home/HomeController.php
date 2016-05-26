@@ -23,7 +23,7 @@ class HomeController extends Controller
     {
         $cates = Category::getCategoryAll();
         $cate = $cates->first();
-        $articles = $cate->articles()->latest()->paginate(6);
+        $articles = $cate->articles()->latest()->simplePaginate(8);
         $options = Options::first();
         $pages = Pages::all();
         return view('home.index',compact('cates', 'articles', 'options', 'pages'));
@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function category(Category $category)
     {
         $cates = Category::getCategoryAll();
-        $articles = $category->articles()->latest()->paginate(6);
+        $articles = $category->articles()->latest()->simplePaginate(8);
         $options = Options::first();
         $pages = Pages::all();
         return view('home.category', compact('cates', 'articles', 'options', 'pages'));

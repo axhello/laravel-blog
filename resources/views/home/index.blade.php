@@ -23,7 +23,7 @@
                 </div>
             </div>
             @if(count($articles) > 0)
-                <section class="index">
+                <section class="archive">
                     @foreach($articles as $article)
                         <article class="article">
                             <div class="post-warp">
@@ -50,9 +50,10 @@
                                 </div>
                             @endif
                         </article>
+                        <hr>
                     @endforeach
                 </section>
-                {{ $articles->render() }}
+                {{ $articles->links() }}
             @endif
         </main>
     </div>

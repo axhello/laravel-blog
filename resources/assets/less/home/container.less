@@ -153,8 +153,6 @@
 }
 
 .article {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #fff;
   padding: 30px 0;
   width: 100%;
   position: relative;
@@ -168,24 +166,22 @@
       text-decoration: none;
       transition: color .3s;
       &:hover {
-        color: #2db7f5;
         text-decoration: none;
       }
     }
-  }
-  .post-warp {
-    //display: inline-block;
-    //width: ~'calc(100% - 140px - 20px)';
   }
 
   .content {
     width: @width;
     padding: 10px 0;
+    color: rgba(0,0,0,.8);
     word-wrap: break-word;
   }
 
   .meta {
-    color: #555;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.5;
     width: @width;
 
     .date {
@@ -216,6 +212,76 @@
     img {
       border-radius: 10px;
     }
+  }
+}
+
+.pager {
+  margin: 30px 0;
+  padding: 0;
+
+  .disabled {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    a {
+      text-align: center;
+    }
+  }
+}
+
+.btn.small {
+  height: 32px;
+  line-height: 31px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+
+.btn {
+  height: 38px;
+  line-height: 37px;
+  padding: 0 16px;
+  color: rgba(0,0,0,.44);
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.15);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 999em;
+  -moz-border-radius: 999em;
+  border-radius: 999em;
+  -webkit-transition: .1s background-color,.1s border-color,.1s color;
+  -moz-transition: .1s background-color,.1s border-color,.1s color;
+  -ms-transition: .1s background-color,.1s border-color,.1s color;
+  -o-transition: .1s background-color,.1s border-color,.1s color;
+  transition: .1s background-color,.1s border-color,.1s color;
+}
+
+.btn {
+  outline: 0;
+  background: 0 0;
+  vertical-align: bottom;
+  font-family: "Open sans",Geneva,Verdana,sans-serif;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  display: inline-block;
+  font-style: normal;
+  white-space: nowrap;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:hover {
+    color: rgba(0,0,0,.6);
+    border-color: rgba(0,0,0,.3);
   }
 }
 

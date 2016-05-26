@@ -48,6 +48,7 @@
                             </div>
                         @endif
                     </article>
+                    <hr>
                 @endforeach
             </section>
             {{ $articles->render() }}

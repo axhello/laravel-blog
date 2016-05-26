@@ -58,18 +58,13 @@ body {
   margin: 0;
 }
 
-//body {
-//  font-family: "Segoe UI", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-//  font-size: 15px;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//  color: #34495e;
-//}
-
 body {
   font-family: Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #333;
+  letter-spacing: -.02em;
+  line-height: 1.4;
   font-size: 16px;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
@@ -265,9 +260,15 @@ figure {
 // Address differences between Firefox and other browsers.
 //
 
+//hr {
+//  box-sizing: content-box;
+//  height: 0;
+//}
+
 hr {
-  box-sizing: content-box;
-  height: 0;
+  color: #FFF;
+  border: 0;
+  border-top: 1px solid #f2f2f0;
 }
 
 //

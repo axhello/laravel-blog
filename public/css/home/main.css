@@ -30,7 +30,10 @@ body {
 body {
   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
   font-size: 16px;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
@@ -117,8 +120,9 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  box-sizing: content-box;
-  height: 0;
+  color: #FFF;
+  border: 0;
+  border-top: 1px solid #f2f2f0;
 }
 pre {
   overflow: auto;
@@ -525,8 +529,6 @@ ul.icons li a {
   transition: left 0.3s;
 }
 .article {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #fff;
   padding: 30px 0;
   width: 100%;
   position: relative;
@@ -542,16 +544,18 @@ ul.icons li a {
   transition: color .3s;
 }
 .article .title a:hover {
-  color: #2db7f5;
   text-decoration: none;
 }
 .article .content {
   width: auto;
   padding: 10px 0;
+  color: rgba(0, 0, 0, 0.8);
   word-wrap: break-word;
 }
 .article .meta {
-  color: #555;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.5;
   width: auto;
 }
 .article .meta .date {
@@ -575,6 +579,62 @@ ul.icons li a {
 }
 .article .thumbnail img {
   border-radius: 10px;
+}
+.pager {
+  margin: 30px 0;
+  padding: 0;
+}
+.pager .disabled {
+  display: none;
+}
+.pager li {
+  display: inline-block;
+}
+.pager li a {
+  text-align: center;
+}
+.btn.small {
+  height: 32px;
+  line-height: 31px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+.btn {
+  height: 38px;
+  line-height: 37px;
+  padding: 0 16px;
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  border-radius: 999em;
+  transition: 0.1s background-color, 0.1s border-color, 0.1s color;
+}
+.btn {
+  outline: 0;
+  background: 0 0;
+  vertical-align: bottom;
+  font-family: "Open sans", Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  font-style: normal;
+  white-space: nowrap;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.btn:hover {
+  color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.3);
 }
 .pagination {
   display: inline-block;
