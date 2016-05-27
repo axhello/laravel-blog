@@ -61,7 +61,8 @@ class OptionsController extends Controller
             $user->password = $request->new_password;
             $user->save();
             if ($user->save()) {
-                return back()->with('success', '用户信息更新成功!');
+                \Auth::logout();
+                return redirect('/admin');
             } else {
                 return redirect()->back()->with('error', '用户信息更新失败!');
             }

@@ -19,6 +19,11 @@ class CreateOptionsTable extends Migration
             $table->string('siteUrl')->nullable();
             $table->string('description')->nullable();
             $table->string('keywords')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('weibo')->nullable();
+            $table->string('steam')->nullable();
+            $table->string('github')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

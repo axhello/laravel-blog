@@ -41,6 +41,7 @@ $factory->define(\App\Models\Tag::class, function (Faker\Generator $faker) {
 $factory->define(\App\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
+        'slug' => $faker->slug,
         'sort' => 0,
     ];
 });

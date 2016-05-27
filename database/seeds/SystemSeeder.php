@@ -15,5 +15,10 @@ class SystemSeeder extends Seeder
         $options->title = 'localshot';
         $options->siteUrl = 'http://localhost:8000';
         $options->save();
+
+        $category = new \App\Models\Category();
+        $category->name = '首页';
+        $category->slug = 'home';
+        $category->save();
     }
 }
