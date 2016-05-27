@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class HtmlHelper
+class SidebarHelper
 {
     public static function m_active($route) 
     {
