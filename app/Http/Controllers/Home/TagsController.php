@@ -22,8 +22,7 @@ class TagsController extends Controller
     public function show(Tag $tag)
     {
         $articles = $tag->articles()->paginate(6);
-        $options = Options::first();
         $pages = Pages::all();
-        return  view('home.tags', compact('tag', 'articles','options','pages'));
+        return view('home.tags', compact('tag', 'articles', 'pages'));
     }
 }

@@ -1,12 +1,15 @@
+@inject('options', 'App\Models\Options')
 @extends('app')
+
 @section('header')
     @if(!empty($options))
-        <title>About - {{ $options->title }}</title>
-        <meta name="author" content="{{ $options->author }}">
-        <meta name="description" content="{{ $options->description }}| {{ $options->title }}" />
-        <meta name="keywords" content="{{ $options->keywords }}" />
+        <title>{{ $slug->title }} - {{ $options->title() }}</title>
+        <meta name="author" content="{{ $options->author() }}">
+        <meta name="description" content="{{ $options->descriptions() }}| {{ $options->title() }}" />
+        <meta name="keywords" content="{{ $options->keywords() }}" />
     @endif
 @stop
+
 @section('content')
     <div id="Container" class="container">
         <main class="main-content">

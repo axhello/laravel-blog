@@ -13,8 +13,7 @@ class PagesController extends Controller
 {
     public function pages(Pages $slug)
     {
-        $options = Options::first();
         $pages = Pages::all();
-        return view('home.pages',compact('options','pages','slug'));
+        return view('home.pages', compact('pages', 'slug'));
     }
 }
