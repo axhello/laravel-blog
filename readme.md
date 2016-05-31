@@ -26,13 +26,13 @@ Blog project written in Laravel 5.2.
 git clone https://github.com/axhello/laravel-blog.git
 ```
 
-2、In your project root directory `cd laravel-blog/`,use `composer` to install：
+2、In your project root directory `cd laravel-blog/`, use `composer` to install：
 
 ```
 composer install
 ```
 
-3、Change`.env.example`to`.env`file,setup your MySQL database, modify the following:
+3、Change`.env.example`to`.env`file, setup your MySQL database, modify the following:
 
 ```
 DB_HOST=127.0.0.1
@@ -59,7 +59,7 @@ chmod -R 755 storage/
 ```
 php artisan migrate
 ```
-7、.Seed some data（Default user）
+7、Seed some data（Default user）
 
 ```
 php artisan db:seed
@@ -68,7 +68,7 @@ Default backend login ：`http://yourhost/admin`
 
 username：`admin@admin.com` password：`admin123`
 
-8、 Use Apache to open the `mod_rewrite`, use the nginx please configure your `host file`, refer to the following：
+8、 Use Apache to open the `mod_rewrite`, Use the nginx please configure your `host file`, refer to the following：
 
 ```
 server {
