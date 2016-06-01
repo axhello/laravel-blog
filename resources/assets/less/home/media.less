@@ -1,3 +1,4 @@
+@import "variables";
 @media screen and (max-width: 480px) {
   body, input, select, textarea {
     font-size: 12pt;
@@ -126,7 +127,7 @@
       right: 0;
 
       &:before {
-        background: #4acaa8;
+        background: @background;
         color: #ffffff;
         content: "\e905";
         display: block;
@@ -164,7 +165,7 @@
   }
 
   .main-content {
-    padding: 40px 10px;
+    padding: 40px 15px;
   }
 
   .article {

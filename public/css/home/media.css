@@ -100,7 +100,7 @@
     right: 0;
   }
   #titleBar .toggle:before {
-    background: #4acaa8;
+    background: #34495e;
     color: #ffffff;
     content: "\e905";
     display: block;
@@ -130,7 +130,7 @@
     padding: 20px 0 1px 0!important;
   }
   .main-content {
-    padding: 40px 10px;
+    padding: 40px 15px;
   }
   .article {
     padding: 18px 0!important;
