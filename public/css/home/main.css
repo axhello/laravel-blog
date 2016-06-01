@@ -253,7 +253,7 @@ blockquote {
   padding: 0;
 }
 #sidebar {
-  background: #1ABC9C;
+  background: #34495e;
   color: #d1f1e9;
   height: 100%;
   position: fixed;
@@ -263,7 +263,7 @@ blockquote {
   width: 23em;
 }
 #sidebar a {
-  color: #d1f1e9;
+  color: #D8F1FF;
 }
 #sidebar > header {
   padding: 3em;
@@ -289,7 +289,6 @@ blockquote {
   padding: 0;
 }
 #sidebar > nav ul li {
-  border-top: solid 1px #5ccfb0;
   display: block;
   padding: 0;
 }
@@ -303,11 +302,11 @@ blockquote {
 }
 #sidebar > nav ul li:hover a {
   background: #fff;
-  color: #4acaa8 !important;
+  color: #34495e !important;
 }
 #sidebar > nav ul li a.active {
   background: #fff;
-  color: #4acaa8 !important;
+  color: #34495e !important;
 }
 #sidebar > nav ul li:first-child {
   border-top: 0;
@@ -841,7 +840,7 @@ ul.icons li a {
   width: 50%;
 }
 .article-page a {
-  color: #4acaa8;
+  color: #34495e;
   font-size: 15px;
 }
 .article-page .vertical.divider {
