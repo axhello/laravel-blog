@@ -398,7 +398,7 @@ ul.icons li a {
   padding-left: 23em;
 }
 .main-content {
-  padding: 50px 30px 30px 30px;
+  padding: 50px 40px 0px 40px;
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -554,15 +554,28 @@ ul.icons li a {
 .article .meta {
   font-size: 15px;
   color: #808080;
-  line-height: 1.5;
+  line-height: 1.8;
   width: auto;
 }
-.article .meta .date {
-  display: inline-block;
-  margin-right: .65rem;
+.article .meta:before,
+.article .meta:after {
+  content: " ";
+  display: table;
 }
-.article .meta .tags {
-  display: inline-block;
+.article .meta:after {
+  clear: both;
+}
+.article .meta:before,
+.article .meta:after {
+  content: " ";
+  display: table;
+}
+.article .meta:after {
+  clear: both;
+}
+.article .meta .date {
+  float: left;
+  margin-right: .55rem;
 }
 .article .meta .comment a {
   color: #A0A0A0;

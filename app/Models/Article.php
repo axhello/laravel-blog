@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Markdown\Parser;
 use App\User;
+use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -51,6 +52,7 @@ class Article extends Model implements SluggableInterface
     public function scopeCreatedAt()
     {
         return $this->created_at->diffForHumans();
+
     }
 
     /**
