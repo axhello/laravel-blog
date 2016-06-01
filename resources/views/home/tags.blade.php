@@ -20,7 +20,7 @@
                 </div>
             </div>
             @if(count($articles) > 0)
-                <section class="index">
+                <section class="archive">
                     @foreach($articles as $article)
                         <article class="article">
                             <h1 class="title"><a href="/article/{{ $article->slug }}">{{ $article->title }}</a></h1>
@@ -29,7 +29,7 @@
                             </div>
                             <div class="meta">
                                 <div class="date">
-                                    <time>{{ $article->created_at }}</time>
+                                    <time>{{ $article->createdat() }}</time>
                                 </div>
                                 @if(count($article->tags) > 0)
                                     <div class="tags">
@@ -45,9 +45,10 @@
                                 </div>
                             @endif
                         </article>
+                        <hr>
                     @endforeach
                 </section>
-                {{ $articles->render() }}
+                {!! $articles->render() !!}
             @endif
         </main>
     </div>

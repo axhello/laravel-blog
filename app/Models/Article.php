@@ -51,7 +51,8 @@ class Article extends Model implements SluggableInterface
      */
     public function scopeCreatedAt()
     {
-        return $this->created_at->diffForHumans();
+//        return $this->created_at->toDateString(); // 2016-06-01
+        return $this->created_at->diffForHumans(); // xx分钟前
 
     }
 
@@ -87,9 +88,11 @@ class Article extends Model implements SluggableInterface
      * @param $keyword
      * @return mixed
      */
-    public static function Search($keyword)
+    public static function search($keyword)
     {
-        return self::where('title', 'like', "%$keyword%")->orWhere('content_html', 'like', "%$keyword%")->paginate(6);
+        return self::where('title', 'like', "%$keyword%")
+                   ->orWhere('content_html', 'like', "%$keyword%")
+                   ->paginate(6);
     }
 
     /**

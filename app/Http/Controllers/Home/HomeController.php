@@ -106,7 +106,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('q');
-        $results = Article::Search($keyword);
+        $results = Article::search($keyword);
         $pages = Pages::all();
         return view('home.search', compact('results', 'pages'));
     }

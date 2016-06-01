@@ -19,35 +19,40 @@
                     <input class="mui-switch mui-switch-anim" type="checkbox" :checked="switch"  @click="toggleSwitch()">
                 </div>
             </div>
-            @if(count($results) > 0)
-                <section class="index">
-                    @foreach($results as $article)
-                        <article class="article">
-                            <h1 class="title"><a href="/article/{{ $article->slug }}">{{ $article->title }}</a></h1>
-                            <div class="content">
-                                {{ str_limit(strip_tags($article->content_html),200) }}
-                            </div>
-                            <div class="meta">
-                                <div class="date">
-                                    <time>{{ $article->created_at }}</time>
+            @if(empty(Request::get('q')))
+                <div>你要找什么呢?</div>
+                @elseif(count($results) > 0)
+                    <section class="archive">
+                        @foreach($results as $article)
+                            <article class="article">
+                                <h1 class="title"><a href="/article/{{ $article->slug }}">{{ $article->title }}</a></h1>
+                                <div class="content">
+                                    {{ str_limit(strip_tags($article->content_html),200) }}
                                 </div>
-                                @if(count($article->tags) > 0)
-                                    <div class="tags">
-                                        @foreach($article->tags as $tag)
-                                            <div class="ui tiny label"><a href="/tag/{{$tag->name}}">{{ $tag->name }}</a></div>
-                                        @endforeach
+                                <div class="meta">
+                                    <div class="date">
+                                        <time>{{ $article->createdat() }}</time>
+                                    </div>
+                                    @if(count($article->tags) > 0)
+                                        <div class="tags">
+                                            @foreach($article->tags as $tag)
+                                                <div class="ui tiny label"><a href="/tag/{{$tag->name}}">{{ $tag->name }}</a></div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </div>
+                                @if(!empty($article->thumbnail))
+                                    <div class="thumbnail" v-if="toggleImg">
+                                        <img src="{{ $article->thumbnail }}" alt="" width="150" height="150">
                                     </div>
                                 @endif
-                            </div>
-                            @if(!empty($article->thumbnail))
-                                <div class="thumbnail" v-if="toggleImg">
-                                    <img src="{{ $article->thumbnail }}" alt="" width="150" height="150">
-                                </div>
-                            @endif
-                        </article>
-                    @endforeach
-                </section>
-                {!! $results->appends(\Request::only('q'))->render() !!}
+                            </article>
+                            <hr>
+                        @endforeach
+                    </section>
+                    {!! $results->appends(\Request::only('q'))->render() !!}
+                @else
+                <div>没有找到你想要的哦?</div>
             @endif
         </main>
     </div>

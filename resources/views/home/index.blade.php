@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="meta">
                                     <div class="date">
-                                        <time>{{ $article->created_at }}</time>
+                                        <time>{{ $article->createdat() }}</time>
                                     </div>
                                     @if(count($article->tags) > 0)
                                         <div class="tags">
@@ -54,7 +54,7 @@
                         <hr>
                     @endforeach
                 </section>
-                {{ $articles->links() }}
+                {!! $articles->render() !!}
             @endif
         </main>
     </div>
