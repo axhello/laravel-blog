@@ -264,7 +264,6 @@ blockquote {
   color: #d1f1e9;
   height: 100%;
   position: fixed;
-  text-align: center;
   top: 0;
   left: 0;
   width: 23em;
@@ -305,8 +304,10 @@ blockquote {
   border: 0;
   color: #ffffff !important;
   display: block;
-  padding: 0.85em 0em;
+  padding: .99em 0 .99em 7em;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #sidebar > nav ul li a i {
   margin-right: .5em;
@@ -454,10 +455,17 @@ ul.icons li a {
   text-decoration: none;
   border-top: 0 solid transparent;
 }
-.vi.menu .switch {
+.vi.menu #search {
+  position: absolute;
+  font-size: 18px;
+  top: 8px;
+  right: 10px;
+}
+.vi.menu #switch {
   position: absolute;
   top: 10px;
   right: 55px;
+  display: none;
 }
 .mui-switch {
   width: 52px;
@@ -717,24 +725,16 @@ ul.icons li a {
 .search-title {
   padding: 1.2em 0;
 }
-#search {
-  position: relative;
-  font-size: 18px;
-  padding-top: 40px;
-  margin: -20px auto 0;
-}
 #search #search-input {
-  padding-left: 43px;
-  padding-right: 43px;
-  border-radius: 23px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 25px;
   outline: none;
-  width: 58%;
-  margin: 0 auto;
 }
 #search label {
   position: absolute;
-  left: 88px;
-  top: 45px;
+  left: 5%;
+  top: 5px;
 }
 .sr-only {
   position: absolute;

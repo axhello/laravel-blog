@@ -146,7 +146,8 @@
     -webkit-padding-start: 20px;
     padding-left: 20px;
   }
-  .switch {
+  #search,
+  #switch {
     display: none;
   }
   .article-page {

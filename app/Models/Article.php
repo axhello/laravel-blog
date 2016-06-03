@@ -92,7 +92,7 @@ class Article extends Model implements SluggableInterface
     {
         return self::where('title', 'like', "%$keyword%")
                    ->orWhere('content_html', 'like', "%$keyword%")
-                   ->paginate(6);
+                   ->simplePaginate(6);
     }
 
     /**

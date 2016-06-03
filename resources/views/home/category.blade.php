@@ -19,7 +19,13 @@
                         {{ $cate->name }}
                     </a>
                 @endforeach
-                <div class="switch">
+                <div id="search">
+                    <form action="/search">
+                        <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search icons</span></label>
+                        <input id="search-input" class="form-control input-lg" placeholder="Enter Keywords" name="q" autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1">
+                    </form>
+                </div>
+                <div id="switch">
                     <input class="mui-switch mui-switch-anim" type="checkbox" :checked="switch"  @click="toggleSwitch()">
                 </div>
             </div>

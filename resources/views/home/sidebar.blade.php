@@ -12,31 +12,25 @@
             <li>
                 <a href="/" id="one-link">
                     <i class="fa fa-home fa-lg"></i>
-                    <span>Home</span>
+                    Home
                 </a>
             </li>
             @foreach($pages as $page)
                 <li>
                     <a href="/pages/{{ $page->slug }}" id="about">
                         <i class="fa fa-pagelines fa-lg"></i>
-                        <span> {{ $page->title }}</span>
+                        {{ $page->title }}
                     </a>
                 </li>
             @endforeach
             <li>
                 <a href="/links" id="links" >
                     <i class="fa fa-at fa-lg"></i>
-                    <span>My Friends</span>
+                    My Friends
                 </a>
             </li>
         </ul>
     </nav>
-    <section id="search">
-        <form action="/search">
-            <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search icons</span></label>
-            <input id="search-input" class="form-control input-lg" placeholder="Search..." name="q" autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1">
-        </form>
-    </section>
     <footer>
         <ul class="icons">
             <li><a href="{{ $options->getFirstData()->twitter }}" target="_blank" class="icon icon-twitter"><span class="label">Twitter</span></a></li>

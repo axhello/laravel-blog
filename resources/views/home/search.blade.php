@@ -15,7 +15,7 @@
         <main class="main-content">
             <div id="menu" class="vi tabular menu">
                 <div class="search-title">找到以下文章:</div>
-                <div class="switch">
+                <div id="switch">
                     <input class="mui-switch mui-switch-anim" type="checkbox" :checked="switch"  @click="toggleSwitch()">
                 </div>
             </div>
