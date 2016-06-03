@@ -15,6 +15,19 @@
         <main class="main-content">
             <div id="menu" class="vi tabular menu">
                 <div class="search-title">找到以下文章:</div>
+                <div id="search">
+                    <form action="/search">
+                        <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search icons</span></label>
+                        <input id="search-input" class="form-control input-lg"
+                               placeholder="Enter Keywords"
+                               name="q"
+                               autocomplete="off"
+                               spellcheck="false"
+                               autocorrect="off"
+                               {{ !empty(Request::input('q')) ? 'value='.Request::input('q') : 'value'  }}
+                               tabindex="1">
+                    </form>
+                </div>
                 <div id="switch">
                     <input class="mui-switch mui-switch-anim" type="checkbox" :checked="switch"  @click="toggleSwitch()">
                 </div>
