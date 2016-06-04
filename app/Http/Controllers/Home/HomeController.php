@@ -23,16 +23,14 @@ class HomeController extends Controller
         $cates = Category::getCategoryAll();
         $cate = $cates->first();
         $articles = $cate->articles()->latest()->simplePaginate(8);
-        $pages = Pages::all();
-        return view('home.index', compact('cates', 'articles', 'pages'));
+        return view('home.index', compact('cates', 'articles'));
     }
 
     public function category(Category $category)
     {
         $cates = Category::getCategoryAll();
         $articles = $category->articles()->latest()->simplePaginate(8);
-        $pages = Pages::all();
-        return view('home.category', compact('cates', 'articles', 'pages'));
+        return view('home.category', compact('cates', 'articles'));
     }
 
     /**
@@ -62,10 +60,9 @@ class HomeController extends Controller
     public function show(Article $article)
     {
         $slug = $article->getSlug();
-        $pages = Pages::all();
         $prev_article = Article::find($this->getPrevArticleId($article->id));
         $next_article = Article::find($this->getNextArticleId($article->id));
-        return view('home.show', compact('article', 'slug', 'options', 'pages', 'prev_article', 'next_article'));
+        return view('home.show', compact('article', 'slug', 'options', 'prev_article', 'next_article'));
     }
 
     /**
@@ -107,8 +104,7 @@ class HomeController extends Controller
     {
         $keyword = $request->input('q');
         $results = Article::search($keyword);
-        $pages = Pages::all();
-        return view('home.search', compact('results', 'pages'));
+        return view('home.search', compact('results'));
     }
 
     /**
@@ -117,8 +113,7 @@ class HomeController extends Controller
     public function links()
     {
         $links = Link::all();
-        $pages = Pages::all();
-        return view('home.links', compact('links', 'pages'));
+        return view('home.links', compact('links'));
     }
 
     /**
