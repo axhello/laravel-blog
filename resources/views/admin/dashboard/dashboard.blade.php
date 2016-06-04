@@ -97,6 +97,8 @@
     </div>
 
     <div class="page-loading-overlay">
-        <div class="loader-2"></div>
+        <div class="loader-inner">
+            <div class="semi-circle-spin"><div></div></div>
+        </div>
     </div>
 @stop

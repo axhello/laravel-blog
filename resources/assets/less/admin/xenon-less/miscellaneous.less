@@ -572,44 +572,65 @@ div.scrollable {
 @loader-2-color: #fff;
 @loader-2-duration: 1000ms;
 
-.loader-2 {
-  .animation(~"loaderAnimate2 @{loader-2-duration} linear infinite");
-  clip: rect(0, @loader-2-size, @loader-2-size, @loader-2-size/2); 
-  height: @loader-2-size;
-  width: @loader-2-size;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -@loader-2-size/2;
-  margin-top: -@loader-2-size/2;
+.loader-inner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -15px;
+	margin-top: -15px;
 }
 
-.keyframes(~"loaderAnimate2, 0%{ transform: rotate(0deg); } 100%{ transform: rotate(220deg); }");
-.keyframes(~"loaderAnimate22, 0%{ box-shadow: inset @{loader-2-color} 0 0 0 8px; transform: rotate(-140deg); } 50%{ box-shadow: inset @{loader-2-color} 0 0 0 2px; } 100%{ box-shadow: inset @{loader-2-color} 0 0 0 8px; transform: rotate(140deg); }");
+@-webkit-keyframes spin-rotate {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0)
+	}
 
-.loader-2:after {
-  .animation(~"loaderAnimate22 @{loader-2-duration} ease-in-out infinite");
-  clip: rect(0, @loader-2-size, @loader-2-size, @loader-2-size/2);
-  content:'';
-  border-radius: 50%; 
-  height: @loader-2-size;
-  width: @loader-2-size;
-  position: absolute; 
-} 
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg)
+	}
 
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
 
-@keyframes loaderAnimate22 {
-  0% {
-    box-shadow: inset #fff 0 0 0 17px;
-    transform: rotate(-140deg);
-  }
-  50% {
-    box-shadow: inset #fff 0 0 0 2px;
-  }
-  100% {
-    box-shadow: inset #fff 0 0 0 17px;
-    transform: rotate(140deg);
-  }
+@keyframes spin-rotate {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0)
+	}
+
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg)
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+.semi-circle-spin {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	overflow: hidden;
+}
+
+.semi-circle-spin>div {
+	position: absolute;
+	border-width: 0;
+	border-radius: 100%;
+	-webkit-animation: spin-rotate .6s 0s infinite linear;
+	animation: spin-rotate .6s 0s infinite linear;
+	background-image: -webkit-linear-gradient(transparent 0,transparent 70%,#fff 30%,#fff 100%);
+	background-image: linear-gradient(transparent 0,transparent 70%,#fff 30%,#fff 100%);
+	width: 100%;
+	height: 100%
 }
 
 
@@ -620,7 +641,7 @@ div.scrollable {
 	z-index: 10000;
 	.opacity(1);
 	.transition(~"all 800ms ease-in-out");
-	
+
 	&.loaded {
 		.opacity(0);
 		visibility: hidden;
