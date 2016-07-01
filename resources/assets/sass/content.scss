@@ -1,0 +1,119 @@
+.content {
+  width: 75%;
+  margin-left: 25%;
+  padding: 50px;
+}
+.body-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  max-width: 1400px;
+}
+.blog-list {
+  display: block;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.post-wrapper {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: #fff;
+}
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+.blog-title-link {
+  display: block;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  color: #333;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.61;
+  }
+}
+.post-info-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+.post-info {
+  display: inline-block;
+  margin-right: 8px;
+  color: #969696;
+  font-size: 12px;
+  line-height: 125%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  &.when-link {
+    text-decoration: none;
+  }
+}
+.post-summary {
+  display: block;
+  margin-bottom: 14px;
+  line-height: 144%;
+}
+.w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898EC;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+.button {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #ddd;
+  -webkit-transition: box-shadow 200ms ease;
+  transition: box-shadow 200ms ease;
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.button-round {
+  padding: 5px 12px;
+  border: 1px solid #d3d3d3;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-transition: border 200ms ease, color 200ms ease;
+  transition: border 200ms ease, color 200ms ease;
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
+  &:hover {
+    border-color: #333;
+    color: #333;
+  }
+}
+.button-wrapper {
+  margin-top: 50px;
+  color: green;
+  text-align: center;
+}
+
+.section-header {
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: left;
+  text-transform: capitalize;
+}
+@import "post";

@@ -1,5 +1,5 @@
 @inject('options', 'App\Models\Options')
-@extends('app')
+@extends('themes.default.layout')
 
 @section('header')
     @if(!empty($options))

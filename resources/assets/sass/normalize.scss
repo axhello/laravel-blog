@@ -1,0 +1,65 @@
+@font-face {
+  font-family: icomoon;
+  src: url(fonts/icomoon.eot?j7qxws);
+  src: url(fonts/icomoon.eot?j7qxws#iefix) format('embedded-opentype'),url(fonts/icomoon.ttf?j7qxws) format('truetype'),url(fonts/icomoon.woff?j7qxws) format('woff'),url(fonts/icomoon.svg?j7qxws#icomoon) format('svg');
+  font-weight: 400;
+  font-style: normal
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 135%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+body {
+  margin: 0;
+}
+
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+a {
+  color: #24a7ff;
+  text-decoration: underline;
+}
+a {
+  background-color: transparent;
+}
+a {
+  &:active, &:hover {
+    outline: 0;
+  }
+}
+
+[class*=" icon-"], [class^=icon-] {
+  font-family: icomoon!important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

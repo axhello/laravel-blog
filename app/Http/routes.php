@@ -5,12 +5,12 @@ Route::get('/admin', 'Admin\AdminController@index');
 Route::post('/admin/login', 'Admin\AdminController@login');
 Route::get('/category', 'Home\HomeController@getCategory');
 Route::get('/article/{article}', 'Home\HomeController@show');
-Route::get('/pages/{slug}', 'Home\PagesController@pages');
+Route::get('/pages/{slug}', 'Home\HomeController@pages');
 Route::post('/comment','Home\CommentController@comment');
 Route::post('/comment/reply','Home\CommentController@reply');
 Route::post('/comment/notice','Home\CommentController@notice');
 Route::get('/search', 'Home\HomeController@search');
-Route::get('/tag/{tag}', 'Home\TagsController@show');
+Route::get('/tag/{tag}', 'Home\HomeController@tag');
 Route::get('/links','Home\HomeController@links');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {

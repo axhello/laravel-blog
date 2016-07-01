@@ -1,5 +1,5 @@
 @inject('options', 'App\Models\Options')
-@extends('app')
+@extends('themes.default.layout')
 
 @section('header')
     @if(!empty($options))
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <footer id="footer">
-                    @include('home.disqus')
+                    @include('default.disqus')
                     <div class="copy">
                         <p>Code is poetry.</p>
                     </div>

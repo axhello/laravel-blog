@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Home;
 
 use App\Models\Article;
+use App\Models\Pages;
 use App\Models\Category;
 use App\Models\Link;
-use App\Models\Options;
-use App\Models\Pages;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,23 +14,44 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        $pages = Pages::all();
+        $cates = Category::all();
+        view()->share('pages', $pages);
+        view()->share('cates', $cates);
+    }
+
     /**
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $cates = Category::getCategoryAll();
-        $cate = $cates->first();
+        $cate = Category::first();
         $articles = $cate->articles()->latest()->simplePaginate(8);
-        return view('home.index', compact('cates', 'articles'));
+        $results = Article::latest()->simplePaginate(10);
+        return view('themes.moon.index', compact('articles', 'results'));
     }
 
     public function category(Category $category)
     {
-        $cates = Category::getCategoryAll();
         $articles = $category->articles()->latest()->simplePaginate(8);
-        return view('home.category', compact('cates', 'articles'));
+        return view('themes.moon.categories', compact('category', 'articles'));
+    }
+
+    public function tag(Tag $tag)
+    {
+        $articles = $tag->articles()->simplePaginate(8);
+        $pages = Pages::all();
+        return view('themes.moon.tags', compact('tag', 'articles', 'pages'));
+    }
+
+    public function pages(Pages $slug)
+    {
+        $pages = Pages::all();
+        return view('themes.moon.pages', compact('pages', 'slug'));
     }
 
     /**
@@ -62,7 +83,7 @@ class HomeController extends Controller
         $slug = $article->getSlug();
         $prev_article = Article::find($this->getPrevArticleId($article->id));
         $next_article = Article::find($this->getNextArticleId($article->id));
-        return view('home.show', compact('article', 'slug', 'options', 'prev_article', 'next_article'));
+        return view('themes.moon.post', compact('article', 'slug', 'options', 'prev_article', 'next_article'));
     }
 
     /**
@@ -104,7 +125,7 @@ class HomeController extends Controller
     {
         $keyword = $request->input('q');
         $results = Article::search($keyword);
-        return view('home.search', compact('results'));
+        return view('themes.default.search', compact('results'));
     }
 
     /**
@@ -113,7 +134,7 @@ class HomeController extends Controller
     public function links()
     {
         $links = Link::all();
-        return view('home.links', compact('links'));
+        return view('themes.default.links', compact('links'));
     }
 
     /**

@@ -14,14 +14,6 @@ class Category extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public static function getCategoryAll()
-    {
-        return self::all();
-    }
-
-    /**
      * @return mixed
      */
     public static function getCategoryArray()

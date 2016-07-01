@@ -17,8 +17,8 @@ class SystemSeeder extends Seeder
         $options->save();
 
         $category = new \App\Models\Category();
-        $category->name = '首页';
-        $category->slug = 'home';
+        $category->name = '分类目录';
+        $category->slug = 'categories';
         $category->save();
     }
 }
