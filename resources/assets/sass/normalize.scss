@@ -27,7 +27,7 @@ body {
   background-color: #fff;
   font-family: Arial,sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.25;
   color: #333;
 }
 body {
@@ -62,4 +62,15 @@ a {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
 }

@@ -39,9 +39,7 @@
         </div>
         @endforeach
         <div class="button-wrapper">
-            <a href="#" class="w-button button">←&nbsp;More posts</a>
-            <a href="#" class="w-button button">More posts&nbsp;→</a>
-            {!! $articles->render() !!}
+            {!! $results->render() !!}
         </div>
     </div>
 @stop

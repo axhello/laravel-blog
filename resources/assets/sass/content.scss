@@ -58,6 +58,18 @@
   margin-bottom: 14px;
   line-height: 144%;
 }
+
+.pager {
+  list-style: none;
+  text-align: center;
+  margin: 20px;
+  padding: 0;
+  .disabled { display: none }
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
 .w-button {
   display: inline-block;
   padding: 9px 15px;
@@ -115,5 +127,8 @@
   font-weight: 300;
   text-align: left;
   text-transform: capitalize;
+}
+.clearfix {
+  @include clearfix;
 }
 @import "post";

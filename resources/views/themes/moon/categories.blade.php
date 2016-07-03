@@ -1,4 +1,15 @@
+@inject('options', 'App\Models\Options')
 @extends('themes.moon.layout')
+
+@section('header')
+    @if(!empty($options))
+        <title>{{ $options->title() }} - {{ $category->name }}</title>
+        <meta name="author" content="{{ $options->author() }}">
+        <meta name="description" content="{{ $options->descriptions() }}| {{ $options->title() }}" />
+        <meta name="keywords" content="{{ $options->keywords() }}" />
+    @endif
+@stop
+
 @section('content')
     <div class="content">
         <div class="w-container">
@@ -32,7 +43,7 @@
             </div>
             @endforeach
             <div class="button-wrapper">
-                <a href="#" class="w-button button">←&nbsp;All posts</a>
+                {!! $articles->render() !!}
             </div>
         </div>
     </div>

@@ -9,19 +9,6 @@
 <body>
     @include('themes.moon.sidebar')
     @yield('content')
-    <script src="//cdn.bootcss.com/vue/1.0.21/vue.min.js"></script>
-    <script>
-        new Vue({
-            el: 'body',
-            data: {
-                isOpen: false
-            },
-            methods: {
-                toggleNav: function() {
-                    this.isOpen = !this.isOpen;
-                }
-            }
-        })
-    </script>
+    <script src="/js/moon/main.min.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('main.scss', 'public/css/moon/main.min.css');
+    mix.scripts([ 'moon/vue.min.js', 'moon/main.js'], 'public/js/moon/main.min.js');
     //mix.less('home/main.less', 'public/css/home/main.css');
     //mix.less('home/media.less', 'public/css/home/media.css');
     //mix.less('home/errors.less', 'public/css/home/errors.css');
