@@ -26,6 +26,12 @@
   max-width: 100%;
   display: inline-block;
 }
+.blog-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 27px;
+  line-height: 37px;
+}
 .blog-title-link {
   display: block;
   -webkit-transition: opacity 200ms ease;
@@ -94,6 +100,9 @@
   line-height: 20px;
   text-align: center;
   text-decoration: none;
+  &:hover {
+    box-shadow: 0 0 0 1px #333;
+  }
 }
 .button-round {
   padding: 5px 12px;

@@ -64,13 +64,30 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin clearfix {
-  &:before,
-  &:after {
-    content: " "; // 1
-    display: table; // 2
-  }
-  &:after {
-    clear: both;
-  }
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-sina-weibo:before {
+  content: "\ea9a";
+}
+.icon-steam:before {
+  content: "\eaac";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-facebook:before {
+  content: "\ea91";
+}
+.icon-mail:before {
+  content: "\ea86";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-google-plus:before {
+  content: "\ea8d";
+}
+.icon-rss:before {
+  content: "\ea9c";
 }
