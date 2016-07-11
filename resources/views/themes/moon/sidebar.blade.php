@@ -24,6 +24,7 @@
                 @foreach($pages as $page)
                     <a href="/pages/{{ $page->slug }}" class="w-nav-link nav-link">{{ $page->title }}</a>
                 @endforeach
+                <a href="/links" class="w-nav-link nav-link">Links</a>
                 <div class="divider"></div>
                 <div class="social-link-group">
                     <ul class="icons">

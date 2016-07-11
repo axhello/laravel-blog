@@ -125,7 +125,7 @@ class HomeController extends Controller
     {
         $keyword = $request->input('q');
         $results = Article::search($keyword);
-        return view('themes.default.search', compact('results'));
+        return view('themes.moon.search', compact('results'));
     }
 
     /**
@@ -134,7 +134,7 @@ class HomeController extends Controller
     public function links()
     {
         $links = Link::all();
-        return view('themes.default.links', compact('links'));
+        return view('themes.moon.links', compact('links'));
     }
 
     /**
