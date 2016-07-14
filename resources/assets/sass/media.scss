@@ -6,8 +6,8 @@
   .w-nav[data-collapse="medium"] .w-nav-button {
     display: block;
   }
-  .w-nav[data-collapse="medium"] .w-nav-menu {
-    transform: translateY(-300px) translateX(0px);
+  .w-nav-overlay {
+    transform: translateY(-320px) translateX(0px);
     transition: transform 400ms;
   }
 }
@@ -29,6 +29,17 @@
   }
   .w-hidden-tiny {
     display: none !important;
+  }
+  .blog-title {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  .post-title-section h1 {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  .pager {
+    margin: 0;
   }
 }
 
@@ -117,11 +128,17 @@
     padding-bottom: 20px;
   }
   .button-wrapper {
-    margin-top: 20px;
+    margin: 20px;
     text-align: center;
   }
   .nav-link {
     display: block;
+  }
+  .post-nav li a {
+    padding: 16px 36px 24px;
+    span, strong{
+      font-size: 12px;
+    }
   }
 }
 

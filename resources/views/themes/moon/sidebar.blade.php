@@ -9,8 +9,8 @@
                 <i class="fa fa-bars" style="font-size: 17px"></i>
             </div>
         </div>
-        <div class="w-nav-overlay" style="display: block">
-            <nav role="navigation" class="w-nav-menu navigation-menu" :class="{'w--nav-menu-open': isOpen}">
+        <div class="w-nav-overlay" :class="{'w--nav-menu-open': isOpen}">
+            <nav role="navigation" class="w-nav-menu navigation-menu">
                 <div class="w-hidden-medium w-hidden-small w-hidden-tiny main-subheading">
                     {{ $options->descriptions() }}
                 </div>

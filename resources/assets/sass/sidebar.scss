@@ -8,6 +8,7 @@
   padding: 50px 40px;
   background-color: #333;
   color: #9b9b9b;
+  z-index: 100;
 }
 .w-nav {
   position: relative;
@@ -24,13 +25,14 @@
 .w-nav-overlay {
   position: absolute;
   overflow: hidden;
-  display: none;
+  display: block;
   top: 100%;
   left: 0;
   right: 0;
   width: 100%;
+  z-index: -99;
 
-  .w--nav-menu-open {
+  &.w--nav-menu-open {
     transform: translateY(0px) translateX(0px)!important;
     transition: transform 400ms!important;
   }
