@@ -7,8 +7,8 @@
     display: block;
   }
   .w-nav-overlay {
-    transform: translateY(-320px) translateX(0px);
-    transition: transform 400ms;
+    transform: translateY(-350px) translateX(0px);
+    transition: transform 300ms;
   }
 }
 @include max-screen(767px) {
