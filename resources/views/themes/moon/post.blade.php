@@ -65,7 +65,7 @@
                 </ul>
             </div>
             <div id="footer" class="comment-footer">
-                @include('themes.moon.disqus')
+                @include('themes.moon.duoshuo')
             </div>
         </div>
     </div>
