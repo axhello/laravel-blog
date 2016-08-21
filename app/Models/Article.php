@@ -65,23 +65,23 @@ class Article extends Model implements SluggableInterface
         return $this->updated_at->diffForHumans();
     }
 
-//    /**
-//     * 创建文章时将content_raw转成html存到content_html中
-//     * @param $contentRaw
-//     */
-//    public function setContentRawAttribute($contentRaw)
-//    {
-//        $this->attributes['content_html'] = (new Parser())->makeHtml($contentRaw);
-//        $this->attributes['content_raw'] = $contentRaw;
-//    }
+    /**
+     * 创建文章时将content_raw转成html存到content_html中
+     * @param $contentRaw
+     */
+    public function setContentRawAttribute($contentRaw)
+    {
+        $this->attributes['content_html'] = (new Parser())->makeHtml($contentRaw);
+        $this->attributes['content_raw'] = $contentRaw;
+    }
 
-    public function scopeShort()
+    public function short()
     {
         $html = (new Parser())->makeHtml($this->content_raw);
         return substr($html, 0, strpos($html, '&lt;!--more--&gt;'));
     }
 
-    public function scopeHtml()
+    public function html()
     {
         $html = (new Parser())->makeHtml($this->content_raw);
         return str_replace('&lt;!--more--&gt;', '', $html);

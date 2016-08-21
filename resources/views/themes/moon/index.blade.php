@@ -31,7 +31,8 @@
                                 <a class="post-info when-link">None</a>
                             @endif
                         </div>
-                        <p>{!! $result->short() !!}</p>
+                        <p>{{ str_limit(strip_tags($result->content_html),200) }}</p>
+                        {{--<p>{!! $result->short() !!}</p>--}}
                         <a class="w-button button-round" href="/article/{{ $result->slug }}">Continue reading →</a>
                     </div>
                 </div>
