@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="w-richtext body-copy">
-                {!! $article->content_html !!}
+                {!! $article->html() !!}
             </div>
             <div class="article-page">
                 <ul class="post-nav clearfix">

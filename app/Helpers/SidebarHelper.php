@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 class SidebarHelper
 {
-    public static function m_active($route) 
+    public static function m_active($route)
     {
         return \Request::is('admin/'.$route) ? "active" : '';
     }
