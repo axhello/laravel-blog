@@ -16,11 +16,11 @@
             <div class="post-title-section">
                 <h1>My Friends</h1>
                 <div class="post-info-wrapper">
-                    <div class="post-info">欢迎站长们申请交换友链,看站长站点情况添加友链~</div>
+                    <div class="post-info">排名不分先后,欢迎申请交换友链,看情况添加友链~</div>
                 </div>
             </div>
             <div class="body-copy">
-                <div class="links-box">
+                <div class="links-box clearfix">
                     <ul class="friends-list">
                         @foreach($links as $link)
                             <li>

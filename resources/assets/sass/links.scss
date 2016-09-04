@@ -3,7 +3,6 @@
 }
 
 .links-box {
-  margin-top: 40px;
   ul {
     list-style: none;
     padding: 0;
@@ -12,7 +11,7 @@
     li {
       float: left;
       position: relative;
-      margin: 0 2em 2em 0;
+      margin: 35px 5px 0 5px;
 
       &:hover a {
         background: rgba(140, 212, 245, .5);
@@ -21,7 +20,7 @@
       a {
         border-radius: .5em;
         height: 90px;
-        width: auto;
+        width: 225px;
         float: left;
         padding: 0 10px 0 90px;
         color: #222;
@@ -49,10 +48,12 @@
         padding-top: 10px;
         margin: 0;
       }
-
       p {
         color: #999;
         font-size: .8em;
+        width: 105px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       span {
