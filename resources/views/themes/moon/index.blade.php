@@ -12,33 +12,34 @@
 
 @section('content')
     <div class="content">
-        @foreach($results as $result)
-        <div class="w-dyn-list blog-list">
-            <div class="w-dyn-items">
-                <div class="w-dyn-item">
+        <div class="main-post-list">
+            <ol class="post-list">
+                @foreach($results as $result)
+                <li>
                     <div class="post-wrapper">
-                        <a href="/article/{{ $result->slug }}" class="w-inline-block blog-title-link">
-                            <h1 class="blog-title">{{ $result->title }}</h1>
+                        <a href="/article/{{ $result->slug }}" class="blog-title-link">
+                            <h2 class="blog-title">{{ $result->title }}</h2>
                         </a>
-                        <div class="post-info-wrapper">
-                            <div class="post-info">{{ $result->createdat() }}</div>
-                            <div class="post-info">|</div>
+                        <p class="excerpt">{{ str_limit(strip_tags($result->content_html),360) }}</p>
+                        {{--<p>{!! $result->short() !!}</p>--}}
+                        <div class="post-meta-wrapper">
+                            <div class="post-meta">{{ $result->createdat() }}</div>
+                            <div class="post-meta">|</div>
                             @if(count($result->tags) > 0)
                                 @foreach($result->tags as $tag)
-                                    <a class="post-info when-link" href="/tag/{{$tag->name}}">{{ $tag->name }}</a>
+                                    <a class="post-meta when-link" href="/tag/{{$tag->name}}">{{ $tag->name }}</a>
                                 @endforeach
                             @else
-                                <a class="post-info when-link">None</a>
+                                <a class="post-meta when-link">None</a>
                             @endif
+                            <a class="w-button button-round" href="/article/{{ $result->slug }}">继续阅读→</a>
                         </div>
-                        <p>{{ str_limit(strip_tags($result->content_html),200) }}</p>
-                        {{--<p>{!! $result->short() !!}</p>--}}
-                        <a class="w-button button-round" href="/article/{{ $result->slug }}">Continue reading →</a>
+                        <hr class="post-divider">
                     </div>
-                </div>
-            </div>
+                </li>
+                @endforeach
+            </ol>
         </div>
-        @endforeach
         <div class="button-wrapper">
             {!! $results->render() !!}
         </div>

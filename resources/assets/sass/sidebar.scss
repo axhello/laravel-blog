@@ -48,13 +48,12 @@
   float: none;
 }
 .logo-text {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: 'Open Sans', sans-serif;
-  color: #f0f0f0;
-  font-size: 28px;
+  font-size: 1.8em;
   line-height: 120%;
   font-weight: 600;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  color: #FFF;
 }
 .w-nav-menu {
   position: relative;
@@ -118,7 +117,7 @@
   -webkit-transition: color 200ms ease;
   transition: color 200ms ease;
   color: #969696;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-decoration: none;

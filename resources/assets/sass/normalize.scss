@@ -11,29 +11,27 @@
   box-sizing: border-box;
 }
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
 }
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
-  font-size: 16px;
-  line-height: 135%;
-}
+
 body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.25;
-  color: #333;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.42857143;
+  color: #666;
 }
 body {
-  margin: 0;
+  font-family: "Lato Regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
-
+html, body {
+  height: 100%;
+}
 .w-container {
   margin-left: auto;
   margin-right: auto;
@@ -41,7 +39,7 @@ body {
 }
 a {
   color: #24a7ff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a {
   background-color: transparent;
@@ -52,6 +50,39 @@ a {
   }
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.8;
+}
+h2 {
+  font-size: 2.0em; }
+
+h3 {
+  font-size: 1.6em; }
+
+h4 {
+  font-size: 1.2em; }
+
+h4 {
+  font-size: 1.1em; }
+
+h5 {
+  font-size: 1em; }
+
+p {
+  margin-bottom: 1.3em;
+  line-height: 1.7em;
+}
+h1, h2, h3, h4, h5, h5 {
+  margin-top: 1.0em;
+  margin-bottom: .5em;
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: lighter;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+hr {
+  border: none;
+}
 [class*=" icon-"], [class^=icon-] {
   font-family: icomoon!important;
   speak: none;

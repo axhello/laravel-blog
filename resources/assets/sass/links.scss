@@ -2,68 +2,39 @@
   margin: 1em 0;
 }
 
-.links-box {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      float: left;
-      position: relative;
-      margin: 35px 5px 0 5px;
-
-      &:hover a {
-        background: rgba(140, 212, 245, .5);
-      }
-
-      a {
-        border-radius: .5em;
-        height: 90px;
-        width: 225px;
-        float: left;
-        padding: 0 10px 0 90px;
-        color: #222;
-        transition: background .3s;
-        text-decoration: none;
-      }
-
-      &:hover {
-        -webkit-animation: jello 1s linear;
-      }
-
-      img {
-        width: 60px;
-        height: 60px;
-        background: #EEE;
-        border-radius: 9em;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-      }
-
-      h3 {
-        font-size: 1.3em;
-        line-height: 38px;
-        padding-top: 10px;
-        margin: 0;
-      }
-      p {
-        color: #999;
-        font-size: .8em;
-        width: 105px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      span {
-        color: #999;
-        font-size: .8em;
-        display: none;
-      }
-    }
+.friends-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    width: 25%;
   }
-
+}
+.link-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  float: left;
+}
+.link-info {
+  h3 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  p {
+    color: #949494;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  span {
+    color: #999;
+    font-size: .8em;
+    display: none;
+  }
 }
 @-webkit-keyframes rubberBand {
   0% {

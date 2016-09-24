@@ -16,19 +16,21 @@
             <div class="post-title-section">
                 <h1>My Friends</h1>
                 <div class="post-info-wrapper">
-                    <div class="post-info">排名不分先后,欢迎申请交换友链,看情况添加友链~</div>
+                    <div class="post-info">排名不分先后~ 欢迎dalao们交换友链_(:з」∠)_</div>
                 </div>
             </div>
             <div class="body-copy">
-                <div class="links-box clearfix">
+                <div class="links-box">
                     <ul class="friends-list">
                         @foreach($links as $link)
                             <li>
                                 <a href="{{ $link->url }}" target="_blank">
-                                    <img src="{{ $link->image }}" alt="">
-                                    <h3>{{ $link->name }}</h3>
-                                    <p>{{ $link->description }}</p>
-                                    <span>{{ $link->url }}</span>
+                                    <img class="link-img" src="{{ $link->image }}" alt="">
+                                    <div class="link-info">
+                                        <h3>{{ $link->name }}</h3>
+                                        <p>{{ $link->description }}</p>
+                                        <span>{{ $link->url }}</span>
+                                    </div>
                                 </a>
                             </li>
                         @endforeach
