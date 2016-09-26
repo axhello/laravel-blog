@@ -15,15 +15,15 @@
         <div class="w-container">
             <div class="post-title-section">
                 <h1>{{ $article->title }}</h1>
-                <div class="post-info-wrapper">
-                    <div class="post-info">{{ $article->created_at->format('F d, Y') }}</div>
-                    <div class="post-info">|</div>
+                <div class="post-meta">
+                    <time class="post-meta">{{ $article->created_at->format('F d, Y') }}</time>
+                    <span class="post-meta">|</span>
                     @if(count($article->tags) > 0)
                         @foreach($article->tags as $tag)
-                            <a class="post-info when-link" href="/tag/{{$tag->name}}">{{ $tag->name }}</a>
+                            <a class="post-meta when-link" href="/tag/{{$tag->name}}">{{ $tag->name }}</a>
                         @endforeach
                     @else
-                        <a class="post-info when-link">None</a>
+                        <a class="post-meta when-link">None</a>
                     @endif
                 </div>
             </div>

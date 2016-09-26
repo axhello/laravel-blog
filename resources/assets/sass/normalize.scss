@@ -29,13 +29,15 @@ body {
 body {
   font-family: "Lato Regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
-html, body {
-  height: 100%;
+body:before, body:after {
+  content: "";
+  display: table;
 }
 .w-container {
   margin-left: auto;
   margin-right: auto;
   max-width: 940px;
+  padding: 30px 0;
 }
 a {
   color: #24a7ff;
@@ -73,8 +75,6 @@ p {
   line-height: 1.7em;
 }
 h1, h2, h3, h4, h5, h5 {
-  margin-top: 1.0em;
-  margin-bottom: .5em;
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: lighter;
   color: #333333;

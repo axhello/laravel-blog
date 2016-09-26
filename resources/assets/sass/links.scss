@@ -8,20 +8,24 @@
   list-style-type: none;
   li {
     width: 25%;
+    float: left;
+    margin: 1.8em 0;
   }
 }
-.link-img {
+.link-logo {
   width: 60px;
   height: 60px;
   border-radius: 100%;
   float: left;
+  margin-right: 10px;
 }
 .link-info {
-  h3 {
+  .link-name {
     font-size: 1.2em;
     margin: 0;
   }
-  p {
+  .link-desc {
+    margin: 0;
     color: #949494;
     font-size: 13px;
     text-overflow: ellipsis;
@@ -30,91 +34,12 @@
     -webkit-transition: all .5s;
     transition: all .5s;
   }
-  span {
+  .link-url {
     color: #999;
     font-size: .8em;
     display: none;
   }
 }
-@-webkit-keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1,1,1);
-    transform: scale3d(1,1,1)
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25,.75,1);
-    transform: scale3d(1.25,.75,1)
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75,1.25,1);
-    transform: scale3d(0.75,1.25,1)
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15,.85,1);
-    transform: scale3d(1.15,.85,1)
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95,1.05,1);
-    transform: scale3d(.95,1.05,1)
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05,.95,1);
-    transform: scale3d(1.05,.95,1)
-  }
-
-  100% {
-    -webkit-transform: scale3d(1,1,1);
-    transform: scale3d(1,1,1)
-  }
-}
-
-@keyframes rubberBand {
-  0% {
-    -webkit-transform: scale3d(1,1,1);
-    transform: scale3d(1,1,1)
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25,.75,1);
-    transform: scale3d(1.25,.75,1)
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75,1.25,1);
-    transform: scale3d(0.75,1.25,1)
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15,.85,1);
-    transform: scale3d(1.15,.85,1)
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95,1.05,1);
-    transform: scale3d(.95,1.05,1)
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05,.95,1);
-    transform: scale3d(1.05,.95,1)
-  }
-
-  100% {
-    -webkit-transform: scale3d(1,1,1);
-    transform: scale3d(1,1,1)
-  }
-}
-
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand
-}
-
 @-webkit-keyframes jello {
   0%,100%,11.1% {
     -webkit-transform: none;

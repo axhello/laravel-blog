@@ -1,9 +1,12 @@
 .content {
-  width: 75%;
-  margin-left: 25%;
+  width: 70%;
+  margin-left: 30%;
 }
 .main-post-list {
   margin: 0 10%;
+  padding: 50px 0;
+}
+.cate-post-list {
   padding: 50px 0;
 }
 .post-list {
@@ -55,11 +58,6 @@
   width: 100%;
   margin: 2.2em 0 2.1em 0;
   border-top: 1px solid #DDDDDD;
-}
-.post-summary {
-  display: block;
-  margin-bottom: 14px;
-  line-height: 144%;
 }
 
 .pager {
@@ -123,15 +121,14 @@
 }
 
 .section-header {
-  margin-top: 0;
-  margin-bottom: 40px;
+  margin: 0;
   padding-bottom: 20px;
   border-bottom: 1px solid #d3d3d3;
   background-color: #fff;
   font-size: 25px;
   line-height: 30px;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
   text-transform: capitalize;
 }
 .clearfix {

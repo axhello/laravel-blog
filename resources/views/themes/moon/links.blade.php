@@ -23,13 +23,13 @@
                 <div class="links-box">
                     <ul class="friends-list">
                         @foreach($links as $link)
-                            <li>
+                            <li class="clearfix">
                                 <a href="{{ $link->url }}" target="_blank">
-                                    <img class="link-img" src="{{ $link->image }}" alt="">
+                                    <img class="link-logo" src="{{ $link->image }}" alt="">
                                     <div class="link-info">
-                                        <h3>{{ $link->name }}</h3>
-                                        <p>{{ $link->description }}</p>
-                                        <span>{{ $link->url }}</span>
+                                        <h3 class="link-name">{{ $link->name }}</h3>
+                                        <p class="link-desc">{{ $link->description }}</p>
+                                        <span class="link-url">{{ $link->url }}</span>
                                     </div>
                                 </a>
                             </li>

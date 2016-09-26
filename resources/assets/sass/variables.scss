@@ -1,5 +1,5 @@
-@mixin max-screen($res){
-  @media screen and ( max-width: $res )
+@mixin all($res){
+  @media all and ( max-width: $res )
   {
     @content;
   }
