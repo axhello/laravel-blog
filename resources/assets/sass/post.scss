@@ -81,8 +81,7 @@
   margin-bottom: 2.5em;
 }
 
-.body-copy {
-
+.body-text {
   blockquote {
     margin-left: -23px;
     padding-left: 18px;
@@ -91,14 +90,15 @@
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
   }
-
+  p {
+    line-height: 1.2em;
+  }
   img {
     max-width: 100%;
   }
-}
-
-.w-richtext ol, .w-richtext ul {
-  overflow: hidden;
+  ol, ul {
+    overflow: hidden;
+  }
 }
 
 ul {

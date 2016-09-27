@@ -5,8 +5,8 @@
     @if(!empty($options))
         <title>Links - {{ $options->title() }}</title>
         <meta name="author" content="{{ $options->author() }}">
-        <meta name="description" content="{{ $options->descriptions() }}| {{ $options->title() }}" />
-        <meta name="keywords" content="{{ $options->keywords() }}" />
+        <meta name="description" content="{{ $options->descriptions() }}| {{ $options->title() }}"/>
+        <meta name="keywords" content="{{ $options->keywords() }}"/>
     @endif
 @stop
 

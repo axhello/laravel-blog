@@ -27,7 +27,7 @@
                     @endif
                 </div>
             </div>
-            <div class="w-richtext body-copy">
+            <div class="body-text">
                 {!! $article->content_html !!}
             </div>
             <div class="article-page">

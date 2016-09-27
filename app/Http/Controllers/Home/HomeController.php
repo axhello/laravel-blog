@@ -30,20 +30,20 @@ class HomeController extends Controller
     public function index()
     {
         $cate = Category::first();
-        $articles = $cate->articles()->latest()->simplePaginate(8);
-        $results = Article::latest()->simplePaginate(10);
+        $articles = $cate->articles()->latest()->paginate(8);
+        $results = Article::latest()->paginate(8);
         return view('themes.moon.index', compact('articles', 'results'));
     }
 
     public function category(Category $category)
     {
-        $articles = $category->articles()->latest()->simplePaginate(8);
+        $articles = $category->articles()->latest()->paginate(8);
         return view('themes.moon.categories', compact('category', 'articles'));
     }
 
     public function tag(Tag $tag)
     {
-        $articles = $tag->articles()->simplePaginate(8);
+        $articles = $tag->articles()->paginate(8);
         $pages = Pages::all();
         return view('themes.moon.tags', compact('tag', 'articles', 'pages'));
     }
