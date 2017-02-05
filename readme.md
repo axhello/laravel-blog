@@ -9,8 +9,7 @@ Blog project written in Laravel 5.2.
 - [x] Friendship link manage
 - [x] Support new page
 - [x] Backend support for custom skin
-- [ ] Support local upload images
-- [ ] Support custom templates
+- [x] Add [Syntax Highlighter](http://prismjs.com/#basic-usage)
 
 ## Packages
 
