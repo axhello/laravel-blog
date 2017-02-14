@@ -1,13 +1,20 @@
 FROM php:7.0.12-fpm
-MAINTAINER Tairy <tairyguo@gmail.com>
 
 WORKDIR /working
+# 安装 PHP 相关的依赖包，如需其他依赖包在此添加
 RUN apt-get update --fix-missing && apt-get install -y \
     g++ autoconf bash git apt-utils libxml2-dev libcurl3-dev pkg-config \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
-    && docker-php-ext-install iconv curl mbstring \
-        xml json mcrypt mysqli pdo pdo_mysql zip \
+
+    # 官方 PHP 镜像内置命令，安装 PHP 依赖
+    && docker-php-ext-install \
+        curl \
+        mcrypt \
+        mbstring \
+        mysqli \
+        pdo_mysql \
+        zip \
     && docker-php-ext-configure gd \
         --with-gd \
         --with-freetype-dir=/usr/include/ \
@@ -18,8 +25,10 @@ RUN apt-get update --fix-missing && apt-get install -y \
     && pecl install /pecl/redis-3.0.0.tgz \
     && docker-php-ext-enable redis \
     && apt-get purge -y --auto-remove \
-    && rm -rf /var/cache/apt/* \
-    && rm -rf /var/lib/apt/lists/* \
+    # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
+    && apt-get clean \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -rf /pecl
 
 # 安装 composer
