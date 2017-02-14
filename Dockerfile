@@ -10,7 +10,6 @@ RUN apt-get update --fix-missing && apt-get install -y \
     # 官方 PHP 镜像内置命令，安装 PHP 依赖
     && docker-php-ext-install \
         curl \
-        mcrypt \
         mbstring \
         mysqli \
         pdo_mysql \
