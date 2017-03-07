@@ -139,11 +139,12 @@ pre {
   font-size: 14px;
   margin: 20px 0;
   code {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     color: #3a3a3a;
+    font-size: 14px;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
   }
 }
 

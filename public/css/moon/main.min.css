@@ -548,11 +548,12 @@ pre {
   font-size: 14px;
   margin: 20px 0; }
   pre code {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: #3a3a3a;
     font-size: 14px;
-    color: #3a3a3a; }
+    background-color: transparent;
+    margin: 0;
+    padding: 0; }
 
 code, pre {
   background-color: rgba(0, 0, 0, 0.05);
