@@ -82,6 +82,7 @@
 }
 
 .body-text {
+  line-height: 1.8;
   blockquote {
     margin-left: -23px;
     padding-left: 18px;
@@ -93,7 +94,7 @@
     word-break: normal;
   }
   p {
-    line-height: 1.2em;
+    line-height: 2;
   }
   img {
     max-width: 100%;
@@ -144,6 +145,7 @@ pre {
     background-color: transparent;
     margin: 0;
     padding: 0;
+    border: none;
   }
 }
 
@@ -154,9 +156,10 @@ code, pre {
 
 code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  color: #000;
-  line-height: 22px;
+  color: #3a3a3a;
+  line-height: 2;
   font-size: 15px;
-  padding: 3px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ddd;
 }
-
