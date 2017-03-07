@@ -139,7 +139,6 @@ pre {
   font-size: 14px;
   margin: 20px 0;
   code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     color: #3a3a3a;
     font-size: 14px;
     background-color: transparent;
@@ -154,6 +153,7 @@ code, pre {
 }
 
 code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   color: #000;
   line-height: 22px;
   font-size: 15px;
