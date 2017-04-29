@@ -1,17 +1,24 @@
 <?php
-
-Route::get('/', 'Home\HomeController@index');
-Route::get('/admin', 'Admin\AdminController@index');
-Route::post('/admin/login', 'Admin\AdminController@login');
+/**
+ * 前台路由
+ */
 Route::get('/category', 'Home\HomeController@getCategory');
 Route::get('/article/{article}', 'Home\HomeController@show');
 Route::get('/pages/{slug}', 'Home\HomeController@pages');
-Route::post('/comment','Home\CommentController@comment');
-Route::post('/comment/reply','Home\CommentController@reply');
-Route::post('/comment/notice','Home\CommentController@notice');
 Route::get('/search', 'Home\HomeController@search');
 Route::get('/tag/{tag}', 'Home\HomeController@tag');
 Route::get('/links','Home\HomeController@links');
+Route::post('/comment','Home\CommentController@comment');
+Route::post('/comment/reply','Home\CommentController@reply');
+Route::post('/comment/notice','Home\CommentController@notice');
+Route::get('/{category}', 'Home\HomeController@category');
+
+/**
+ * 后台路由
+ */
+Route::get('/', 'Home\HomeController@index');
+Route::get('/admin', 'Admin\AdminController@index');
+Route::post('/admin/login', 'Admin\AdminController@login');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/logout', 'Admin\AdminController@logout');
@@ -55,5 +62,3 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/user/edit','Admin\OptionsController@editUser');
     Route::patch('/user/update/{id}','Admin\OptionsController@updateUser');
 });
-
-Route::get('/{category}', 'Home\HomeController@category');
