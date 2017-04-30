@@ -11,7 +11,6 @@ Route::get('/links','Home\HomeController@links');
 Route::post('/comment','Home\CommentController@comment');
 Route::post('/comment/reply','Home\CommentController@reply');
 Route::post('/comment/notice','Home\CommentController@notice');
-Route::get('/{category}', 'Home\HomeController@category');
 
 /**
  * 后台路由
@@ -62,3 +61,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/user/edit','Admin\OptionsController@editUser');
     Route::patch('/user/update/{id}','Admin\OptionsController@updateUser');
 });
+
+Route::get('/{category}', 'Home\HomeController@category');

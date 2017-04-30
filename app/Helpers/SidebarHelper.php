@@ -6,7 +6,7 @@ class SidebarHelper
 {
     public static function m_active($route)
     {
-        return \Request::is('admin/'.$route) ? "active" : '';
+        return \Request::is('admin/'.$route) ? "in" : '';
     }
 
     public static function a_active($route)
@@ -27,7 +27,7 @@ class SidebarHelper
         return \Request::is('admin/'.$article)
         || \Request::is('admin/articles/'.$a_create)
         || \Request::is('admin/'.$pages)
-        || \Request::is('admin/pages/'.$p_create) ? 'active opened expanded has-sub' : '';
+        || \Request::is('admin/pages/'.$p_create) ? 'active' : '';
     }
 
     public static function userActive($basic, $add, $edit)

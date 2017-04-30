@@ -8,18 +8,28 @@
 
     <title>Dashboard</title>
     <link rel="stylesheet" href="/css/admin/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/admin/fonts/linecons/css/linecons.css">
-    <link rel="stylesheet" href="/css/admin/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/admin/select2.min.css">
-    <link rel="stylesheet" href="/css/admin/sweetalert.css">
-    <link rel="stylesheet" href="/css/admin/dashboard.min.css">
-    <script src="/js/admin/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/admin/animate.min.css">
+    <link rel="stylesheet" href="/css/admin/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/admin/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/css/admin/light-bootstrap-dashboard.css">
+    <link rel="stylesheet" href="/css/admin/dashboard.css">
 </head>
-<body class="page-body {{ Route::current()->uri() === 'admin' ? 'login-page' : ''}}">
-
-@yield('content')
-
-<script src="/js/admin/dashboard.min.js"></script>
-<script src="/js/admin/custom.js"></script>
-</body>
+    <body>
+        <div class="wrapper">
+            @include('admin.sidebar')
+            @include('admin.navbar')
+            <div class="main-panel">
+                <div class="content">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="/js/admin/jquery.min.js"></script>
+    <script src="/js/admin/bootstrap.min.js"></script>
+    <script src="/js/admin/bootstrap-checkbox-radio-switch-tags.js"></script>
+    <script src="/js/admin/chartist.min.js"></script>
+    <script src="/js/admin/bootstrap-notify.js"></script>
+    <script src="/js/admin/light-bootstrap-dashboard.js"></script>
+    <script src="/js/admin/demo.js"></script>
 </html>

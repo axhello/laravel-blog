@@ -1,133 +1,69 @@
-<div class="sidebar-menu toggle-others fixed">
-    <div class="sidebar-menu-inner">
-        <header class="logo-env">
-            <!-- logo -->
-            <div class="logo">
-                <a href="/admin/dashboard" class="logo-expanded">
-                    <img src="/images/logo@2x.png" width="80" alt=""/>
+<div class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="/admin" class="logo-text">
+                管理后台
+            </a>
+        </div>
+        <ul class="nav">
+            <li>
+                <a href="dashboard.html">
+                    <i class="pe-7s-graph"></i>
+                    <p>Dashboard</p>
                 </a>
-                <a href="/admin/dashboard" class="logo-collapsed">
-                    <img src="/images/logo-collapsed@2x.png" width="40" alt="" />
-                </a>
-            </div>
-            <!-- This will toggle the mobile menu and will be visible only on mobile devices -->
-            <div class="mobile-menu-toggle visible-xs">
-                <a href="#" data-toggle="user-info-menu">
-                    <i class="fa-bell-o"></i>
-                    <span class="badge badge-success">7</span>
-                </a>
-                <a href="#" data-toggle="mobile-menu">
-                    <i class="fa-bars"></i>
-                </a>
-            </div>
-            <!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
-            <div class="settings-icon">
-                <a href="#" data-toggle="settings-pane" data-animate="true">
-                    <i class="linecons-cog"></i>
-                </a>
-            </div>
-        </header>
-        <ul id="main-menu" class="main-menu">
-
-            <li class="{{ Sidebar::m_active('skin') ? 'active opened expanded has-sub' : '' }}">
-                <a href="/admin/dashboard">
-                    <i class="linecons-params"></i>
-                    <span class="title">控制台</span>
-                </a>
-                <ul>
-                    <li class="{{ Sidebar::m_active('skin') }}">
-                        <a href="/admin/skin"><span class="title">更换皮肤</span></a>
-                    </li>
-                </ul>
             </li>
-
-            <li class="{{ Sidebar::articleActive('articles','create','pages','create')}}">
-                <a href="#">
-                    <i class="linecons-desktop"></i>
-                    <span class="title">文章管理</span>
+            <li class="active">
+                <a data-toggle="collapse" href="#article-management" class="collapsed" aria-expanded="false">
+                    <i class="pe-7s-plugin"></i>
+                    <p>文章管理
+                        <b class="caret"></b>
+                    </p>
                 </a>
-                <ul>
-                    <li class="{{ Sidebar::m_active('articles') }}">
-                        <a href="/admin/articles">
-                            <span class="title">查看文章</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::a_active('create') }}">
-                        <a href="/admin/articles/create">
-                            <span class="title">撰写文章</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::m_active('pages') }}">
-                        <a href="/admin/pages">
-                            <span class="title">查看页面</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::p_active('create') }}">
-                        <a href="/admin/pages/create">
-                            <span class="title">创建页面</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="collapse in" id="article-management" aria-expanded="false">
+                    <ul class="nav">
+                        <li class="active"><a href="/admin/articles">查看文章</a></li>
+                        <li><a href="/admin/articles/create">撰写文章</a></li>
+                        <li><a href="/admin/pages">查看页面</a></li>
+                        <li><a href="/admin/pages/create">创建页面</a></li>
+                    </ul>
+                </div>
             </li>
-            <li class="{{ Sidebar::classActive('category','tags', 'comment', 'links') }}">
-                <a href="#">
-                    <i class="linecons-note"></i>
-                    <span class="title">分类管理</span>
+            <li>
+                <a href="table.html">
+                    <i class="pe-7s-note2"></i>
+                    <p>Table List</p>
                 </a>
-                <ul>
-                    <li class="{{ Sidebar::m_active('category') }}">
-                        <a href="/admin/category">
-                            <span class="title">分类管理</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::m_active('tags') }}">
-                        <a href="/admin/tags">
-                            <span class="title">标签管理</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::m_active('comment') }}">
-                        <a href="/admin/comment">
-                            <span class="title">评论管理</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::m_active('links') }}">
-                        <a href="/admin/links">
-                            <span class="title">友链管理</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="{{ Sidebar::userActive('basic','add','edit') }}">
-                <a href="#">
-                    <i class="linecons-cog"></i>
-                    <span class="title">设置</span>
-                    <span class="label label-purple pull-right hidden-collapsed">New</span>
+            <li>
+                <a href="typography.html">
+                    <i class="pe-7s-news-paper"></i>
+                    <p>Typography</p>
                 </a>
-                <ul>
-                    <li class="{{ Sidebar::o_active('basic') }}">
-                        <a href="/admin/options/basic">
-                            <span class="title">基本</span>
-                            <span class="label label-success pull-right">new</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::u_active('add') }}">
-                        <a href="/admin/user/add">
-                            <span class="title">添加用户</span>
-                        </a>
-                    </li>
-                    <li class="{{ Sidebar::u_active('edit') }}">
-                        <a href="/admin/user/edit">
-                            <span class="title">账户资料</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="{{ Sidebar::a_active('recycle') }}">
-                <a href="/admin/articles/recycle">
-                    <i class="linecons-beaker"></i>
-                    <span class="title">回收站</span>
+            <li>
+                <a href="icons.html">
+                    <i class="pe-7s-science"></i>
+                    <p>Icons</p>
+                </a>
+            </li>
+            <li>
+                <a href="maps.html">
+                    <i class="pe-7s-map-marker"></i>
+                    <p>Maps</p>
+                </a>
+            </li>
+            <li>
+                <a href="notifications.html">
+                    <i class="pe-7s-bell"></i>
+                    <p>Notifications</p>
+                </a>
+            </li>
+            <li class="active-pro">
+                <a href="upgrade.html">
+                    <i class="pe-7s-rocket"></i>
+                    <p>Upgrade to PRO</p>
                 </a>
             </li>
         </ul>
     </div>
-</div>
+    <div class="sidebar-background" style="background-image: url(assets/img/sidebar-5.jpg) "></div></div>
