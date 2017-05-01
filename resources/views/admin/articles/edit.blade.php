@@ -1,81 +1,63 @@
 @extends('admin.layout')
 @section('content')
-    @include('admin.header')
-    <div class="page-container">
-
-        @include('admin.sidebar')
-
-        <div class="main-content">
-            <!-- User Info, Notifications and Menu Bar -->
-            @include('admin.navbar')
-            <div class="page-title">
-                <div class="title-env">
-                    <h1 class="title">Articles Editing</h1>
-                    <p class="description">Combined WYSIWYG editors you can use with Xenon theme</p>
-                </div>
-                <div class="breadcrumb-env">
-                    <ol class="breadcrumb bc-1">
-                        <li>
-                            <a href="/admin/dashboard"><i class="fa-home"></i>Home</a>
-                        </li>
-                        <li>
-                            <a href="/admin/articles">Articles</a>
-                        </li>
-                        <li class="active">
-                            <strong>Edit</strong>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <br />
-            <link rel="stylesheet" href="/css/admin/uikit.css">
-            <link rel="stylesheet" href="/css/admin/codemirror.css">
-            <link rel="stylesheet" href="/css/admin/codemirror.css">
-            <link rel="stylesheet" href="/css/admin/htmleditor.css">
-            {!! Form::model($article, ['url'=>'admin/articles/'.$article->id, 'method'=>'PATCH']) !!}
-            <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                {!! Form::text('title', null, ['class' => 'form-control', 'placeholder'=>'文章标题']) !!}
-                @if ($errors->has('title'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('title') }}</strong>
-                    </span>
-                @endif
-            </div>
-            <div class="form-group">
-                {!! Form::select('cate_id', $cates, null, ['class' => 'form-control','id'=>'cate_list']) !!}
-            </div>
-            <div class="form-group">
-                {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control','multiple'=>'multiple','id'=>'tag_list']) !!}
-            </div>
-            <div class="editor form-group {{ $errors->has('content_raw') ? ' has-error' : '' }}">
-                {!! Form::textarea('content_raw', null, ['data-uk-htmleditor'=>'{markdown:true}', 'class' => 'form-control']) !!}
-                @if ($errors->has('content_raw'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('content_raw') }}</strong>
-                    </span>
-                @endif
-            </div>
-            <div class="form-group">
-                {!! Form::submit('提交啊',['class'=>'btn btn-primary form-control']) !!}
-            </div>
-            {!! Form::close() !!}
-
-            <footer class="main-footer sticky footer-type-1">
-                <div class="footer-inner">
-                    <!-- Add your copyright text here -->
-                    <div class="footer-text">
-                        &copy; 2014
-                        <strong>Xenon</strong>
-                        More Templates
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">编辑文章</h4>
                     </div>
-                    <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
-                    <div class="go-up">
-                        <a href="#" rel="go-top">
-                            <i class="fa-angle-up"></i>
-                        </a>
+                    <div class="content">
+                        {!! Form::model($article, ['url'=>'admin/articles/'.$article->id, 'method'=>'PATCH', 'class'=>'form-horizontal']) !!}
+                        <fieldset>
+                            <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                                <div class="col-sm-10 col-md-offset-1">
+                                    {!! Form::text('title', null, ['class' => 'form-control', 'placeholder'=>'文章标题', 'autocomplete'=>'off']) !!}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-sm-10 col-md-offset-1">
+                                    {!! Form::select('cate_id', $cates, null, ['class' => 'form-control','id'=>'cate_list']) !!}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-sm-10 col-md-offset-1">
+                                    {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control','multiple'=>'multiple','id'=>'tag_list']) !!}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group {{ $errors->has('content_raw') ? 'has-error' : '' }}">
+                                <div class="col-sm-10 col-md-offset-1">
+                                    {!! Form::textarea('content_raw', null, ['data-uk-htmleditor'=>'{maxsplitsize:800, markdown:true}', 'class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="col-sm-2 col-md-offset-9">
+                                {!! Form::submit('提交',['class'=>'btn btn-fill btn-block btn-info']) !!}
+                            </div>
+                        </fieldset>
+                        {!! Form::close() !!}
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
+    <link rel="stylesheet" href="/ukeditor/css/codemirror.css">
+    <link rel="stylesheet" href="/ukeditor/css/highlight.css">
+    <link rel="stylesheet" href="/ukeditor/css/htmleditor.css">
+    <link rel="stylesheet" href="/css/admin/select2.min.css">
+    <script src="/js/admin/jquery.min.js"></script>
+    <script src="/ukeditor/js/uikit.min.js"></script>
+    <script src="/ukeditor/js/highlight.js"></script>
+    <script src="/ukeditor/js/codemirror.js"></script>
+    <script src="/ukeditor/js/marked.js"></script>
+    <script src="/ukeditor/js/htmleditor.js"></script>
+    <script src="/js/admin/select2.min.js"></script>
+    <script>$("#cate_list").select2();$("#tag_list").select2({ placeholder:'分类标签', tags: true});</script>
 @stop

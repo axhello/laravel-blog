@@ -123,5 +123,4 @@
             </div>
         </div>
     </div>
-    @include('admin.footer')
 @stop

@@ -3,3 +3,121 @@
     padding: 15px 10px 0 10px;
     border-top: 1px solid #ddd;
 }
+
+legend {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.table-text {
+    color: #333;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 37px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 37px !important;
+    color: #6b6b6b !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 37px !important;
+}
+
+.select2-selection .select2-selection--multiple {
+    height: 37px !important;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+    line-height: 25px !important;
+}
+
+.form-control {
+    height: 37px;
+    padding: 8px 8px;
+}
+
+.input-color::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #797979;
+}
+
+.input-color:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #797979;
+}
+
+.input-color::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #797979;
+}
+
+.input-color:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #797979;
+}
+
+.page-url span {
+    color: #777;
+}
+
+.page-url {
+    font-size: 15px;
+    color: #565656;
+}
+
+.page-url .tip {
+    color: #bb0000;
+    font-size: 13px;
+}
+
+.has-error .slug-input {
+    border-color: red;
+}
+
+.slug-input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.tags-list {
+    padding: 0;
+    list-style: none;
+}
+
+.tags-list li {
+    list-style: none;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 2em;
+    padding: 12px;
+}
+
+.tags-list li .tags {
+    background: #3273dc;
+    border-radius: 3px;
+    padding: 10px 25px 10px 25px;
+    color: #fff;
+}
+
+.tags-list li .tags i {
+    color: #5e5e5e;
+    font-size: 20px;
+}
+
+.tips {
+    margin: 10px 0;
+    font-size: 13px;
+    color: #737373;
+}
+
+.text-red {
+    color: red;
+}
+
+.description {
+    width: 60%;
+    margin: 1em auto;
+}

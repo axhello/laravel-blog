@@ -22,6 +22,7 @@
                 <div class="content">
                     @yield('content')
                 </div>
+                @include('admin.footer')
             </div>
         </div>
     </body>
@@ -30,6 +31,7 @@
     <script src="/js/admin/bootstrap-checkbox-radio-switch-tags.js"></script>
     <script src="/js/admin/chartist.min.js"></script>
     <script src="/js/admin/bootstrap-notify.js"></script>
+    <script src="/js/admin/sweetalert2.js"></script>
     <script src="/js/admin/light-bootstrap-dashboard.js"></script>
     <script src="/js/admin/demo.js"></script>
 </html>

@@ -11,8 +11,8 @@
                         </div>
                         <a href="/admin/articles/create" class="btn btn-primary btn-fill btn-wd pull-right">撰写文章</a>
                     </div>
-                    <div class="content table-responsive table-full-width">
-                        <table class="table table-hover table-striped">
+                    <div class="content table-responsive">
+                        <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -26,9 +26,9 @@
                             @foreach($articles as $article)
                                 <tr>
                                     <td>{{ $article->id }}</td>
-                                    <td><a href="/admin/articles/{{ $article->id }}/edit">{{ $article->title }}</a></td>
+                                    <td><a class="table-text" href="/admin/articles/{{ $article->id }}/edit">{{ $article->title }}</a></td>
                                     <td>{{ $article->user->name }}</td>
-                                    <td>{{ $article->updatedat() }}</td>
+                                    <td>{{ $article->updated_at }}</td>
                                     <td class="td-actions">
                                         <button type="button" rel="tooltip"
                                                 data-placement="left"
@@ -38,7 +38,7 @@
                                             <i class="fa fa-edit"></i>
                                         </button>
                                         <button type="button" rel="tooltip"
-                                                data-placement="left"
+                                                data-placement="right"
                                                 title=""
                                                 class="btn btn-danger btn-simple btn-icon "
                                                 data-original-title="删除文章">

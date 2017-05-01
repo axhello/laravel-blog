@@ -906,45 +906,6 @@
             "time": "2016-09-16T12:04:44+00:00"
         },
         {
-            "name": "overtrue/laravel-ueditor",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/overtrue/laravel-ueditor.git",
-                "reference": "7bb62c59f939811c0065e1986a72df8c3607d72a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/overtrue/laravel-ueditor/7bb62c59f939811c0065e1986a72df8c3607d72a.zip",
-                "reference": "7bb62c59f939811c0065e1986a72df8c3607d72a",
-                "shasum": ""
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.10"
-            },
-            "suggest": {
-                "overtrue/laravel-filesystem-qiniu": "如果你想要使用七牛云存储，也许你需要安装它哦~"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Overtrue\\LaravelUEditor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "overtrue",
-                    "email": "anzhengchao@gmail.com"
-                }
-            ],
-            "description": "UEditor integration for Laravel.",
-            "time": "2017-04-17T10:14:31+00:00"
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "v1.4.1",
             "source": {
@@ -2147,7 +2108,7 @@
             "version": "0.9.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
             },
             "dist": {

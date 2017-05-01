@@ -6403,10 +6403,6 @@ star {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /*   this code is for fixing safari bug with hidden overflow for border-radius   */
-  -webkit-mask: url("../img/mask.png") 0 0 no-repeat;
-  -webkit-mask-size: 60px 28px;
-  mask: url("../img/mask.png") 0 0 no-repeat;
 }
 
 .has-switch.deactivate {
@@ -6591,12 +6587,6 @@ star {
 }
 .navbar .btn-simple {
   font-size: 16px;
-}
-.navbar.fixed {
-  width: calc(100% - $sidebar-width);
-  right: 0;
-  left: auto;
-  border-radius: 0;
 }
 .navbar.navbar-absolute {
   position: absolute;
@@ -6785,17 +6775,17 @@ star {
   background-color: rgba(255, 255, 255, 0.23);
   color: #FFFFFF;
 }
-[class*="navbar-ct"] .navbar-form .form-control:-moz-placeholder {
+[class*="navbar-ct"] .navbar-form .form-control::-moz-placeholder {
   color: #FFFFFF;
   opacity: 1;
   filter: alpha(opacity=100);
 }
-[class*="navbar-ct"] .navbar-form .form-control:-webkit-input-placeholder {
+[class*="navbar-ct"] .navbar-form .form-control::-webkit-input-placeholder {
   color: #FFFFFF;
   opacity: 1;
   filter: alpha(opacity=100);
 }
-[class*="navbar-ct"] .navbar-form .form-control:-ms-input-placeholder {
+[class*="navbar-ct"] .navbar-form .form-control::-ms-input-placeholder {
   color: #FFFFFF;
   opacity: 1;
   filter: alpha(opacity=100);
@@ -6807,8 +6797,6 @@ star {
   background-color: transparent;
   color: #E3E3E3;
   font-size: 16px;
-  padding: 0 7px;
-  border-radius: 4px 0 0 4px;
 }
 .navbar-form .input-group-focus .input-group-addon, .navbar-form .form-control:focus {
   color: #9A9A9A;
@@ -7597,7 +7585,7 @@ star {
 }
 .card .form-group > label {
   margin-bottom: 5px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .card .title {
   margin: 0;
@@ -8089,7 +8077,6 @@ star {
 .bootstrap-datetimepicker-widget table td.today > div:before {
   content: '';
   display: inline-block;
-  border: 0 0 7px 7px solid transparent;
   border-bottom-color: #23CCEF;
   border-top-color: rgba(0, 0, 0, 0.2);
   position: absolute;

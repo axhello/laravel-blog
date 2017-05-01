@@ -3,62 +3,61 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-
                 <div class="card">
                     <div class="header">
                         <h4 class="title">撰写文章</h4>
                     </div>
                     <div class="content">
-                        <form method="get" action="/" class="form-horizontal">
+                        {!! Form::open(['url'=>'/admin/articles/', 'class'=>'form-horizontal']) !!}
                             <fieldset>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">文章标题</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="">
+                                <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        {!! Form::text('title', null, ['class' => 'form-control input-color', 'placeholder'=>'文章标题', 'autocomplete'=>'off']) !!}
                                     </div>
                                 </div>
                             </fieldset>
-
                             <fieldset>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">分类目录</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="">
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        {!! Form::select('cate_id', $cates, null, ['class' => 'form-control','id'=>'cate_list']) !!}
                                     </div>
                                 </div>
                             </fieldset>
-
                             <fieldset>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">分类标签</label>
-                                    <div class="col-sm-8">
-                                        <input name="tagsinput" class="tagsinput tag-azure tag-fill" value="" />
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control','multiple'=>'multiple','id'=>'tag_list']) !!}
                                     </div>
                                 </div>
                             </fieldset>
-
                             <fieldset>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">文章内容</label>
-                                    <div class="col-sm-8">
-                                        @include('vendor.ueditor.assets')
-                                        <!-- 编辑器容器 -->
-                                            <script id="container" name="content" type="text/plain"></script>
-                                        <!-- 实例化编辑器 -->
-                                        <script type="text/javascript">
-                                            var ue = UE.getEditor('container');
-                                            ue.ready(function() {
-                                                ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-                                            });
-                                        </script>
+                                <div class="form-group {{ $errors->has('content_raw') ? 'has-error' : '' }}">
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        {!! Form::textarea('content_raw', null, ['data-uk-htmleditor'=>'{maxsplitsize:800, markdown:true}', 'class' => 'form-control']) !!}
                                     </div>
                                 </div>
                             </fieldset>
-
-                        </form>
+                            <fieldset>
+                                <div class="col-sm-2 col-md-offset-9">
+                                    {!! Form::submit('提交',['class'=>'btn btn-fill btn-block btn-info']) !!}
+                                </div>
+                            </fieldset>
+                        {!! Form::close() !!}
                     </div>
                 </div>  <!-- end card -->
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="/ukeditor/css/codemirror.css">
+    <link rel="stylesheet" href="/ukeditor/css/highlight.css">
+    <link rel="stylesheet" href="/ukeditor/css/htmleditor.css">
+    <link rel="stylesheet" href="/css/admin/select2.min.css">
+    <script src="/js/admin/jquery.min.js"></script>
+    <script src="/ukeditor/js/uikit.min.js"></script>
+    <script src="/ukeditor/js/highlight.js"></script>
+    <script src="/ukeditor/js/codemirror.js"></script>
+    <script src="/ukeditor/js/marked.js"></script>
+    <script src="/ukeditor/js/htmleditor.js"></script>
+    <script src="/js/admin/select2.min.js"></script>
+    <script>$("#cate_list").select2();$("#tag_list").select2({ placeholder:'分类标签', tags: true});</script>
 @stop

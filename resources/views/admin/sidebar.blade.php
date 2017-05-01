@@ -1,27 +1,27 @@
-<div class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+<div class="sidebar" data-color="blue" data-image="/img/full-screen-image-3.jpg">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="/admin" class="logo-text">
+            <a href="/admin/dashboard" class="logo-text">
                 管理后台
             </a>
         </div>
         <ul class="nav">
             <li>
-                <a href="dashboard.html">
+                <a href="#">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a data-toggle="collapse" href="#article-management" class="collapsed" aria-expanded="false">
-                    <i class="pe-7s-plugin"></i>
+                    <i class="pe-7s-note2"></i>
                     <p>文章管理
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse in" id="article-management" aria-expanded="false">
+                <div class="collapse" id="article-management" aria-expanded="false">
                     <ul class="nav">
-                        <li class="active"><a href="/admin/articles">查看文章</a></li>
+                        <li><a href="/admin/articles">查看文章</a></li>
                         <li><a href="/admin/articles/create">撰写文章</a></li>
                         <li><a href="/admin/pages">查看页面</a></li>
                         <li><a href="/admin/pages/create">创建页面</a></li>
@@ -29,39 +29,39 @@
                 </div>
             </li>
             <li>
-                <a href="table.html">
-                    <i class="pe-7s-note2"></i>
-                    <p>Table List</p>
+                <a data-toggle="collapse" href="#sort-management" class="collapsed" aria-expanded="false">
+                    <i class="pe-7s-plugin"></i>
+                    <p>分类管理
+                        <b class="caret"></b>
+                    </p>
                 </a>
+                <div class="collapse" id="sort-management" aria-expanded="false">
+                    <ul class="nav">
+                        <li><a href="/admin/category">分类管理</a></li>
+                        <li><a href="/admin/tags">标签管理</a></li>
+                        <li><a href="/admin/links">友链管理</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="active">
+                <a data-toggle="collapse" href="#admin-setting" class="collapsed" aria-expanded="false">
+                    <i class="pe-7s-config"></i>
+                    <p>管理员设置
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse in" id="admin-setting" aria-expanded="false">
+                    <ul class="nav">
+                        <li><a href="/admin/options/basic">基本设置</a></li>
+                        <li><a href="/admin/user/add">添加用户</a></li>
+                        <li><a href="/admin/user/edit">修改资料</a></li>
+                    </ul>
+                </div>
             </li>
             <li>
-                <a href="typography.html">
-                    <i class="pe-7s-news-paper"></i>
-                    <p>Typography</p>
-                </a>
-            </li>
-            <li>
-                <a href="icons.html">
-                    <i class="pe-7s-science"></i>
-                    <p>Icons</p>
-                </a>
-            </li>
-            <li>
-                <a href="maps.html">
-                    <i class="pe-7s-map-marker"></i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li>
-                <a href="notifications.html">
-                    <i class="pe-7s-bell"></i>
-                    <p>Notifications</p>
-                </a>
-            </li>
-            <li class="active-pro">
-                <a href="upgrade.html">
-                    <i class="pe-7s-rocket"></i>
-                    <p>Upgrade to PRO</p>
+                <a href="/admin/articles/recycle">
+                    <i class="pe-7s-trash"></i>
+                    <p>回收站</p>
                 </a>
             </li>
         </ul>
