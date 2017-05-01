@@ -1,21 +1,42 @@
 @if ( Session::has('success') )
     <script>
-        window.onload = function () {
-            toastr.success("{{ Session::get('success') }}", "成功提醒!", opts);
-        };
+        $.notify({
+            icon: 'pe-7s-bell',
+            message: '{{ Session::get('success') }}'
+        },{
+            type: "success",
+            placement: {
+                from: 'top',
+                align: 'center'
+            }
+        });
     </script>
 @endif
 @if ( Session::has('error') )
     <script>
-        window.onload = function () {
-            toastr.error("{{ Session::get('error') }}", "失败提示!", opts);
-        };
+        $.notify({
+            icon: 'pe-7s-bell',
+            message: '{{ Session::get('error') }}'
+        },{
+            type: "danger",
+            placement: {
+                from: 'top',
+                align: 'center'
+            }
+        });
     </script>
 @endif
 @if ( Session::has('info') )
     <script>
-        window.onload = function () {
-            toastr.info('{{ Session::get('info') }}');
-        };
+        $.notify({
+            icon: 'pe-7s-bell',
+            message: '{{ Session::get('info') }}'
+        },{
+            type: "info",
+            placement: {
+                from: 'top',
+                align: 'center'
+            }
+        });
     </script>
 @endif

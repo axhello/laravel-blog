@@ -28,20 +28,23 @@
                                     <td><a class="table-text" href="/admin/pages/{{ $page->id }}/edit">{{ $page->title }}</a></td>
                                     <td>{{ $page->updated_at }}</td>
                                     <td class="td-actions">
-                                        <button type="button" rel="tooltip"
-                                                data-placement="left"
-                                                title=""
-                                                class="btn btn-success btn-simple btn-icon"
-                                                data-original-title="编辑文章">
+                                        <a href="/admin/pages/{{ $page->id }}/edit"
+                                           rel="tooltip"
+                                           data-placement="left"
+                                           title="编辑页面"
+                                           class="btn btn-success btn-simple btn-icon"
+                                           data-original-title="编辑页面">
                                             <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip"
-                                                data-placement="left"
-                                                title=""
+                                        </a>
+                                        {!! Form::open(['url'=>'/admin/pages/'.$page->id, 'method'=>'DELETE', 'style'=>'display:inline-block']) !!}
+                                        <button type="submit" rel="tooltip"
+                                                data-placement="right"
+                                                title="删除页面"
                                                 class="btn btn-danger btn-simple btn-icon "
-                                                data-original-title="删除文章">
+                                                data-original-title="删除页面">
                                             <i class="fa fa-times"></i>
                                         </button>
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach

@@ -30,20 +30,23 @@
                                     <td>{{ $article->user->name }}</td>
                                     <td>{{ $article->updated_at }}</td>
                                     <td class="td-actions">
-                                        <button type="button" rel="tooltip"
+                                        <a href="/admin/articles/{{ $article->id }}/edit"
+                                                rel="tooltip"
                                                 data-placement="left"
-                                                title=""
+                                                title="编辑文章"
                                                 class="btn btn-success btn-simple btn-icon"
                                                 data-original-title="编辑文章">
                                             <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip"
-                                                data-placement="right"
-                                                title=""
-                                                class="btn btn-danger btn-simple btn-icon "
-                                                data-original-title="删除文章">
-                                            <i class="fa fa-times"></i>
-                                        </button>
+                                        </a>
+                                        {!! Form::open(['url'=>'/admin/articles/'.$article->id, 'method'=>'DELETE', 'style'=>'display:inline-block']) !!}
+                                            <button type="submit" rel="tooltip"
+                                                    data-placement="right"
+                                                    title="删除文章"
+                                                    class="btn btn-danger btn-simple btn-icon"
+                                                    data-original-title="删除文章">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach

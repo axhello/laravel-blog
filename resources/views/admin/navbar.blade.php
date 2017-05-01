@@ -13,34 +13,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Dashboard PRO</a>
+            {{--<a class="navbar-brand" href="#">Dashboard PRO</a>--}}
         </div>
         <div class="collapse navbar-collapse">
 
             <form class="navbar-form navbar-left navbar-search-form" role="search">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" value="" class="form-control" placeholder="Search...">
+                    <input type="text" value="" class="form-control" placeholder="搜索...">
                 </div>
             </form>
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-gavel"></i>
-                        <p class="hidden-md hidden-lg">
-                            Actions
-                            <b class="caret"></b>
-                        </p>
+                    <a href="/" title="返回前台">
+                        <i class="fa fa-home" style="font-size: 22px"></i>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Create New Post</a></li>
-                        <li><a href="#">Manage Something</a></li>
-                        <li><a href="#">Do Nothing</a></li>
-                        <li><a href="#">Submit to live</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Another Action</a></li>
-                    </ul>
                 </li>
 
                 <li class="dropdown">
@@ -99,7 +87,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>

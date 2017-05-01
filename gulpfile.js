@@ -20,6 +20,7 @@ elixir(function(mix) {
         'resources/assets/css/admin/font-awesome.min.css',
         'resources/assets/css/admin/light-bootstrap-dashboard.css',
         'resources/assets/css/admin/dashboard.css',
+        'resources/assets/css/admin/sweetalert2.min.css',
         'resources/assets/css/admin/select2.min.css'
     ], 'public/css/admin');
     mix.copy('resources/assets/css/fonts/*.{ttf,eot,svg,woff,woff2}', 'public/css/fonts');
@@ -45,8 +46,8 @@ elixir(function(mix) {
         'resources/assets/js/admin/chartist.min.js',
         'resources/assets/js/admin/light-bootstrap-dashboard.js',
         'resources/assets/js/admin/jquery.validate.min.js',
-        'resources/assets/js/admin/sweetalert2.js',
         'resources/assets/js/admin/select2.min.js',
+        'resources/assets/js/admin/sweetalert2.min.js',
         'resources/assets/js/admin/demo.js'
     ], 'public/js/admin');
 });

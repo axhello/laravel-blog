@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="/css/admin/animate.min.css">
     <link rel="stylesheet" href="/css/admin/font-awesome.min.css">
     <link rel="stylesheet" href="/css/admin/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/css/admin/sweetalert2.min.css">
     <link rel="stylesheet" href="/css/admin/light-bootstrap-dashboard.css">
     <link rel="stylesheet" href="/css/admin/dashboard.css">
+    <script src="/js/admin/jquery.min.js"></script>
+    <script src="/js/admin/bootstrap-notify.js"></script>
+    <script src="/js/admin/sweetalert2.min.js"></script>
 </head>
     <body>
         <div class="wrapper">
@@ -22,16 +26,13 @@
                 <div class="content">
                     @yield('content')
                 </div>
-                @include('admin.footer')
+                {{--@include('admin.footer')--}}
             </div>
+            @include('admin.notice')
         </div>
     </body>
-    <script src="/js/admin/jquery.min.js"></script>
     <script src="/js/admin/bootstrap.min.js"></script>
     <script src="/js/admin/bootstrap-checkbox-radio-switch-tags.js"></script>
-    <script src="/js/admin/chartist.min.js"></script>
-    <script src="/js/admin/bootstrap-notify.js"></script>
-    <script src="/js/admin/sweetalert2.js"></script>
     <script src="/js/admin/light-bootstrap-dashboard.js"></script>
     <script src="/js/admin/demo.js"></script>
 </html>

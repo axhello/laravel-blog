@@ -5,8 +5,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header clearfix">
-                        <h4 class="title">文章列表</h4>
-                        <p class="category">tip: 点击标题可直接编辑文章</p>
+                        <h4 class="title">回收站文章</h4>
+                        {{--<p class="category">tip: 点击标题可直接编辑文章</p>--}}
                     </div>
                     <div class="content table-responsive">
                         <table class="table table-hover table-bordered">
@@ -24,22 +24,23 @@
                                     <td>{{ $article->title }}</td>
                                     <td>{{ $article->user->name }}</td>
                                     <td>{{ $article->deleted_at }}</td>
-                                    <td>{{ $article->updated_at }}</td>
                                     <td class="td-actions">
-                                        <button type="button" rel="tooltip"
-                                                data-placement="left"
-                                                title=""
-                                                class="btn btn-success btn-simple btn-icon"
-                                                data-original-title="恢复文章">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip"
-                                                data-placement="right"
-                                                title=""
-                                                class="btn btn-danger btn-simple btn-icon "
-                                                data-original-title="彻底删除">
+                                        <a href="/admin/articles/restore/{{$article->id}}"
+                                           rel="tooltip"
+                                           data-placement="left"
+                                           title="恢复文章"
+                                           class="btn btn-success btn-simple btn-icon"
+                                           data-original-title="恢复文章">
+                                            <i class="fa fa-undo"></i>
+                                        </a>
+                                        <a onclick="confirmDelete({{$article->id}})"
+                                           rel="tooltip"
+                                           data-placement="right"
+                                           title="彻底删除"
+                                           class="btn btn-danger btn-simple btn-icon "
+                                           data-original-title="彻底删除">
                                             <i class="fa fa-times"></i>
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -61,4 +62,20 @@
             </div>
         </div>
     </div>
+    <script>
+        function confirmDelete(id) {
+            swal({
+                title: '确定删除?',
+                text: "确认将从数据库中删除文章，无法恢复!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '是的, 删除!',
+                cancelButtonText: '取消'
+            }).then(function () {
+                window.location.href = '/admin/articles/delete/'+ id
+            }).catch(swal.noop)
+        }
+    </script>
 @stop

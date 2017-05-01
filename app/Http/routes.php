@@ -8,9 +8,6 @@ Route::get('/pages/{slug}', 'Home\HomeController@pages');
 Route::get('/search', 'Home\HomeController@search');
 Route::get('/tag/{tag}', 'Home\HomeController@tag');
 Route::get('/links','Home\HomeController@links');
-Route::post('/comment','Home\CommentController@comment');
-Route::post('/comment/reply','Home\CommentController@reply');
-Route::post('/comment/notice','Home\CommentController@notice');
 
 /**
  * 后台路由
@@ -43,9 +40,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::post('/tags/edit/{id}', 'Admin\TagController@edit');
     Route::patch('/tags/update/{id}', 'Admin\TagController@update');
     Route::delete('/tags/delete/{id}', 'Admin\TagController@destroy');
-
-    Route::get('/comment', 'Admin\CommentController@index');
-    Route::delete('/comment', 'Admin\CommentController@destroy');
 
     Route::get('/links', 'Admin\LinksController@links');
     Route::post('/links', 'Admin\LinksController@create');
